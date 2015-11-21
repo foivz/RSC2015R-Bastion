@@ -17,6 +17,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60);
+            $table->string('full_name')->nullable();
+            $table->text('gcm_id')->nullable();
+            $table->integer('role')->nullable()->default(1);
+            $table->integer('team_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
         });
