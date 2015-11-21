@@ -41,8 +41,8 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 /* TESTING ROUTES FOR PUSHING NOTIFICATIONS */
 Route::get('/asend', function () {
     PushNotification::app('android')
-        ->to('flTgVB-VFQY:APA91bG7QF6CwNZOt-KQ6q2dJxtAM_y-yaf_dwiIwR07I_mD3b760qlE5XHrnMbJbCPb2xoVkksJhhb45mEe7IzAmImfDzDxvbyB3bBsNMQaXwR_r4NyoVNmnDpryxzeeEm8ybnPn-bJ')
-        ->send('Android GCM testna poruka');
+        ->to('dFN7LCn_JRc:APA91bHuLZh4GPtfwpW0I3-5s62lTOjKpWfkuRUWuY7eLs-EsW-CQLC3wi9a9IvOvMmsHAMeVDW1iPJJMK1BcERqWYjw4F4mWp-BQKK1aM6XY91rDLksAkIQRomkpyV_UopLqwVgThwP')
+        ->send('bozo');
 });
 
 Route::get('/isend', function () {
@@ -72,6 +72,16 @@ Route::group(['prefix' => 'api'], function()
         });
 
         Route::resource('team','TeamController');
+
+        Route::post('join/{name}', function ($name){
+            $team_leader = Auth::user()->gcm_id;
+
+            PushNotification::app('android')
+                ->to($team_leader)
+                ->send('Novi igrač želi u vaš team!');
+            $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => "");
+            return json_encode($responseArray);
+        });
 
 
     });
