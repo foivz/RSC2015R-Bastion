@@ -1,4 +1,4 @@
-package com.bozidar.labas.microdroid.activity;
+package com.bozidar.labas.microdroid.activities;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.microdroid.base.MicroActivity;
