@@ -66,6 +66,8 @@ Route::group(['prefix' => 'api'], function()
             return json_encode($responseArray);
         });
 
+        Route::resource('team','TeamController');
+
 
     });
 });
