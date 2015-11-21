@@ -31,7 +31,7 @@ Route::get('/home', function () {
 Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
-=======
+
 Route::get('testaona', function() {
     //$team_leader = Auth::user()->gcm_id;
     $team = \App\Team::where('id',1)->first();
