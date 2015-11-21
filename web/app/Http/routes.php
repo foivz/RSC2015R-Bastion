@@ -101,7 +101,7 @@ Route::group(['prefix' => 'api'], function()
 
             $user1 = App\User::where('email',$teamLeader)->first();
 
-            if($user->device == 'android') {
+            if($user1->device == 'android') {
                 PushNotification::app('android')
                     ->to($user1->gcm_id)
                     ->send('Novi igrač želi u vaš team!');
