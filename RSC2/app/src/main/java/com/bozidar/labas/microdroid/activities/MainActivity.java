@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.fragments.TeamListFragment;
 import com.bozidar.microdroid.base.MicroActivity;
 
 import butterknife.Bind;
@@ -26,6 +27,19 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     NavigationView navigationView;
 
     ActionBarDrawerToggle drawerToggle;
+
+
+
+    TeamListFragment fragment;
+
+    public enum OpenedFragment {
+        FRAGMENT_CREATED_TEAMS,
+        FRAGMENT_SELECTED_TEAM,
+    }
+
+    OpenedFragment openedFragment;
+
+
 
     @Override
     public int setupToolbar() {
@@ -45,6 +59,9 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     @Override
     public void init() {
         setUpDrawer();
+        fragment = new TeamListFragment();
+        openedFragment = OpenedFragment.FRAGMENT_CREATED_TEAMS;
+        setFragment(R.id.content, fragment);
     }
 
     /**
@@ -93,6 +110,4 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

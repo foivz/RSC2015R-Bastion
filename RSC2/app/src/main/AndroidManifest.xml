@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".activities.TutorialActivity" >
         </activity>
+        <activity android:name=".activities.SelectedTeamActivity" >
+        </activity>
     </application>
 
 </manifest>
