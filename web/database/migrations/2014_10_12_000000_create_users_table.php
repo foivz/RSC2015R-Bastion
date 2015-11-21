@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('full_name')->nullable();
             $table->text('gcm_id')->nullable();
+            $table->string('device')->nullable();
             $table->integer('role')->nullable()->default(1);
             $table->string('long')->nullable();
             $table->string('lat')->nullable();
