@@ -11,11 +11,27 @@
 |
 */
 
+/* USERS factory  */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'name' => $faker->userName,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'password' => bcrypt('123456'),
+        'full_name' => $faker->name,
         'remember_token' => str_random(10),
+    ];
+});
+
+/* Teams factory  */
+$factory->define(App\Team::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+/* Groups factory  */
+$factory->define(App\Group::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
     ];
 });
