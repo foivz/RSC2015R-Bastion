@@ -120,6 +120,7 @@ class AuthController extends Controller {
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->role = 1;
+        $user->device = $request->input('device');
         $user->save();
 
 
