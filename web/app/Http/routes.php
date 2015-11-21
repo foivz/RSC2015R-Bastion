@@ -19,9 +19,17 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/view', function () {
+    return view('prikaz');
+});
+
 Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::post('/save', 'GameController@store');
+
+Route::post('/view', 'GameController@view');
 
 /* AUTHENTICATION ROUTES */
 Route::get('auth/login', 'Auth\AuthController@getLogin');

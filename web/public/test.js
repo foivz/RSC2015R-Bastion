@@ -13,6 +13,7 @@ $(document).ready( function() {
     */
     var iconType = 1;
     var markers = [];
+    var markersHelp = [];
     var map;
     var bangalore = { lat: 46.3087404, lng: 16.3525307 };
     var rectangle;
@@ -62,15 +63,23 @@ $(document).ready( function() {
         else if(iconType == 5){
             var iconBase = 'http://maps.google.com/mapfiles/kml/pal2/icon13.png';
         }
+        var bla = {
+            'type' : 1,
+            'long' : 3,
+            'lat' :4
+        };
+
 
         var marker = new google.maps.Marker({
             position: location,
             map: map,
             icon: iconBase
         });
-        marker.type = iconType;
+        bla.type = iconType;
+        bla.long = marker.getPosition().lng();
+        bla.lat = marker.getPosition().lat();
         markers.push(marker);
-
+        markersHelp.push(bla);
     }
 
     function setMapOnAll(map){
@@ -129,6 +138,35 @@ $(document).ready( function() {
 
     $("#borders7" ).click(function() {
         //savanej
+        var naziv = $('#naziv').val();
+        var trajanje = $('#trajanje').val();
+        var polje = JSON.stringify(markersHelp);
+
+        $.ajax({
+            type: "POST",
+            url: "/save",
+            dataType: "json",
+            data: {
+                'name' : naziv,
+                'duration' : trajanje,
+                'bound_north' : bounds["north"],
+                'bound_south' : bounds["south"],
+                'bound_east' : bounds["east"],
+                'bound_west' : bounds["west"],
+                'markers' : polje
+            },
+            success: function (data, status, xhr) {
+                alert("a");
+            },
+
+            error: function (jqXHR, status) {
+                //alert(status);
+            }
+        });
+
+
+
+
     });
     $("#borders8" ).click(function() {
         iconType = 1;
