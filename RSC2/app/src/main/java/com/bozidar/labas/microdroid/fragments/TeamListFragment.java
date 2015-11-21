@@ -15,6 +15,7 @@ import com.bozidar.labas.microdroid.mvp.presenter.TeamListPresenter;
 import com.bozidar.labas.microdroid.mvp.presenter.impl.TeamListPresenterImpl;
 import com.bozidar.labas.microdroid.mvp.view.CreatedTeamsView;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
+import com.bozidar.labas.microdroid.utils.TokenManager;
 import com.bozidar.microdroid.base.MicroFragment;
 import com.bozidar.microdroid.model.User;
 import com.bozidar.microdroid.recyclerview.adapter.MicroRecyclerAdapter;
@@ -100,7 +101,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     @Override
     public void showTvStations(List<CreatedTeamModel> model, User user) {
-
+        TokenManager.storeNewTokenLocaly(getMicroActivity(), user);
         setRecyclerView(model);
     }
 }

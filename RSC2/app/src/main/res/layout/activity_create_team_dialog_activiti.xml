@@ -29,11 +29,12 @@
                 android:text="KREIRANJE TIMA"
                 android:textSize="25sp"/>
 
-            <TextView
+            <EditText
+                android:id="@+id/et_team_name"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Poslan je zahtjev za ulazak u tim. Pricekajte na odobrenje vode tima kako bi mogli upasti u tim"/>
+                android:hint="Naziv tima"/>
 
             <View
                 android:layout_marginTop="5dp"
@@ -43,11 +44,11 @@
                 android:background="@color/colorPrimary"/>
 
             <TextView
-                android:id="@+id/btnChoseTvShow"
+                android:id="@+id/btn_create_team"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="OBAVIJEST"
+                android:text="KREIRAJ"
                 android:gravity="right"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>

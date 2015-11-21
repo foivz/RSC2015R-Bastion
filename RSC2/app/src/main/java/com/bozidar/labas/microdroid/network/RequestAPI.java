@@ -42,11 +42,15 @@ public interface RequestAPI {
             Callback<Response<RegistrationResponse>> response
     );
 
-    @GET("/api/teams")
+    @GET("/api/team")
     void fetchCreatedTeams(
             @Header("Authorization") String token,
             Callback<Response<List<CreatedTeamModel>>> response);
 
-
+    @FormUrlEncoded
+    @POST("/api/team")
+    void createTeam(@Header("Authorization") String token,
+                       @Field("name") String teamName,
+                       Callback<Response<String>> response);
 }
 //api.register(username, email, password, firstName, lastName, city, birthDate, this);
