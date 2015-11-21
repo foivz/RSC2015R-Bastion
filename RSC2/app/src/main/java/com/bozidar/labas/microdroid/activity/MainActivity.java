@@ -1,5 +1,6 @@
-package com.bozidar.labas.microdroid;
+package com.bozidar.labas.microdroid.activity;
 
+import com.bozidar.labas.microdroid.R;
 import com.bozidar.microdroid.base.MicroActivity;
 
 public class MainActivity extends MicroActivity {

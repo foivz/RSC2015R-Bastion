@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FormEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textColorHint">#ffeeeeee</item>
+        <item name="android:background">@drawable/edittext_background</item>
+    </style>
+
+    <style name="ButtonPlain" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:padding">8.0dip</item>
+    </style>
+
 </resources>
