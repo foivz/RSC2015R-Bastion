@@ -28,6 +28,8 @@
 		20B1FCAE1C00AAAC00B2E0B3 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCAD1C00AAAC00B2E0B3 /* APIUser.swift */; };
 		20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */; };
 		20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB11C00AAF000B2E0B3 /* Constants.swift */; };
+		20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */; };
+		20B1FCB71C00B24D00B2E0B3 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */; };
 		8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		20B1FCAD1C00AAAC00B2E0B3 /* APIUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
 		20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		20B1FCB11C00AAF000B2E0B3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
+		20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListCell.swift; sourceTree = "<group>"; };
 		98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				20B1FC621C009DB800B2E0B3 /* LoginController.swift */,
+				20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 		20B1FC9C1C009EFE00B2E0B3 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				20B1FCB51C00B23300B2E0B3 /* CustomCells */,
 				20B1FC9E1C00A2EE00B2E0B3 /* CustomButton.swift */,
 				20B1FCA01C00A30100B2E0B3 /* CustomTextField.swift */,
 				20B1FCA21C00A31100B2E0B3 /* CustomImageView.swift */,
@@ -238,6 +244,14 @@
 				20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */,
 			);
 			name = APICommunication;
+			sourceTree = "<group>";
+		};
+		20B1FCB51C00B23300B2E0B3 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		B3EEDD9EEE13BDCE4153D649 /* Pods */ = {
@@ -443,12 +457,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B1FCB71C00B24D00B2E0B3 /* TeamListCell.swift in Sources */,
 				20B1FC631C009DB800B2E0B3 /* LoginController.swift in Sources */,
 				20B1FCAE1C00AAAC00B2E0B3 /* APIUser.swift in Sources */,
 				20B1FCA31C00A31100B2E0B3 /* CustomImageView.swift in Sources */,
 				20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */,
 				20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */,
 				20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */,
+				20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */,
 				20B1FCA51C00A7B600B2E0B3 /* CustomView.swift in Sources */,
 				20B1FCA81C00A7F500B2E0B3 /* UIViewExtension.swift in Sources */,
 				20B1FC9F1C00A2EE00B2E0B3 /* CustomButton.swift in Sources */,

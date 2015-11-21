@@ -84,6 +84,9 @@ class LoginController: UIViewController {
                 }
             }) { (error: NSError) -> Void in
         }
+        
+        var teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
+        self.navigationController?.presentViewController(teamListNavigationController!, animated: true, completion: nil)
     }
     
     func register() {
