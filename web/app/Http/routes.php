@@ -63,7 +63,7 @@ Route::group(['prefix' => 'api'], function()
 
     Route::post('logout', 'Api\AuthController@logout');
 
-    Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
+    Route::group(['middleware' => ['jwt.auth']], function() {
 
         Route::get('teams', function (){
             $teams = App\Team::all();
@@ -73,8 +73,11 @@ Route::group(['prefix' => 'api'], function()
 
         Route::resource('team','TeamController');
 
-        Route::post('join/{name}', function ($name){
+        Route::post('join/{id}', function ($id){
             $team_leader = Auth::user()->gcm_id;
+            $user = App\User::find(Auth::user()->id);
+            $user->team_id = $id;
+            $user->save();
 
             PushNotification::app('android')
                 ->to($team_leader)
