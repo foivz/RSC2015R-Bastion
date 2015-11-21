@@ -7,8 +7,8 @@
             <div class="container">
 
                 <ul class="info pull-left">
-                    <li><a href="{{ url('/') }}"><i class="icon-mail contact"></i> bastion@gmail.com</a></li>
-                    <li><i class="icon-mobile contact"></i> +385 097 615 5988</li>
+                    <li><a href="{{ url('/') }}"><i class="icon-mail contact"></i> acredo@gmail.com</a></li>
+                    <li><i class="icon-mobile contact"></i> +385 345 233 4344</li>
                 </ul>
 
                 <ul class="social pull-right">
@@ -23,7 +23,7 @@
 
                 <!-- ============================================================= LOGO MOBILE ============================================================= -->
 
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/logo.svg') }}" class="logo" alt=""></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/splat.svg') }}" class="logo" alt=""></a>
 
                 <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
 
@@ -38,7 +38,7 @@
 
                     <!-- ============================================================= LOGO ============================================================= -->
 
-                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/logo.svg') }}" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/splat.svg') }}" class="logo" alt=""></a>
 
                     <!-- ============================================================= LOGO : END ============================================================= -->
 

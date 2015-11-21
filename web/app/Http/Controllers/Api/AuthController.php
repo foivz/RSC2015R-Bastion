@@ -95,15 +95,12 @@ class AuthController extends Controller {
             'full_name' => 'required|max:50',
             'email' => 'required|unique:users,email|email|max:40',
             'password' => 'required|max:20',
-            'city' => 'required|max:30',
-            'birth_date' => 'required|date_format:Y-m-d',
         ];
 
         $messages = [
             'required' => 'The :attribute field is required.',
             'email.email' => 'Wrong email format',
             'full_name.unique' => 'Given name is not unique',
-            'birth_date.date_format' => 'Date not in correct format',
         ];
 
         $validator = Validator::make($input, $rules, $messages);
@@ -122,14 +119,9 @@ class AuthController extends Controller {
         $user->name = $request->input('full_name');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        //$user->first_name = $request->input('first_name');
-        //$user->last_name = $request->input('last_name');
-        $user->city = $request->input('city');
-        $date = (date('Y-m-d',strtotime(($request->input('birth_date')))));
-        $user->birth_date = $date;
+        $user->role = 1;
         $user->save();
 
-        $user->assignRole('user');
 
         return json_encode(array('status' => 'OK', 'message' => 'Registration successfull!', 'data' => array('response'=>'ok')));
         //return "ok";
