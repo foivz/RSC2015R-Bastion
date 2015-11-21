@@ -56,7 +56,7 @@ class AuthController extends Controller {
 
             //return response()->json($responseArray);
 
-            $dataArray = array('token' => $token,'avatar' => "",'email' => $user->email,'name' => $user->name);
+            $dataArray = array('token' => $token,'avatar' => "",'email' => $user->email,'name' => $user->name, 'role' => $user->role);
             $responseArray = array('status' => 'OK', 'message' => 'Successfull login!','data' => $dataArray);
 
             return json_encode($responseArray);
@@ -120,6 +120,7 @@ class AuthController extends Controller {
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->role = 1;
+        $user->device = $request->input('device');
         $user->save();
 
 
