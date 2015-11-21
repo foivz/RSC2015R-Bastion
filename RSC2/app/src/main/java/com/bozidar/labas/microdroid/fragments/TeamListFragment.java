@@ -1,11 +1,13 @@
 package com.bozidar.labas.microdroid.fragments;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.activities.CreateTeamDialogActivity;
 import com.bozidar.labas.microdroid.activities.MainActivity;
 import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.item.CreatedTeamItem;
@@ -16,6 +18,7 @@ import com.bozidar.microdroid.recyclerview.item.MicroItem;
 import java.util.ArrayList;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Created by Bozidar on 21.11.2015..
@@ -24,6 +27,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     @Bind(R.id.list)
     RecyclerView list;
+
 
     private MicroRecyclerAdapter adapter;
 
@@ -74,5 +78,10 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     private void goToSelectedTeamFragment(CreatedTeamModel selectedModel){
         ((MainActivity)getMicroActivity()).setFragment(R.id.content, new SelectedTeamFragment());
+    }
+
+    @OnClick(R.id.fab)
+    public void createTeam(){
+        startActivity(new Intent(getMicroActivity(), CreateTeamDialogActivity.class));
     }
 }
