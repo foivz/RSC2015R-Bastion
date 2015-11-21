@@ -64,7 +64,6 @@
                                     <constraint firstAttribute="width" constant="50" id="ZdS-ta-gmJ"/>
                                     <constraint firstAttribute="height" constant="50" id="pV0-uM-uIK"/>
                                 </constraints>
-                                <state key="normal" image="facebook"/>
                                 <connections>
                                     <action selector="clickFacebookLogin:" destination="zOn-Ct-8Lh" eventType="touchUpInside" id="9Gd-aL-Z9y"/>
                                 </connections>
@@ -72,7 +71,6 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aS-tw-mwn">
                                 <rect key="frame" x="174" y="196" width="50" height="50"/>
                                 <animations/>
-                                <state key="normal" image="twitter"/>
                                 <connections>
                                     <action selector="clickTwitterLogin:" destination="zOn-Ct-8Lh" eventType="touchUpInside" id="O9L-7n-oy6"/>
                                 </connections>
@@ -139,25 +137,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JY9-ZS-IJe" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="224" width="280" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6m5-5t-Hbi"/>
-                                </constraints>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="0.48425387600000003" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFe-zA-QND">
                                 <rect key="frame" x="20" y="498" width="280" height="50"/>
                                 <animations/>
@@ -172,7 +151,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fHS-K2-OKH" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="166" width="280" height="50"/>
+                                <rect key="frame" x="20" y="224" width="280" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WYP-8m-KIh"/>
@@ -194,38 +173,33 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fHS-K2-OKH" firstAttribute="centerX" secondItem="JY9-ZS-IJe" secondAttribute="centerX" id="1c5-7q-9Gu"/>
                             <constraint firstItem="rnt-kK-pOz" firstAttribute="centerX" secondItem="FTj-kG-OIj" secondAttribute="centerX" id="2L9-8Z-BlT"/>
                             <constraint firstAttribute="trailing" secondItem="FTj-kG-OIj" secondAttribute="trailing" id="2pl-JG-dda"/>
                             <constraint firstItem="jGQ-sJ-JqL" firstAttribute="leading" secondItem="rnt-kK-pOz" secondAttribute="leading" id="4EL-UQ-6gN"/>
-                            <constraint firstItem="JY9-ZS-IJe" firstAttribute="top" secondItem="fHS-K2-OKH" secondAttribute="bottom" constant="8" id="6bQ-jj-bJ3"/>
                             <constraint firstItem="aGa-g9-ECB" firstAttribute="leading" secondItem="g6v-p4-5fJ" secondAttribute="leading" constant="20" id="6cr-3K-8JH"/>
-                            <constraint firstItem="fHS-K2-OKH" firstAttribute="width" secondItem="JY9-ZS-IJe" secondAttribute="width" id="CHe-98-qWw"/>
                             <constraint firstItem="rnt-kK-pOz" firstAttribute="top" secondItem="Pr8-nw-2av" secondAttribute="bottom" constant="24" id="Et6-5f-MZt"/>
                             <constraint firstItem="Fco-xY-aCy" firstAttribute="top" secondItem="FTj-kG-OIj" secondAttribute="bottom" id="Evo-gc-6bi"/>
                             <constraint firstItem="sk0-bb-n40" firstAttribute="height" secondItem="cy7-dA-Cth" secondAttribute="height" id="F0g-pp-rqm"/>
                             <constraint firstItem="CFe-zA-QND" firstAttribute="top" secondItem="aGa-g9-ECB" secondAttribute="bottom" constant="8" id="LHT-0q-0mt"/>
                             <constraint firstItem="rnt-kK-pOz" firstAttribute="leading" secondItem="jGQ-sJ-JqL" secondAttribute="trailing" constant="-50" id="LoG-pt-3ug"/>
-                            <constraint firstItem="jzf-0s-BAf" firstAttribute="top" secondItem="JY9-ZS-IJe" secondAttribute="bottom" constant="8" id="NLR-NY-bGn"/>
+                            <constraint firstItem="fHS-K2-OKH" firstAttribute="centerX" secondItem="jzf-0s-BAf" secondAttribute="centerX" id="M0I-7r-PHe"/>
                             <constraint firstItem="sk0-bb-n40" firstAttribute="top" secondItem="jzf-0s-BAf" secondAttribute="bottom" constant="8" id="Nrm-ue-RZF"/>
                             <constraint firstItem="sk0-bb-n40" firstAttribute="width" secondItem="cy7-dA-Cth" secondAttribute="width" id="PnY-Al-D3X"/>
                             <constraint firstItem="aGa-g9-ECB" firstAttribute="top" secondItem="sk0-bb-n40" secondAttribute="bottom" constant="50" id="Qrk-3J-h3X"/>
                             <constraint firstItem="jzf-0s-BAf" firstAttribute="leading" secondItem="g6v-p4-5fJ" secondAttribute="leading" constant="20" id="RWA-IW-Ejd"/>
                             <constraint firstItem="Fco-xY-aCy" firstAttribute="top" secondItem="CFe-zA-QND" secondAttribute="bottom" constant="22" id="Rfl-P0-RSZ"/>
                             <constraint firstItem="3aS-tw-mwn" firstAttribute="trailing" secondItem="rnt-kK-pOz" secondAttribute="trailing" id="T1N-ws-GZ4"/>
-                            <constraint firstItem="jzf-0s-BAf" firstAttribute="centerX" secondItem="JY9-ZS-IJe" secondAttribute="centerX" id="ahQ-mj-hTt"/>
+                            <constraint firstItem="jzf-0s-BAf" firstAttribute="top" secondItem="fHS-K2-OKH" secondAttribute="bottom" constant="8" id="b6E-zq-6cD"/>
                             <constraint firstItem="3aS-tw-mwn" firstAttribute="height" secondItem="jGQ-sJ-JqL" secondAttribute="height" id="cCx-Nz-hk4"/>
                             <constraint firstAttribute="trailing" secondItem="jzf-0s-BAf" secondAttribute="trailing" constant="20" id="cD5-EU-x6q"/>
                             <constraint firstItem="sk0-bb-n40" firstAttribute="centerX" secondItem="cy7-dA-Cth" secondAttribute="centerX" id="eNn-JD-NZz"/>
                             <constraint firstItem="3aS-tw-mwn" firstAttribute="width" secondItem="jGQ-sJ-JqL" secondAttribute="width" id="fbA-V1-Amb"/>
                             <constraint firstAttribute="trailing" secondItem="sk0-bb-n40" secondAttribute="trailing" constant="20" id="iHV-uY-unr"/>
+                            <constraint firstItem="fHS-K2-OKH" firstAttribute="width" secondItem="jzf-0s-BAf" secondAttribute="width" id="k3U-3A-ni6"/>
                             <constraint firstItem="jGQ-sJ-JqL" firstAttribute="top" secondItem="rnt-kK-pOz" secondAttribute="bottom" constant="24" id="kO3-dm-0nf"/>
                             <constraint firstAttribute="trailing" secondItem="CFe-zA-QND" secondAttribute="trailing" constant="20" id="laz-VU-0a0"/>
-                            <constraint firstItem="jzf-0s-BAf" firstAttribute="width" secondItem="JY9-ZS-IJe" secondAttribute="width" id="mga-Qj-W5F"/>
-                            <constraint firstItem="fHS-K2-OKH" firstAttribute="height" secondItem="JY9-ZS-IJe" secondAttribute="height" id="nME-Cy-sBn"/>
                             <constraint firstItem="FTj-kG-OIj" firstAttribute="leading" secondItem="g6v-p4-5fJ" secondAttribute="leading" id="nfk-bV-gWY"/>
                             <constraint firstItem="sk0-bb-n40" firstAttribute="leading" secondItem="g6v-p4-5fJ" secondAttribute="leading" constant="20" id="p5r-5y-we6"/>
-                            <constraint firstItem="jzf-0s-BAf" firstAttribute="height" secondItem="JY9-ZS-IJe" secondAttribute="height" id="qLr-Yg-xkM"/>
                             <constraint firstItem="FTj-kG-OIj" firstAttribute="top" secondItem="g6v-p4-5fJ" secondAttribute="top" id="siD-Nx-CUF"/>
                             <constraint firstAttribute="trailing" secondItem="aGa-g9-ECB" secondAttribute="trailing" constant="20" id="yJ6-aa-pUR"/>
                             <constraint firstItem="cy7-dA-Cth" firstAttribute="top" secondItem="sk0-bb-n40" secondAttribute="bottom" constant="8" id="yQU-ol-4zX"/>
@@ -244,13 +218,13 @@
                     <connections>
                         <outlet property="buttonConfirm" destination="aGa-g9-ECB" id="hny-EW-BA8"/>
                         <outlet property="buttonRegister" destination="CFe-zA-QND" id="IDN-S2-9Gy"/>
+                        <outlet property="constraintBottomPush" destination="Rfl-P0-RSZ" id="dzX-P4-xSR"/>
                         <outlet property="constraintLogoTop" destination="Et6-5f-MZt" id="Ie8-sA-UhF"/>
                         <outlet property="constraintMoveFields" destination="Qrk-3J-h3X" id="VhW-dA-UVb"/>
                         <outlet property="fieldConfirmPassword" destination="cy7-dA-Cth" id="PgR-MV-ClP"/>
                         <outlet property="fieldEmail" destination="jzf-0s-BAf" id="EdH-4A-kCZ"/>
                         <outlet property="fieldFullName" destination="fHS-K2-OKH" id="Urx-7Q-3Iv"/>
                         <outlet property="fieldPassword" destination="sk0-bb-n40" id="gxb-23-sdo"/>
-                        <outlet property="fieldUsername" destination="JY9-ZS-IJe" id="vE1-fH-QzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izf-gN-Hhi" sceneMemberID="firstResponder"/>
@@ -278,7 +252,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffa-AK-V54" id="C9V-2X-w1Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-IA-Ve8" customClass="CustomImageView" customModule="PaintballApp" customModuleProvider="target">
@@ -410,7 +384,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AUf-kP-fiW" id="kHi-w1-42c">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sb5-YZ-wbH" customClass="CustomImageView" customModule="PaintballApp" customModuleProvider="target">
@@ -425,14 +399,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awB-vY-Isd">
-                                                    <rect key="frame" x="69" y="20" width="167" height="39"/>
+                                                    <rect key="frame" x="69" y="20" width="127" height="39"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
-                                                    <rect key="frame" x="244" y="24" width="30" height="30"/>
+                                                    <rect key="frame" x="204" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="✔︎">
@@ -443,12 +417,12 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
-                                                    <rect key="frame" x="282" y="24" width="30" height="30"/>
+                                                    <rect key="frame" x="262" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.65459408969999999" green="0.19047225879999999" blue="0.21001269219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="7di-0i-Ij9"/>
-                                                        <constraint firstAttribute="height" constant="30" id="EnG-aZ-XCu"/>
+                                                        <constraint firstAttribute="width" constant="50" id="7di-0i-Ij9"/>
+                                                        <constraint firstAttribute="height" constant="40" id="EnG-aZ-XCu"/>
                                                     </constraints>
                                                     <state key="normal" title="✖︎">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -478,7 +452,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-ha-wwq" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-ha-wwq" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
                                 <rect key="frame" x="225" y="455" width="75" height="75"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -524,7 +498,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZDq-gp-dZH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EIl-Tm-QIa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UserListController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EIl-Tm-QIa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
@@ -545,7 +519,5 @@
     </scenes>
     <resources>
         <image name="background" width="250" height="166"/>
-        <image name="facebook" width="368" height="230"/>
-        <image name="twitter" width="368" height="230"/>
     </resources>
 </document>

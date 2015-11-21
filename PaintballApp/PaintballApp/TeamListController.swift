@@ -32,6 +32,7 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func clickPlusButton(sender: AnyObject) {
-        
+        var nextController = self.storyboard?.instantiateViewControllerWithIdentifier("UserListController")
+        self.navigationController?.showViewController(nextController!, sender: nil)
     }
 }
