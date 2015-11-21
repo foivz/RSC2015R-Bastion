@@ -41,11 +41,12 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let name = self.localJson["data"][indexPath.row]["name"].string!
-        APIData.sharedInstance.joinTeam(name, withSuccess: { (json: JSON) -> Void in
-            
-            }) { (error: NSError) -> Void in
-            
+        if let id = self.localJson["data"][indexPath.row]["id"].string {
+            APIData.sharedInstance.joinTeam(Int(id)!, withSuccess: { (json: JSON) -> Void in
+                    print(json)
+                }) { (error: NSError) -> Void in
+                
+            }
         }
     }
     

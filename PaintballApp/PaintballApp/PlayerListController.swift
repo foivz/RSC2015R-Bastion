@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import QRCodeReader
+import AVFoundation
 
-class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +20,9 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:",
+            name: "refreshUserList:", object: nil)
 
     }
 
@@ -35,10 +40,42 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func clickedAddButton(sender: UIButton) {
+
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
     func clickedDeleteButton(sender: UIButton) {
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    func refreshList(notification: NSNotification) {
+        print(notification)
+    }
+    
+    
+    
+    //QRCODE READER
+    func clickQRCodeStartScaning() {
+        reader.delegate = self
+        
+        // Or by using the closure pattern
+        reader.completionBlock = { (result: String?) in
+            print(result)
+        }
+        
+        // Presents the reader as modal form sheet
+        reader.modalPresentationStyle = .FormSheet
+        presentViewController(reader, animated: true, completion: nil)
+    }
+    
+    lazy var reader = QRCodeReaderViewController(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+    
+    // MARK: - QRCodeReader Delegate Methods
+    func readerDidCancel(reader: QRCodeReaderViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func reader(reader: QRCodeReaderViewController, didScanResult result: String) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>QRCodeReader.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +72,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EA1AF77E281BFE665CC0031A7EFE6A5</key>
+		<key>04728B5DBE34083361997296627AD0E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F155462B7D01D2DE28669366C34C649</key>
+		<key>0EA1AF77E281BFE665CC0031A7EFE6A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69A2C094A6530F5ED34A60DCEE866675</key>
+		<key>4BA15834E9D5F01C38DC3EAD47AD2ED3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>789B59FA8F59A82061CDCA025F41B7BA</key>
+		<key>87BE896A5AB28C2B9A2A35B687CF45F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B03183BF7CA3F50B80D52AF1B2C461DB</key>
+		<key>A44E82135F3C74C3AB2647C05790E0F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9220B50947E9948101B3A9C7F29FFBD</key>
+		<key>BCD5537A6DDD55C196A63D7C1689FBB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D074A147CA69741B05DF05CB144CD81E</key>
+		<key>DDF2B8413B32B11B939CD92FBC8A7265</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FACC44D8619B38797C7BCD20E4DFA36E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
