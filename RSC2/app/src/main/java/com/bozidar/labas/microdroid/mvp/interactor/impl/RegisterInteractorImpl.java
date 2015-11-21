@@ -31,7 +31,7 @@ public class RegisterInteractorImpl implements RegisterInteractor, Callback<Resp
         }
         if (!error) {
             RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
-            api.register(firstName + " " + lastName, email, password, this);
+            api.register(firstName + " " + lastName, email, password, "android", this);
         }
     }
 

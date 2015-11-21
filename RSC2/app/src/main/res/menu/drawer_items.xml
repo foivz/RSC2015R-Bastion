@@ -6,13 +6,13 @@
             android:icon="@mipmap/ic_settings"
             android:title="Home"/>
         <item
-            android:id="@+id/nav_tv_stations"
+            android:id="@+id/game_list"
             android:icon="@mipmap/ic_settings"
-            android:title="Tv stations"/>
+            android:title="Lista igara"/>
         <item
-            android:id="@+id/nav_feature_one"
+            android:id="@+id/igra"
             android:icon="@mipmap/ic_settings"
-            android:title="Feature one"/>
+            android:title="Igra"/>
     </group>
     <group android:id="@+id/my_id">
         <item

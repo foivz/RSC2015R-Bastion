@@ -1,8 +1,6 @@
 package com.bozidar.labas.microdroid.mvp.presenter.impl;
 
 
-import android.util.Log;
-
 import com.bozidar.labas.microdroid.mvp.interactor.LoginInteractor;
 import com.bozidar.labas.microdroid.mvp.interactor.impl.LoginInteractorImpl;
 import com.bozidar.labas.microdroid.mvp.listener.OnLoginFinishedListener;
@@ -39,14 +37,18 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
 
     @Override
     public void onSuccess(Response<LoginResponse> loginResponse) {
-        //Log.d("success", "success");
-        LoginResponse response = loginResponse.getData();
-        logedUserModel.setToken(response.getToken());
-        Log.d("tokencicLogin", logedUserModel.getToken());
-        logedUserModel.setName(response.getName());
-        logedUserModel.setEmail(response.getEmail());
-        logedUserModel.setAvatar(response.getAvatar());
-        view.navigateToHome(logedUserModel);
+        if(loginResponse.getData() != null){
+            //Log.d("success", "success");
+            LoginResponse response = loginResponse.getData();
+            logedUserModel.setToken(response.getToken());
+            //Log.d("tokencicLogin", logedUserModel.getToken());
+            logedUserModel.setName(response.getName());
+            logedUserModel.setEmail(response.getEmail());
+            logedUserModel.setAvatar(response.getAvatar());
+            view.navigateToHome(logedUserModel);
+        }
+
+
     }
 
     @Override

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.fragments.Game;
 import com.bozidar.labas.microdroid.fragments.TeamListFragment;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.microdroid.base.MicroActivity;
@@ -88,6 +89,14 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
             case R.id.scan:
                 drawerLayout.closeDrawers();
                 startActivity(new Intent(this, QRCodeActivity.class));
+                break;
+            case R.id.igra:
+                drawerLayout.closeDrawers();
+                setFragment(R.id.content, Game.newInstance());
+                break;
+            case R.id.game_list:
+                drawerLayout.closeDrawers();
+                setFragment(R.id.content, fragment);
                 break;
         }
 

@@ -40,6 +40,7 @@ public interface RequestAPI {
             @Field("full_name") String username,
             @Field("email") String email,
             @Field("password") String password,
+            @Field("device") String deviceType,
             Callback<Response<RegistrationResponse>> response
     );
 
