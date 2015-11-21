@@ -33,11 +33,8 @@ Route::post('/save', 'GameController@store');
 Route::post('/view', 'GameController@view');
 
 Route::get('testaona', function() {
-    //$team_leader = Auth::user()->gcm_id;
-    $team = \App\Team::where('id',1)->first();
-    $teamLeader = $team->team_leader;
-    $user = App\User::find(Auth::user()->id);
-    return $user;
+    $team = \App\Team::last();
+    return $team;
 });
 
 
@@ -113,6 +110,11 @@ Route::group(['prefix' => 'api'], function()
 
             $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => "");
             return json_encode($responseArray);
+        });
+
+        Route::get('applications/{id}', function($id) {
+            $users = \App\User::where('team_id',$id)->get();
+            return $users;
         });
 
 
