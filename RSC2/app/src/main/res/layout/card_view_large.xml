@@ -29,14 +29,14 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No favorites TV shows!"
+                android:text="Zahtjev za tim"
                 android:textSize="25sp"/>
 
             <TextView
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="You dont have any favorites tv shows. You can chose some of tv shows to your favorites."/>
+                android:text="Poslan je zahtjev za ulazak u tim. Pricekajte na odobrenje vode tima kako bi mogli upasti u tim"/>
 
             <View
                 android:layout_marginTop="5dp"
@@ -50,7 +50,7 @@
                android:layout_marginTop="15dp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="CHOSE TV SHOW"
+               android:text="POVRATAK"
                android:gravity="right"
                android:textStyle="bold"
                android:textColor="@color/colorPrimary"/>

@@ -67,6 +67,11 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     @Override
     public void microItemClicked(View view, MicroItem item) {
+        CreatedTeamModel selectedModel = ((CreatedTeamItem)item).getModel();
+
+    }
+
+    private void goToSelectedTeamFragment(CreatedTeamModel selectedModel){
 
     }
 }

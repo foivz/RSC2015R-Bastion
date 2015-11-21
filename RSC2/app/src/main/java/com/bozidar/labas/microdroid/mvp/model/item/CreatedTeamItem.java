@@ -45,4 +45,8 @@ public class CreatedTeamItem implements MicroItem {
     public void setItemView(View view) {
         ButterKnife.bind(this, view);
     }
+
+    public CreatedTeamModel getModel(){
+        return this.teamModel;
+    }
 }
