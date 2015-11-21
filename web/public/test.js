@@ -141,6 +141,12 @@ $(document).ready( function() {
         var naziv = $('#naziv').val();
         var trajanje = $('#trajanje').val();
         var polje = JSON.stringify(markersHelp);
+        var ne = (rectangle.getBounds().getNorthEast());
+        var sw = rectangle.getBounds().getSouthWest();
+        bounds["north"] = ne.lat();
+        bounds["east"] = ne.lng();
+        bounds["south"] = sw.lat();
+        bounds["west"] = sw.lng();
 
         $.ajax({
             type: "POST",

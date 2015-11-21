@@ -36,12 +36,18 @@
 
 
 </div>
+<div id="Team1">
+        <input type="text" id="team1id">
+</div>
 
+<div id="Team2">
+    <input type="text" id="team2id">
+</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_VJESZUU2Dqfatb_5YPr1U5H8bv7oY_o&"></script>
 
 
 
-<script src="{{asset('test.js')}}"></script>
+<script src="{{asset('prikazIgre.js')}}"></script>
 </body>
 </html>
