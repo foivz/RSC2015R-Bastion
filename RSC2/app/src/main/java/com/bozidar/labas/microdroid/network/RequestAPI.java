@@ -1,13 +1,19 @@
 package com.bozidar.labas.microdroid.network;
 
+import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.LoginModel;
 import com.bozidar.labas.microdroid.mvp.model.response.LoginResponse;
+import com.bozidar.labas.microdroid.mvp.model.response.RegistrationResponse;
 import com.bozidar.labas.microdroid.mvp.model.response.Response;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.Body;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
+import retrofit.http.GET;
+import retrofit.http.Header;
 import retrofit.http.POST;
 
 /**
@@ -26,6 +32,20 @@ public interface RequestAPI {
             @Field("token") String token,
             Callback<String> response
     );
+
+    @FormUrlEncoded
+    @POST("/api/register")
+    void register(
+            @Field("full_name") String username,
+            @Field("email") String email,
+            @Field("password") String password,
+            Callback<Response<RegistrationResponse>> response
+    );
+
+    @GET("/api/teams")
+    void fetchCreatedTeams(
+            @Header("Authorization") String token,
+            Callback<Response<List<CreatedTeamModel>>> response);
 
 
 }
