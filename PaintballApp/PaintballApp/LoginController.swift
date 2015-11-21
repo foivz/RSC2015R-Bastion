@@ -82,12 +82,20 @@ class LoginController: UIViewController, UITextFieldDelegate {
         APIUser.sharedInstance.login(self.fieldEmail.text!, password: self.fieldPassword.text!,
             withSuccess: { (json: JSON) -> Void in
                 
-                if let token = json["data"]["token"].string {
-                    APIUser.sharedInstance.setToken("Bearer \(token)")
+                if let token: String = json["data"]["token"].string {
+                    if !token.isEmpty && token != "" {
+                        
+                        APIUser.sharedInstance.setToken("Bearer \(token)")
+                        let teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
+                        self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
                     
-                    print(json)
-                    var teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("UserListController")
-                    self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
+                    } else {
+                        let alert = UIAlertView()
+                        alert.title = "Ups!"
+                        alert.message = "Prijava nije uspjela :("
+                        alert.addButtonWithTitle("OK")
+                        alert.show()
+                    }
                 }
             }) { (error: NSError) -> Void in
         }
@@ -96,20 +104,21 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     func register() {
         APIUser.sharedInstance.register(self.fieldEmail.text!, password: self.fieldPassword.text!, name: self.fieldFullName.text!, withSuccess: { (json: JSON) -> Void in
-                print(json)
-            }) { (error: NSError) -> Void in
-        }
-    }
-    
-    func getData() {
-        APIData.sharedInstance.getListOfTeams({ (json: JSON) -> Void in
             
-            for var i = 0; i < json["data"].count; i++ {
-                print(json["data"][i]["description"].string)
+            if let response = json["message"].string {
+                let alert = UIAlertView()
+                alert.title = "Registracija"
+                alert.message = response
+                alert.addButtonWithTitle("OK")
+                alert.show()
+            } else {
+                let alert = UIAlertView()
+                alert.title = "Ups!"
+                alert.message = "Registracija nije uspjela :("
+                alert.addButtonWithTitle("OK")
+                alert.show()
             }
-            
             }) { (error: NSError) -> Void in
-                
         }
     }
     

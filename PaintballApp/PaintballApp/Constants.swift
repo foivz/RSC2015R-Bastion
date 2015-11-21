@@ -13,5 +13,6 @@ struct Constants {
     static let kENDPOINT: String = "https://bozidarlabas.from.hr"
     static let kLOGIN: String = "\(kENDPOINT)/api/login"
     static let kREGISTER: String = "\(kENDPOINT)/api/register"
+    static let kTEAMLIST: String = "\(kENDPOINT)/api/teams"
     
 }

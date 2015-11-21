@@ -10,6 +10,9 @@ import UIKit
 
 class TeamListCell: UITableViewCell {
 
+    @IBOutlet weak var imageViewImage: CustomImageView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelDescription: UILabel!
     
     
     override func awakeFromNib() {

@@ -30,6 +30,7 @@
 		20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB11C00AAF000B2E0B3 /* Constants.swift */; };
 		20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */; };
 		20B1FCB71C00B24D00B2E0B3 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */; };
+		20B1FCB91C00D34B00B2E0B3 /* PlayerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB81C00D34B00B2E0B3 /* PlayerListController.swift */; };
 		8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		20B1FCB11C00AAF000B2E0B3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
 		20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListCell.swift; sourceTree = "<group>"; };
+		20B1FCB81C00D34B00B2E0B3 /* PlayerListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListController.swift; sourceTree = "<group>"; };
 		98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 			children = (
 				20B1FC621C009DB800B2E0B3 /* LoginController.swift */,
 				20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */,
+				20B1FCB81C00D34B00B2E0B3 /* PlayerListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */,
 				20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */,
 				20B1FCA51C00A7B600B2E0B3 /* CustomView.swift in Sources */,
+				20B1FCB91C00D34B00B2E0B3 /* PlayerListController.swift in Sources */,
 				20B1FCA81C00A7F500B2E0B3 /* UIViewExtension.swift in Sources */,
 				20B1FC9F1C00A2EE00B2E0B3 /* CustomButton.swift in Sources */,
 				20B1FCA11C00A30100B2E0B3 /* CustomTextField.swift in Sources */,

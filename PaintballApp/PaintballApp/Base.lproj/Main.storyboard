@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-0s-BAf" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="bjakus@gmail.com" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzf-0s-BAf" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="282" width="280" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -99,7 +99,7 @@
                                     <action selector="clickConfirm:" destination="zOn-Ct-8Lh" eventType="touchUpInside" id="YZo-Z1-IMS"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk0-bb-n40" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="bojanjakus" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk0-bb-n40" customClass="CustomTextField" customModule="PaintballApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="340" width="280" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -107,7 +107,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -126,7 +126,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -296,6 +296,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="imageViewImage" destination="H2k-IA-Ve8" id="0rU-MR-qck"/>
+                                            <outlet property="labelDescription" destination="Vo0-GA-kgz" id="nWY-Ym-fBX"/>
+                                            <outlet property="labelName" destination="N9E-cM-aed" id="ezK-uh-eTH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -363,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="1534" y="252"/>
         </scene>
-        <!--Team List Controller-->
+        <!--Player List Controller-->
         <scene sceneID="Hl6-d3-EO4">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="TeamListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="PlayerListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GAf-PM-wtp"/>
                         <viewControllerLayoutGuide type="bottom" id="Evt-VA-Ljh"/>

@@ -23,7 +23,8 @@ class APIData {
     }
     
     func getData(apiURL: String, withSuccess: ((JSON) -> Void), andFail withFail: ((NSError) -> Void)) {
-        Alamofire.request(.GET, apiURL, headers: ["Authorization": APIUser.sharedInstance.getToken()])
+        let getToken = APIUser.sharedInstance.getToken()
+        Alamofire.request(.GET, apiURL, headers: ["Authorization": getToken])
             .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
                 
                 var token: String = response!.allHeaderFields["Set-Cookie"] as! String
@@ -39,7 +40,7 @@ class APIData {
     }
     
     func getListOfTeams(withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
-        //getData(Constants.kTEAMLIST, withSuccess: withSuccess, andFail: withFail)
+        getData(Constants.kTEAMLIST, withSuccess: withSuccess, andFail: withFail)
     }
     
 }
