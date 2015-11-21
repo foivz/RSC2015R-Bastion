@@ -23,6 +23,14 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+Route::get('testaona', function() {
+    //$team_leader = Auth::user()->gcm_id;
+    $team = \App\Team::where('id',1)->first();
+    $teamLeader = $team->team_leader;
+    $user = App\User::find(Auth::user()->id);
+    return $user;
+});
+
 /* AUTHENTICATION ROUTES */
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -74,13 +82,17 @@ Route::group(['prefix' => 'api'], function()
         Route::resource('team','TeamController');
 
         Route::post('join/{id}', function ($id){
-            $team_leader = Auth::user()->gcm_id;
+            //$team_leader = Auth::user()->gcm_id;
+            $team = \App\Team::where('id',$id)->first();
+            $teamLeader = $team->team_leader;
             $user = App\User::find(Auth::user()->id);
             $user->team_id = $id;
             $user->save();
 
+            $user1 = App\User::where('email',$teamLeader)->first();
+
             PushNotification::app('android')
-                ->to($team_leader)
+                ->to($user1->gcm_id)
                 ->send('Novi igrač želi u vaš team!');
             $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => "");
             return json_encode($responseArray);
