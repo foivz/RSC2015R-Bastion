@@ -29,6 +29,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func clickConfirm(sender: AnyObject) {
@@ -86,7 +87,7 @@ class LoginController: UIViewController {
         }
         
         var teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
-        self.navigationController?.presentViewController(teamListNavigationController!, animated: true, completion: nil)
+        self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
     }
     
     func register() {

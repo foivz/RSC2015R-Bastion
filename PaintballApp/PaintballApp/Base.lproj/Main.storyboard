@@ -238,6 +238,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="dic-x0-TZn"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="570"/>
                     <connections>
@@ -254,12 +255,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izf-gN-Hhi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="257"/>
+            <point key="canvasLocation" x="1048" y="262"/>
         </scene>
         <!--Team List Controller-->
         <scene sceneID="DAr-ao-lwc">
             <objects>
-                <viewController id="oXm-Ap-zDp" customClass="TeamListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="oXm-Ap-zDp" customClass="TeamListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fbb-FO-41A"/>
                         <viewControllerLayoutGuide type="bottom" id="Iwv-iJ-MK5"/>
@@ -277,7 +278,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffa-AK-V54" id="C9V-2X-w1Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-IA-Ve8" customClass="CustomImageView" customModule="PaintballApp" customModuleProvider="target">
@@ -292,14 +293,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9E-cM-aed">
-                                                    <rect key="frame" x="69" y="12" width="243" height="21"/>
+                                                    <rect key="frame" x="69" y="20" width="243" height="13"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo0-GA-kgz">
-                                                    <rect key="frame" x="69" y="28" width="243" height="37"/>
+                                                    <rect key="frame" x="69" y="33" width="243" height="32"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -308,13 +309,13 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="N9E-cM-aed" firstAttribute="top" secondItem="C9V-2X-w1Q" secondAttribute="top" constant="12" id="1wJ-os-tzb"/>
+                                                <constraint firstItem="N9E-cM-aed" firstAttribute="top" secondItem="C9V-2X-w1Q" secondAttribute="top" constant="20" id="1wJ-os-tzb"/>
                                                 <constraint firstItem="H2k-IA-Ve8" firstAttribute="centerY" secondItem="C9V-2X-w1Q" secondAttribute="centerY" id="5Mi-do-ErH"/>
                                                 <constraint firstItem="Vo0-GA-kgz" firstAttribute="leading" secondItem="H2k-IA-Ve8" secondAttribute="trailing" constant="8" id="5nr-7V-9lN"/>
                                                 <constraint firstItem="N9E-cM-aed" firstAttribute="leading" secondItem="H2k-IA-Ve8" secondAttribute="trailing" constant="8" id="6Qi-5N-RdH"/>
-                                                <constraint firstItem="Vo0-GA-kgz" firstAttribute="top" secondItem="C9V-2X-w1Q" secondAttribute="top" constant="28" id="8R9-ZI-wcJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="N9E-cM-aed" secondAttribute="trailing" constant="8" id="99u-Ia-E3y"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vo0-GA-kgz" secondAttribute="bottom" constant="12" id="Fv4-P6-5Yc"/>
+                                                <constraint firstItem="Vo0-GA-kgz" firstAttribute="top" secondItem="N9E-cM-aed" secondAttribute="bottom" id="G7I-IE-m5k"/>
                                                 <constraint firstItem="H2k-IA-Ve8" firstAttribute="leading" secondItem="C9V-2X-w1Q" secondAttribute="leading" constant="8" id="IJ5-GD-WAb"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vo0-GA-kgz" secondAttribute="trailing" constant="8" id="OhM-xE-6oo"/>
                                                 <constraint firstAttribute="bottom" secondItem="N9E-cM-aed" secondAttribute="bottom" constant="44" id="k2C-Sj-jxJ"/>
@@ -325,12 +326,12 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCH-bL-0bc" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
-                                <rect key="frame" x="250" y="480" width="50" height="50"/>
+                                <rect key="frame" x="225" y="455" width="75" height="75"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="FjM-Li-MmA"/>
-                                    <constraint firstAttribute="height" constant="50" id="jJk-jO-dD4"/>
+                                    <constraint firstAttribute="width" constant="75" id="FjM-Li-MmA"/>
+                                    <constraint firstAttribute="height" constant="75" id="jJk-jO-dD4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="+">
@@ -356,6 +357,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6SY-7W-Qh0"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
                     <connections>
@@ -364,28 +366,181 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoJ-2y-oYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="247"/>
+            <point key="canvasLocation" x="1963" y="252"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="xOR-Ed-DGE">
+        <scene sceneID="5u8-EP-3Gu">
             <objects>
-                <navigationController storyboardIdentifier="TeamListController" automaticallyAdjustsScrollViewInsets="NO" id="RnC-WM-W3c" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TeamListController" automaticallyAdjustsScrollViewInsets="NO" id="CmI-ii-h4K" sceneMemberID="viewController">
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DZl-z4-dHp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9pP-l3-jLc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oXm-Ap-zDp" kind="relationship" relationship="rootViewController" id="SSZ-1o-fgr"/>
+                        <segue destination="oXm-Ap-zDp" kind="relationship" relationship="rootViewController" id="eHx-PD-MoG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ovL-gv-YSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5en-Ns-NM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="247"/>
+            <point key="canvasLocation" x="1534" y="252"/>
+        </scene>
+        <!--Team List Controller-->
+        <scene sceneID="Hl6-d3-EO4">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="TeamListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GAf-PM-wtp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Evt-VA-Ljh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eIQ-n7-2HG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcR-n4-sXt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TeamListCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamListCell" rowHeight="77" id="AUf-kP-fiW" customClass="TeamListCell" customModule="PaintballApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AUf-kP-fiW" id="kHi-w1-42c">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sb5-YZ-wbH" customClass="CustomImageView" customModule="PaintballApp" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="12" width="53" height="53"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="53" id="bjy-bN-wEg"/>
+                                                        <constraint firstAttribute="width" constant="53" id="yXH-SD-OZe"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awB-vY-Isd">
+                                                    <rect key="frame" x="69" y="20" width="167" height="39"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                                                    <rect key="frame" x="244" y="24" width="30" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="✔︎">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                                                    <rect key="frame" x="282" y="24" width="30" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.65459408969999999" green="0.19047225879999999" blue="0.21001269219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="7di-0i-Ij9"/>
+                                                        <constraint firstAttribute="height" constant="30" id="EnG-aZ-XCu"/>
+                                                    </constraints>
+                                                    <state key="normal" title="✖︎">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="raA-Rn-OhT" secondAttribute="trailing" constant="8" id="4An-nX-efJ"/>
+                                                <constraint firstItem="raA-Rn-OhT" firstAttribute="centerY" secondItem="kHi-w1-42c" secondAttribute="centerY" id="9On-dZ-Fi7"/>
+                                                <constraint firstAttribute="bottom" secondItem="awB-vY-Isd" secondAttribute="bottom" constant="17.5" id="ESa-ew-Dga"/>
+                                                <constraint firstItem="xpl-HR-mLY" firstAttribute="centerY" secondItem="raA-Rn-OhT" secondAttribute="centerY" id="W2f-F5-EML"/>
+                                                <constraint firstItem="Sb5-YZ-wbH" firstAttribute="leading" secondItem="kHi-w1-42c" secondAttribute="leading" constant="8" id="WTU-Zz-3SC"/>
+                                                <constraint firstItem="raA-Rn-OhT" firstAttribute="width" secondItem="xpl-HR-mLY" secondAttribute="width" id="dwS-vO-4EC"/>
+                                                <constraint firstItem="Sb5-YZ-wbH" firstAttribute="centerY" secondItem="kHi-w1-42c" secondAttribute="centerY" id="hjI-qT-aX3"/>
+                                                <constraint firstItem="raA-Rn-OhT" firstAttribute="height" secondItem="xpl-HR-mLY" secondAttribute="height" id="hqV-32-L7s"/>
+                                                <constraint firstItem="raA-Rn-OhT" firstAttribute="leading" secondItem="xpl-HR-mLY" secondAttribute="trailing" constant="8" id="qnN-CT-JFc"/>
+                                                <constraint firstItem="xpl-HR-mLY" firstAttribute="leading" secondItem="awB-vY-Isd" secondAttribute="trailing" constant="8" id="vlK-vn-hxO"/>
+                                                <constraint firstItem="awB-vY-Isd" firstAttribute="top" secondItem="kHi-w1-42c" secondAttribute="top" constant="20" id="wRd-E2-456"/>
+                                                <constraint firstItem="awB-vY-Isd" firstAttribute="leading" secondItem="Sb5-YZ-wbH" secondAttribute="trailing" constant="8" id="xJ9-e5-ctM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-ha-wwq" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                                <rect key="frame" x="225" y="455" width="75" height="75"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="9Ty-8c-UDJ"/>
+                                    <constraint firstAttribute="height" constant="75" id="SEM-ba-tfO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <state key="normal" title="✓">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickPlusButton:" destination="Rvh-wo-jj6" eventType="touchUpInside" id="N0i-J6-oFt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bcR-n4-sXt" firstAttribute="top" secondItem="eIQ-n7-2HG" secondAttribute="top" id="93A-lu-hR0"/>
+                            <constraint firstAttribute="trailing" secondItem="bcR-n4-sXt" secondAttribute="trailing" id="9da-hh-vrq"/>
+                            <constraint firstItem="Evt-VA-Ljh" firstAttribute="top" secondItem="bcR-n4-sXt" secondAttribute="bottom" id="BVb-S3-jZ6"/>
+                            <constraint firstAttribute="trailing" secondItem="BEj-ha-wwq" secondAttribute="trailing" constant="20" id="MNi-tG-HOm"/>
+                            <constraint firstItem="Evt-VA-Ljh" firstAttribute="top" secondItem="BEj-ha-wwq" secondAttribute="bottom" constant="20" id="VyI-FQ-zuJ"/>
+                            <constraint firstItem="bcR-n4-sXt" firstAttribute="leading" secondItem="eIQ-n7-2HG" secondAttribute="leading" id="lFa-tN-yoU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="puh-aO-mdG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="550"/>
+                    <connections>
+                        <outlet property="tableView" destination="bcR-n4-sXt" id="lT5-NU-y4e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CC9-cC-chJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1963" y="921"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZDq-gp-dZH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EIl-Tm-QIa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="550"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ZM-CS-vWr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rvh-wo-jj6" kind="relationship" relationship="rootViewController" id="uBz-eW-cQz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzp-uo-lCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534" y="921"/>
         </scene>
     </scenes>
     <resources>

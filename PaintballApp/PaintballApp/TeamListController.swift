@@ -15,6 +15,8 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
