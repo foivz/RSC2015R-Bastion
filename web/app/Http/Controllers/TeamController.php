@@ -48,6 +48,39 @@ class TeamController extends Controller
         $team->team_leader = $email;
         $team->save();
         $id = $team->id;
+        $count = \DB::table('users')->count();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+
+
         $responseArray = array('status' => 'OK', 'message' => $id,'data' => "");
         return json_encode($responseArray);
 

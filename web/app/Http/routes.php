@@ -118,6 +118,8 @@ Route::group(['prefix' => 'api'], function()
         });
 
 
+        Route::get('password/email', 'Auth\TeamController@getEmail');
+
 
 
     });
