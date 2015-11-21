@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC601C009DB800B2E0B3 /* AppDelegate.swift */; };
-		20B1FC631C009DB800B2E0B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC621C009DB800B2E0B3 /* ViewController.swift */; };
+		20B1FC631C009DB800B2E0B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC621C009DB800B2E0B3 /* LoginController.swift */; };
 		20B1FC661C009DB800B2E0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B1FC641C009DB800B2E0B3 /* Main.storyboard */; };
 		20B1FC681C009DB800B2E0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B1FC671C009DB800B2E0B3 /* Assets.xcassets */; };
 		20B1FC6B1C009DB800B2E0B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B1FC691C009DB800B2E0B3 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,15 @@
 		20B1FC881C009DB800B2E0B3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC871C009DB800B2E0B3 /* ExtensionDelegate.swift */; };
 		20B1FC8A1C009DB800B2E0B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC891C009DB800B2E0B3 /* NotificationController.swift */; };
 		20B1FC8C1C009DB800B2E0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B1FC8B1C009DB800B2E0B3 /* Assets.xcassets */; };
+		20B1FC9F1C00A2EE00B2E0B3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC9E1C00A2EE00B2E0B3 /* CustomButton.swift */; };
+		20B1FCA11C00A30100B2E0B3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCA01C00A30100B2E0B3 /* CustomTextField.swift */; };
+		20B1FCA31C00A31100B2E0B3 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCA21C00A31100B2E0B3 /* CustomImageView.swift */; };
+		20B1FCA51C00A7B600B2E0B3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCA41C00A7B600B2E0B3 /* CustomView.swift */; };
+		20B1FCA81C00A7F500B2E0B3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCA71C00A7F500B2E0B3 /* UIViewExtension.swift */; };
+		20B1FCAE1C00AAAC00B2E0B3 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCAD1C00AAAC00B2E0B3 /* APIUser.swift */; };
+		20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */; };
+		20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB11C00AAF000B2E0B3 /* Constants.swift */; };
+		8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +74,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D1C88186BA383EC912A490C /* Pods-PaintballApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.release.xcconfig"; sourceTree = "<group>"; };
 		20B1FC5D1C009DB800B2E0B3 /* PaintballApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintballApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B1FC601C009DB800B2E0B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20B1FC621C009DB800B2E0B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20B1FC621C009DB800B2E0B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		20B1FC651C009DB800B2E0B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B1FC671C009DB800B2E0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B1FC6A1C009DB800B2E0B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +93,17 @@
 		20B1FC891C009DB800B2E0B3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		20B1FC8B1C009DB800B2E0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B1FC8D1C009DB800B2E0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B1FC9E1C00A2EE00B2E0B3 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		20B1FCA01C00A30100B2E0B3 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		20B1FCA21C00A31100B2E0B3 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		20B1FCA41C00A7B600B2E0B3 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		20B1FCA71C00A7F500B2E0B3 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		20B1FCA91C00AA5A00B2E0B3 /* PaintballApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PaintballApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		20B1FCAD1C00AAAC00B2E0B3 /* APIUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
+		20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
+		20B1FCB11C00AAF000B2E0B3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +132,8 @@
 				20B1FC731C009DB800B2E0B3 /* PaintballApp WatchKit App */,
 				20B1FC821C009DB800B2E0B3 /* PaintballApp WatchKit Extension */,
 				20B1FC5E1C009DB800B2E0B3 /* Products */,
+				B3EEDD9EEE13BDCE4153D649 /* Pods */,
+				DA17EA6BFE874136E96D034D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,8 +150,12 @@
 		20B1FC5F1C009DB800B2E0B3 /* PaintballApp */ = {
 			isa = PBXGroup;
 			children = (
+				20B1FCAC1C00AA9600B2E0B3 /* APICommunication */,
+				20B1FCA61C00A7D200B2E0B3 /* Extensions */,
+				20B1FC9D1C009F0700B2E0B3 /* Utils */,
+				20B1FC9C1C009EFE00B2E0B3 /* Custom Views */,
+				20B1FC9B1C009EE600B2E0B3 /* Controllers */,
 				20B1FC601C009DB800B2E0B3 /* AppDelegate.swift */,
-				20B1FC621C009DB800B2E0B3 /* ViewController.swift */,
 				20B1FC641C009DB800B2E0B3 /* Main.storyboard */,
 				20B1FC671C009DB800B2E0B3 /* Assets.xcassets */,
 				20B1FC691C009DB800B2E0B3 /* LaunchScreen.storyboard */,
@@ -167,6 +195,68 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		20B1FC9B1C009EE600B2E0B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FC621C009DB800B2E0B3 /* LoginController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		20B1FC9C1C009EFE00B2E0B3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FC9E1C00A2EE00B2E0B3 /* CustomButton.swift */,
+				20B1FCA01C00A30100B2E0B3 /* CustomTextField.swift */,
+				20B1FCA21C00A31100B2E0B3 /* CustomImageView.swift */,
+				20B1FCA41C00A7B600B2E0B3 /* CustomView.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		20B1FC9D1C009F0700B2E0B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FCA91C00AA5A00B2E0B3 /* PaintballApp-Bridging-Header.h */,
+				20B1FCB11C00AAF000B2E0B3 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		20B1FCA61C00A7D200B2E0B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FCA71C00A7F500B2E0B3 /* UIViewExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		20B1FCAC1C00AA9600B2E0B3 /* APICommunication */ = {
+			isa = PBXGroup;
+			children = (
+				20B1FCAD1C00AAAC00B2E0B3 /* APIUser.swift */,
+				20B1FCAF1C00AAC300B2E0B3 /* APIData.swift */,
+			);
+			name = APICommunication;
+			sourceTree = "<group>";
+		};
+		B3EEDD9EEE13BDCE4153D649 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */,
+				0D1C88186BA383EC912A490C /* Pods-PaintballApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA17EA6BFE874136E96D034D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,10 +264,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20B1FC981C009DB800B2E0B3 /* Build configuration list for PBXNativeTarget "PaintballApp" */;
 			buildPhases = (
+				482AD6C951BF8905D34150F4 /* Check Pods Manifest.lock */,
 				20B1FC591C009DB800B2E0B3 /* Sources */,
 				20B1FC5A1C009DB800B2E0B3 /* Frameworks */,
 				20B1FC5B1C009DB800B2E0B3 /* Resources */,
 				20B1FC971C009DB800B2E0B3 /* Embed Watch Content */,
+				E38903C514A3D8BC7B61D19F /* Embed Pods Frameworks */,
+				E0EF4E6A5080DB639381B792 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,12 +328,15 @@
 				TargetAttributes = {
 					20B1FC5C1C009DB800B2E0B3 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 3QE7LSCU2Q;
 					};
 					20B1FC6E1C009DB800B2E0B3 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 3QE7LSCU2Q;
 					};
 					20B1FC7D1C009DB800B2E0B3 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 3QE7LSCU2Q;
 					};
 				};
 			};
@@ -294,13 +390,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		482AD6C951BF8905D34150F4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E0EF4E6A5080DB639381B792 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E38903C514A3D8BC7B61D19F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20B1FC591C009DB800B2E0B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B1FC631C009DB800B2E0B3 /* ViewController.swift in Sources */,
+				20B1FC631C009DB800B2E0B3 /* LoginController.swift in Sources */,
+				20B1FCAE1C00AAAC00B2E0B3 /* APIUser.swift in Sources */,
+				20B1FCA31C00A31100B2E0B3 /* CustomImageView.swift in Sources */,
+				20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */,
 				20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */,
+				20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */,
+				20B1FCA51C00A7B600B2E0B3 /* CustomView.swift in Sources */,
+				20B1FCA81C00A7F500B2E0B3 /* UIViewExtension.swift in Sources */,
+				20B1FC9F1C00A2EE00B2E0B3 /* CustomButton.swift in Sources */,
+				20B1FCA11C00A30100B2E0B3 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +593,7 @@
 		20B1FC911C009DB800B2E0B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PaintballApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.hackaton.PaintballApp.watchkitapp.watchkitextension;
@@ -455,6 +608,7 @@
 		20B1FC921C009DB800B2E0B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "PaintballApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.hackaton.PaintballApp.watchkitapp.watchkitextension;
@@ -470,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = PaintballApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PaintballApp WatchKit App/Info.plist";
@@ -486,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = PaintballApp_WatchKit_Extension;
 				INFOPLIST_FILE = "PaintballApp WatchKit App/Info.plist";
@@ -500,23 +656,36 @@
 		};
 		20B1FC991C009DB800B2E0B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bojan Jakuš (265H2AU4TA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bojan Jakuš (265H2AU4TA)";
 				INFOPLIST_FILE = PaintballApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.hackaton.PaintballApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ed434236-98f9-426e-83bd-114e74aefe21";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaintballApp/PaintballApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		20B1FC9A1C009DB800B2E0B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D1C88186BA383EC912A490C /* Pods-PaintballApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bojan Jakuš (265H2AU4TA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bojan Jakuš (265H2AU4TA)";
 				INFOPLIST_FILE = PaintballApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hr.hackaton.PaintballApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ed434236-98f9-426e-83bd-114e74aefe21";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaintballApp/PaintballApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -539,6 +708,7 @@
 				20B1FC921C009DB800B2E0B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20B1FC941C009DB800B2E0B3 /* Build configuration list for PBXNativeTarget "PaintballApp WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +717,7 @@
 				20B1FC961C009DB800B2E0B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20B1FC981C009DB800B2E0B3 /* Build configuration list for PBXNativeTarget "PaintballApp" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +726,7 @@
 				20B1FC9A1C009DB800B2E0B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

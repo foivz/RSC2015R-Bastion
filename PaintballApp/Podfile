@@ -1,0 +1,25 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target 'PaintballApp' do
+
+pod 'Alamofire', '~> 3.0'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'SimpleAuth/Facebook'
+pod 'SimpleAuth/Twitter'
+pod 'SimpleAuth/FacebookWeb'
+pod 'Box', :head
+pod 'Result', :head
+pod 'ReactiveCocoa', '2.4.7'
+
+end
+
+target 'PaintballApp WatchKit App' do
+
+end
+
+target 'PaintballApp WatchKit Extension' do
+
+end
+
