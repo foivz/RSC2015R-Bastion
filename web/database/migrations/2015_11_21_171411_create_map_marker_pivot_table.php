@@ -14,6 +14,7 @@ class CreateMapMarkerPivotTable extends Migration
     {
         Schema::create('map_marker', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('map_id')->unsigned()->index();
             $table->string('long');
             $table->string('lat');
             $table->foreign('map_id')->references('id')->on('maps')->onDelete('cascade');
