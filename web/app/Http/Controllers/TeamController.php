@@ -42,10 +42,10 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        $full_name = Auth::user()->full_name;
+        $email = Auth::user()->email;
         $team = new Team();
         $team->name = $request->name;
-        $team->team_leader = $full_name;
+        $team->team_leader = $email;
         $team->save();
         $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => "");
         return json_encode($responseArray);

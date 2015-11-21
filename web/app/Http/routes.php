@@ -27,9 +27,19 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+
 Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
+=======
+Route::get('testaona', function() {
+    //$team_leader = Auth::user()->gcm_id;
+    $team = \App\Team::where('id',1)->first();
+    $teamLeader = $team->team_leader;
+    $user = App\User::find(Auth::user()->id);
+    return $user;
+});
+
 
 /* AUTHENTICATION ROUTES */
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -49,8 +59,8 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 /* TESTING ROUTES FOR PUSHING NOTIFICATIONS */
 Route::get('/asend', function () {
     PushNotification::app('android')
-        ->to('flTgVB-VFQY:APA91bG7QF6CwNZOt-KQ6q2dJxtAM_y-yaf_dwiIwR07I_mD3b760qlE5XHrnMbJbCPb2xoVkksJhhb45mEe7IzAmImfDzDxvbyB3bBsNMQaXwR_r4NyoVNmnDpryxzeeEm8ybnPn-bJ')
-        ->send('Android GCM testna poruka');
+        ->to('dFN7LCn_JRc:APA91bHuLZh4GPtfwpW0I3-5s62lTOjKpWfkuRUWuY7eLs-EsW-CQLC3wi9a9IvOvMmsHAMeVDW1iPJJMK1BcERqWYjw4F4mWp-BQKK1aM6XY91rDLksAkIQRomkpyV_UopLqwVgThwP')
+        ->send('bozo');
 });
 
 Route::get('/isend', function () {
@@ -71,7 +81,7 @@ Route::group(['prefix' => 'api'], function()
 
     Route::post('logout', 'Api\AuthController@logout');
 
-    Route::group(['middleware' => ['jwt.auth', 'jwt.refresh']], function() {
+    Route::group(['middleware' => ['jwt.auth']], function() {
 
         Route::get('teams', function (){
             $teams = App\Team::all();
@@ -80,6 +90,23 @@ Route::group(['prefix' => 'api'], function()
         });
 
         Route::resource('team','TeamController');
+
+        Route::post('join/{id}', function ($id){
+            //$team_leader = Auth::user()->gcm_id;
+            $team = \App\Team::where('id',$id)->first();
+            $teamLeader = $team->team_leader;
+            $user = App\User::find(Auth::user()->id);
+            $user->team_id = $id;
+            $user->save();
+
+            $user1 = App\User::where('email',$teamLeader)->first();
+
+            PushNotification::app('android')
+                ->to($user1->gcm_id)
+                ->send('Novi igrač želi u vaš team!');
+            $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => "");
+            return json_encode($responseArray);
+        });
 
 
     });
