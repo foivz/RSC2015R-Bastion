@@ -15,6 +15,7 @@ import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.POST;
+import retrofit.http.Path;
 
 /**
  * Created by macbook on 18.10.2015..
@@ -54,9 +55,10 @@ public interface RequestAPI {
                        Callback<Response<String>> response);
 
     @FormUrlEncoded
-    @POST("/api/join")
+    @POST("/api/join/{id}")
     void goToTeam(@Header("Authorization") String token,
-                    @Field("name") String teamName,
-                    Callback<Response<String>> response);
+                  @Path("id") int id,
+                  @Field("id") int id2,
+                  Callback<Response<String>> response);
 }
 //api.register(username, email, password, firstName, lastName, city, birthDate, this);

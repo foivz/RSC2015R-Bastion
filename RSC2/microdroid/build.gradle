@@ -29,7 +29,6 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.wdullaer:materialdatetimepicker:1.5.4'
 
-
     compile('com.afollestad.material-dialogs:core:0.8.3.0@aar') {
         transitive = true
     }
@@ -39,6 +38,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-plus:8.1.0'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.truizlop.fabreveallayout:library:1.0.0'
+    compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0'
 
     compile 'com.github.techery:ProperRatingBar:ba6de138f4'
 }

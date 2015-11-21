@@ -13,7 +13,6 @@ import com.bozidar.labas.microdroid.mvp.presenter.CreateTeamPresenter;
 import com.bozidar.labas.microdroid.mvp.presenter.impl.CreateTeamPresenterImpl;
 import com.bozidar.labas.microdroid.mvp.view.CreateTeamView;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
-import com.bozidar.labas.microdroid.utils.TokenManager;
 import com.bozidar.microdroid.model.User;
 
 import butterknife.Bind;
@@ -48,7 +47,7 @@ public class CreateTeamDialogActivity extends Activity implements CreateTeamView
 
     @Override
     public void teamCreated(User user) {
-        TokenManager.storeNewTokenLocaly(this, user);
+        //TokenManager.storeNewTokenLocaly(this, user);
         Log.d("kreiran", "oki doki");
         Toast.makeText(this, "Team created", Toast.LENGTH_LONG).show();
 

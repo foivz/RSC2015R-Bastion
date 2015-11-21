@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".activities.MyCreatedTeam" >
         </activity>
+        <activity android:name=".activities.QRCodeActivity" >
+        </activity>
     </application>
 
 </manifest>

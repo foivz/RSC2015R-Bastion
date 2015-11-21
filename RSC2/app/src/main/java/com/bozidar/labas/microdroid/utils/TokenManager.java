@@ -1,10 +1,5 @@
 package com.bozidar.labas.microdroid.utils;
 
-import android.content.Context;
-
-import com.bozidar.labas.microdroid.R;
-import com.bozidar.microdroid.model.User;
-
 import java.util.List;
 
 import retrofit.client.Header;
@@ -30,10 +25,10 @@ public class TokenManager {
         return "";
     }
 
-    public static void storeNewTokenLocaly(Context context, User user){
-        SharedPrefs prefs = SharedPrefs.getInstance();
-        prefs.saveObject(context, context.getResources().getString(R.string.user_data), user);
-    }
+//    public static void storeNewTokenLocaly(Context context, User user){
+//        SharedPrefs prefs = SharedPrefs.getInstance();
+//        prefs.saveObject(context, context.getResources().getString(R.string.user_data), user);
+//    }
 
     public static String formatToken(String token) {
         return "Bearer " + token;

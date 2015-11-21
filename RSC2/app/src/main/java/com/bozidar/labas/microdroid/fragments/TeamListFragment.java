@@ -46,6 +46,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     private MicroRecyclerAdapter adapter;
     private TeamListPresenter presenter;
+    User user;
 
     SharedPrefs prefs = SharedPrefs.getInstance();
 
@@ -57,6 +58,8 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
     @Override
     public void init() {
 //        setRecyclerView(mockTeams());
+
+        user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
 
         presenter = new TeamListPresenterImpl(this);
         User user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
@@ -93,7 +96,6 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
         // ArrayList<MockModel> data = MockModel.getData();
 
         for (CreatedTeamModel model : data) {
-            Log.d("test", model.getName());
             CreatedTeamItem teamItem = new CreatedTeamItem(model);
             adapter.addItem(teamItem);
         }
@@ -103,7 +105,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
     public void microItemClicked(View view, MicroItem item) {
         selectedModel = ((CreatedTeamItem)item).getModel();
         prefs.save(getMicroActivity(), "myCreatedTeam", selectedModel.getName());
-        goToTeam(selectedModel.getName());
+        goToTeam(selectedModel.getName(), selectedModel.getId());
     }
 
     private void goToSelectedTeamFragment(CreatedTeamModel selectedModel){
@@ -117,25 +119,28 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     @Override
     public void showTvStations(List<CreatedTeamModel> model, User user) {
-        TokenManager.storeNewTokenLocaly(getMicroActivity(), user);
+        //TokenManager.storeNewTokenLocaly(getMicroActivity(), user);
         Log.d("tokenLista", user.getToken());
         setRecyclerView(model);
     }
 
-    public void goToTeam(String teamName){
-        User user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
+    public void goToTeam(String teamName, int id){
         RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
         String tokenFormat = TokenManager.formatToken(user.getToken());
-        api.goToTeam(tokenFormat, teamName, this);
+        api.goToTeam(tokenFormat, id, id, this);
     }
 
     @Override
     public void success(Response<String> stringResponse, retrofit.client.Response response) {
+        Log.d("success", "success");
+       // String newToken = TokenManager.getTokenFromHeader(response);
+        //this.user.setToken(newToken);
+        //TokenManager.storeNewTokenLocaly(getMicroActivity(), this.user);
         goToSelectedTeamFragment(selectedModel);
     }
 
     @Override
     public void failure(RetrofitError error) {
-
+        Log.d("error", "success");
     }
 }
