@@ -1,6 +1,7 @@
 package com.bozidar.labas.microdroid.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
@@ -50,6 +51,7 @@ public class CreateTeamDialogActivity extends Activity implements CreateTeamView
         TokenManager.storeNewTokenLocaly(this, user);
         Log.d("kreiran", "oki doki");
         Toast.makeText(this, "Team created", Toast.LENGTH_LONG).show();
-        finish();
+
+        startActivity(new Intent(this, MyCreatedTeam.class));
     }
 }

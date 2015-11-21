@@ -52,5 +52,11 @@ public interface RequestAPI {
     void createTeam(@Header("Authorization") String token,
                        @Field("name") String teamName,
                        Callback<Response<String>> response);
+
+    @FormUrlEncoded
+    @POST("/api/join")
+    void goToTeam(@Header("Authorization") String token,
+                    @Field("name") String teamName,
+                    Callback<Response<String>> response);
 }
 //api.register(username, email, password, firstName, lastName, city, birthDate, this);

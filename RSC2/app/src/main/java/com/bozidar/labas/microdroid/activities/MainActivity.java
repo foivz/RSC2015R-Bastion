@@ -120,4 +120,5 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
         return super.onOptionsItemSelected(item);
     }
+
 }

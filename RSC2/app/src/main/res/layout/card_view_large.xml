@@ -26,6 +26,7 @@
             android:padding="15dp"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/selected_team"
                 android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

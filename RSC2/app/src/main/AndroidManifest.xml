@@ -20,17 +20,17 @@
             android:name=".activities.RegistrationActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity android:name=".activities.TutorialActivity" >
         </activity>
-
-        <activity android:name=".activities.CreateTeamDialogActivity"
-            android:theme="@style/AppTheme.DialogCustom">
+        <activity
+            android:name=".activities.CreateTeamDialogActivity"
+            android:theme="@style/AppTheme.DialogCustom" >
         </activity>
-
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activities.MyCreatedTeam" >
         </activity>
     </application>
 

@@ -11,13 +11,17 @@ import com.bozidar.labas.microdroid.activities.CreateTeamDialogActivity;
 import com.bozidar.labas.microdroid.activities.MainActivity;
 import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.item.CreatedTeamItem;
+import com.bozidar.labas.microdroid.mvp.model.response.Response;
 import com.bozidar.labas.microdroid.mvp.presenter.TeamListPresenter;
 import com.bozidar.labas.microdroid.mvp.presenter.impl.TeamListPresenterImpl;
 import com.bozidar.labas.microdroid.mvp.view.CreatedTeamsView;
+import com.bozidar.labas.microdroid.network.RequestAPI;
+import com.bozidar.labas.microdroid.utils.Constants;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.labas.microdroid.utils.TokenManager;
 import com.bozidar.microdroid.base.MicroFragment;
 import com.bozidar.microdroid.model.User;
+import com.bozidar.microdroid.network.ServiceFactory;
 import com.bozidar.microdroid.recyclerview.adapter.MicroRecyclerAdapter;
 import com.bozidar.microdroid.recyclerview.item.MicroItem;
 
@@ -26,14 +30,18 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import retrofit.Callback;
+import retrofit.RetrofitError;
 
 /**
  * Created by Bozidar on 21.11.2015..
  */
-public class TeamListFragment extends MicroFragment implements MicroRecyclerAdapter.onMicroItemCLickListener, CreatedTeamsView {
+public class TeamListFragment extends MicroFragment implements MicroRecyclerAdapter.onMicroItemCLickListener, CreatedTeamsView, Callback<Response<String>> {
 
     @Bind(R.id.list)
     RecyclerView list;
+
+    CreatedTeamModel selectedModel;
 
 
     private MicroRecyclerAdapter adapter;
@@ -93,8 +101,9 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
     @Override
     public void microItemClicked(View view, MicroItem item) {
-        CreatedTeamModel selectedModel = ((CreatedTeamItem)item).getModel();
-        goToSelectedTeamFragment(selectedModel);
+        selectedModel = ((CreatedTeamItem)item).getModel();
+        prefs.save(getMicroActivity(), "myCreatedTeam", selectedModel.getName());
+        goToTeam(selectedModel.getName());
     }
 
     private void goToSelectedTeamFragment(CreatedTeamModel selectedModel){
@@ -111,5 +120,22 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
         TokenManager.storeNewTokenLocaly(getMicroActivity(), user);
         Log.d("tokenLista", user.getToken());
         setRecyclerView(model);
+    }
+
+    public void goToTeam(String teamName){
+        User user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
+        RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
+        String tokenFormat = TokenManager.formatToken(user.getToken());
+        api.goToTeam(tokenFormat, teamName, this);
+    }
+
+    @Override
+    public void success(Response<String> stringResponse, retrofit.client.Response response) {
+        goToSelectedTeamFragment(selectedModel);
+    }
+
+    @Override
+    public void failure(RetrofitError error) {
+
     }
 }
