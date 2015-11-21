@@ -1,5 +1,6 @@
 package com.bozidar.labas.microdroid.activities;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.labas.microdroid.fragments.TeamListFragment;
+import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.microdroid.base.MicroActivity;
 
 import butterknife.Bind;
@@ -27,8 +29,6 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     NavigationView navigationView;
 
     ActionBarDrawerToggle drawerToggle;
-
-
 
     TeamListFragment fragment;
 
@@ -77,6 +77,16 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
     @Override
     public boolean onNavigationItemSelected(MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        switch (id) {
+            case R.id.nav_logout:
+                SharedPrefs.getInstance().removeUser(this);
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+                break;
+        }
+
         return false;
     }
 
