@@ -15,4 +15,8 @@ class Team extends Model
     {
         return $this->hasMany('App\Group');
     }
+
+    public function game() {
+        return $this->hasOne('App\Game');
+    }
 }
