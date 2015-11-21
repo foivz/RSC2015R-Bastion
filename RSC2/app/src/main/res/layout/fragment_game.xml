@@ -39,7 +39,4 @@
 
     </LinearLayout>
 
-
-    <include layout="@layout/er" />
-
 </FrameLayout>

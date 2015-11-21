@@ -95,6 +95,7 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
                 setFragment(R.id.content, Game.newInstance());
                 break;
             case R.id.game_list:
+
                 drawerLayout.closeDrawers();
                 setFragment(R.id.content, fragment);
                 break;

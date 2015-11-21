@@ -49,8 +49,8 @@ public class CreateTeamDialogActivity extends Activity implements CreateTeamView
     public void teamCreated(User user) {
         //TokenManager.storeNewTokenLocaly(this, user);
         Log.d("kreiran", "oki doki");
+        finish();
         Toast.makeText(this, "Team created", Toast.LENGTH_LONG).show();
-
         startActivity(new Intent(this, MyCreatedTeam.class));
     }
 }

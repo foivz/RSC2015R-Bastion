@@ -5,4 +5,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="prefs_name">RSCPrefs</string>
+
+    <string-array name="salji_igracima">
+        <item>Treba mi pomoc</item>
+        <item>Neprijatelj u blizini</item>
+        <item>Kifla, nemam metaka</item>
+        <item>Uzmite pusku u ruke i aaaajmoooo</item>
+        <item>Ajmo gospodo jedan po jedan</item>
+    </string-array>
 </resources>
