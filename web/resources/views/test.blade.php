@@ -37,15 +37,19 @@
         <button id="borders2" ><img src="images/rsz_border-256x256.png"></button>
         <button id="borders3" ><img src="http://maps.google.com/mapfiles/kml/pal3/icon48.png"></button>
         <button id="borders4" ><img src="http://maps.google.com/mapfiles/kml/pal2/icon4.png"></button>
+        <button id="borders9" ><img src="http://maps.google.com/mapfiles/kml/pal2/icon13.png"></button>
         <button id="borders5" ><img src="http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png"></button>
         <button id="borders6" ><img src="http://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png"></button>
-        <button id="borders9" ><img src="http://maps.google.com/mapfiles/kml/pal2/icon13.png"></button>
+
         <button id="borders7" ><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/save.png"></button>
         <button id="borders8" ><img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/cancel.png"></button>
     </div>
 
 
     <div>
+
+        <h1>Naziv</h1>
+        <input type="text" id="naziv">
         <h1>Trajanje (h)</h1>
         <input type="text" id="trajanje">
     </div>

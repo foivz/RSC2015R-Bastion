@@ -20,7 +20,7 @@ class CreateMapMarkerPivotTable extends Migration
             $table->foreign('map_id')->references('id')->on('maps')->onDelete('cascade');
             $table->integer('marker_id')->unsigned()->index();
             $table->foreign('marker_id')->references('id')->on('markers')->onDelete('cascade');
-            $table->primary(['id']);
+
         });
     }
 

@@ -19,9 +19,18 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/view', function () {
+    return view('prikaz');
+});
+
 Route::get('/home', function () {
     return view('welcome');
 });
+
+
+Route::post('/save', 'GameController@store');
+
+Route::post('/view', 'GameController@view');
 
 Route::get('testaona', function() {
     //$team_leader = Auth::user()->gcm_id;
@@ -30,6 +39,7 @@ Route::get('testaona', function() {
     $user = App\User::find(Auth::user()->id);
     return $user;
 });
+
 
 /* AUTHENTICATION ROUTES */
 Route::get('auth/login', 'Auth\AuthController@getLogin');
