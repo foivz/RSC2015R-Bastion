@@ -52,7 +52,7 @@ public class SharedPrefs {
         Gson gson = new Gson();
         String json = gson.toJson(object); // myObject - instance of MyObject
         editor.putString(key, json);
-        editor.apply();
+        editor.commit();
     }
 
     public User loadObject(String key, Context context){

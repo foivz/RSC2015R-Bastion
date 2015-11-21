@@ -42,7 +42,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
         //Log.d("success", "success");
         LoginResponse response = loginResponse.getData();
         logedUserModel.setToken(response.getToken());
-        Log.d("TOKEN", logedUserModel.getToken());
+        Log.d("tokencicLogin", logedUserModel.getToken());
         logedUserModel.setName(response.getName());
         logedUserModel.setEmail(response.getEmail());
         logedUserModel.setAvatar(response.getAvatar());

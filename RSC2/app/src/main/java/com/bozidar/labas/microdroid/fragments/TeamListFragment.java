@@ -52,6 +52,13 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
 
         presenter = new TeamListPresenterImpl(this);
         User user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         presenter.getTeamList(user);
     }
 
@@ -102,6 +109,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
     @Override
     public void showTvStations(List<CreatedTeamModel> model, User user) {
         TokenManager.storeNewTokenLocaly(getMicroActivity(), user);
+        Log.d("tokenLista", user.getToken());
         setRecyclerView(model);
     }
 }

@@ -2,6 +2,7 @@ package com.bozidar.labas.microdroid.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.labas.microdroid.activities.MainActivity;
@@ -20,6 +21,7 @@ public class IntentUtil {
         SharedPrefs prefs = SharedPrefs.getInstance();
         prefs.saveObject(context, context.getResources().getString(R.string.user_data), user);
         prefs.save(context, context.getResources().getString(R.string.login), loginType);
+        Log.d("tokenLogin", user.getToken());
 
         String jsonUser = Serializator.serialize(user);
         Intent newIntent = new Intent(context, MainActivity.class);

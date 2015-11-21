@@ -34,7 +34,7 @@ public class TeamListInteractorImpl implements TeamListInteractor, Callback<Resp
     @Override
     public void success(Response<List<CreatedTeamModel>> listResponse, retrofit.client.Response response) {
         String newToken = TokenManager.getTokenFromHeader(response);
-        Log.d("dohvaceno", newToken);
+        Log.d("tokencicLista", newToken);
       //  Log.d("ispis", listResponse.getData().get(0).getImgUrl());
         listener.onSuccess(listResponse.getData(), newToken);
     }

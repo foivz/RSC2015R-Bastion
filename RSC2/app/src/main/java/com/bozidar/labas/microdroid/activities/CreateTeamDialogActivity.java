@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.labas.microdroid.mvp.presenter.CreateTeamPresenter;
@@ -48,5 +49,7 @@ public class CreateTeamDialogActivity extends Activity implements CreateTeamView
     public void teamCreated(User user) {
         TokenManager.storeNewTokenLocaly(this, user);
         Log.d("kreiran", "oki doki");
+        Toast.makeText(this, "Team created", Toast.LENGTH_LONG).show();
+        finish();
     }
 }

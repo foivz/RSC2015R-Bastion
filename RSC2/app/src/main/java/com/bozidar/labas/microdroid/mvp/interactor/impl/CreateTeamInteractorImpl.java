@@ -22,21 +22,23 @@ public class CreateTeamInteractorImpl implements CreateTeamInteractor, Callback<
 
     @Override
     public void createTeam(String name, String token, OnTeamCreatedListener listener) {
+        Log.d("sdkfjds", token);
         this.listener = listener;
         RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
-        api.createTeam(token, name, this);
-
+        String tokenFormat = TokenManager.formatToken(token);
+        api.createTeam(tokenFormat, name, this);
     }
 
     @Override
     public void success(Response<String> stringResponse, retrofit.client.Response response) {
-        String newToken = TokenManager.getTokenFromHeader(response);
-        listener.teamCreated(newToken);
         Log.d("succcess", "success");
+        String newToken = TokenManager.getTokenFromHeader(response);
+        Log.d("tokencickREIRAJ", newToken);
+        listener.teamCreated(newToken);
     }
 
     @Override
     public void failure(RetrofitError error) {
-
+        Log.d("error", error.toString());
     }
 }

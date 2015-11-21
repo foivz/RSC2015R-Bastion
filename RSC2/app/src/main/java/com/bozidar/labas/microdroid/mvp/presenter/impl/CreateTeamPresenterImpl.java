@@ -20,6 +20,7 @@ public class CreateTeamPresenterImpl implements CreateTeamPresenter, OnTeamCreat
         this.view = view;
         interactor = new CreateTeamInteractorImpl();
     }
+
     @Override
     public void createTeam(User user, String name, String token) {
         interactor.createTeam(name, token, this);

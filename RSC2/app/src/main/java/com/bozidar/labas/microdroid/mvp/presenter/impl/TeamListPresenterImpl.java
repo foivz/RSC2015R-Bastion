@@ -33,6 +33,6 @@ public class TeamListPresenterImpl implements TeamListPresenter, TeamListListene
     @Override
     public void onSuccess(List<CreatedTeamModel> model, String token) {
         this.user.setToken(token);
-        view.showTvStations(model, user);
+        view.showTvStations(model, this.user);
     }
 }
