@@ -13,13 +13,13 @@ class CreateMapMarkerPivotTable extends Migration
     public function up()
     {
         Schema::create('map_marker', function (Blueprint $table) {
-            $table->integer('map_id')->unsigned()->index();
+            $table->increments('id');
             $table->string('long');
             $table->string('lat');
             $table->foreign('map_id')->references('id')->on('maps')->onDelete('cascade');
             $table->integer('marker_id')->unsigned()->index();
             $table->foreign('marker_id')->references('id')->on('markers')->onDelete('cascade');
-            $table->primary(['map_id', 'marker_id']);
+            $table->primary(['id']);
         });
     }
 
