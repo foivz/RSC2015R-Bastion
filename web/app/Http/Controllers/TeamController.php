@@ -130,4 +130,20 @@ class TeamController extends Controller
     {
         //
     }
+
+    public function players(){
+        $user = Auth::user();
+        $team = Team::where('team_leader',$user->email)->orderBy('created_at')->take(1)->get();
+        $players = $team->users()->get();
+
+        for($i = 0;$i < count($players);$i++){
+            $players[$i]->team_name = $team->name;
+        }
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => $players);
+        return json_encode($responseArray);
+
+
+
+    }
 }
