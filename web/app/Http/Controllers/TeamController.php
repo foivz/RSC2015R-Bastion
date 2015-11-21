@@ -47,6 +47,9 @@ class TeamController extends Controller
         $team->name = $request->name;
         $team->team_leader = $request->full_name;
         $team->save();
+        $responseArray = array('status' => 'OK', 'message' => 'Okay','data' => $team);
+        return json_encode($responseArray);
+
     }
 
     /**
