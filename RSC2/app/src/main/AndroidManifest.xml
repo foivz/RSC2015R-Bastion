@@ -27,12 +27,12 @@
             android:theme="@style/AppTheme.DialogCustom" >
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.QRCodeActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".activities.MyCreatedTeam" >
+        <activity android:name=".activities.MainActivity" >
         </activity>
-        <activity android:name=".activities.QRCodeActivity" >
+        <activity android:name=".activities.MyCreatedTeam" >
         </activity>
     </application>
 

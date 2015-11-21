@@ -85,6 +85,10 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
                 startActivity(new Intent(this, LoginActivity.class));
                 finish();
                 break;
+            case R.id.scan:
+                drawerLayout.closeDrawers();
+                startActivity(new Intent(this, QRCodeActivity.class));
+                break;
         }
 
         return false;
