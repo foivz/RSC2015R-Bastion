@@ -31,6 +31,8 @@
 		20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */; };
 		20B1FCB71C00B24D00B2E0B3 /* TeamListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */; };
 		20B1FCB91C00D34B00B2E0B3 /* PlayerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCB81C00D34B00B2E0B3 /* PlayerListController.swift */; };
+		20B1FCBB1C00E43800B2E0B3 /* UIAlertViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCBA1C00E43800B2E0B3 /* UIAlertViewExtension.swift */; };
+		20B1FCBD1C00EAE200B2E0B3 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCBC1C00EAE200B2E0B3 /* UserListCell.swift */; };
 		8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		20B1FCB31C00B12900B2E0B3 /* TeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListController.swift; sourceTree = "<group>"; };
 		20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListCell.swift; sourceTree = "<group>"; };
 		20B1FCB81C00D34B00B2E0B3 /* PlayerListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListController.swift; sourceTree = "<group>"; };
+		20B1FCBA1C00E43800B2E0B3 /* UIAlertViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertViewExtension.swift; sourceTree = "<group>"; };
+		20B1FCBC1C00EAE200B2E0B3 /* UserListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +223,7 @@
 				20B1FCA01C00A30100B2E0B3 /* CustomTextField.swift */,
 				20B1FCA21C00A31100B2E0B3 /* CustomImageView.swift */,
 				20B1FCA41C00A7B600B2E0B3 /* CustomView.swift */,
+				20B1FCBA1C00E43800B2E0B3 /* UIAlertViewExtension.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				20B1FCB61C00B24D00B2E0B3 /* TeamListCell.swift */,
+				20B1FCBC1C00EAE200B2E0B3 /* UserListCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -460,11 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B1FCBD1C00EAE200B2E0B3 /* UserListCell.swift in Sources */,
 				20B1FCB71C00B24D00B2E0B3 /* TeamListCell.swift in Sources */,
 				20B1FC631C009DB800B2E0B3 /* LoginController.swift in Sources */,
 				20B1FCAE1C00AAAC00B2E0B3 /* APIUser.swift in Sources */,
 				20B1FCA31C00A31100B2E0B3 /* CustomImageView.swift in Sources */,
 				20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */,
+				20B1FCBB1C00E43800B2E0B3 /* UIAlertViewExtension.swift in Sources */,
 				20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */,
 				20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */,
 				20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */,

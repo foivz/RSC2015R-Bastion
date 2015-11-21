@@ -27,11 +27,9 @@ class APIData {
         Alamofire.request(.GET, apiURL, headers: ["Authorization": getToken])
             .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
                 
-                var token: String = response!.allHeaderFields["Set-Cookie"] as! String
-                token = token.stringByReplacingOccurrencesOfString("laravel_session=", withString: "")
-                token = token.substringToIndex((token.rangeOfString(";")?.first)!)
+                let token: String = response!.allHeaderFields["Authorization"] as! String
                 
-                APIUser.sharedInstance.setToken("Bearer \(token)")
+                APIUser.sharedInstance.setToken(token)
                 let json = JSON(data: data!)
                 
                 withSuccess(json)
@@ -41,6 +39,37 @@ class APIData {
     
     func getListOfTeams(withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
         getData(Constants.kTEAMLIST, withSuccess: withSuccess, andFail: withFail)
+    }
+    
+    
+    func setTeam(teamName: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        Alamofire.request(.POST, Constants.kTEAMLIST, parameters: ["name": teamName], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+ 
+                let token: String = response!.allHeaderFields["Authorization"] as! String
+                
+                APIUser.sharedInstance.setToken(token)
+                let json = JSON(data: data!)
+                
+                withSuccess(json)
+                
+        }
+    }
+    
+    func joinTeam(teamName: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        Alamofire.request(.POST, Constants.kTEAMLIST, parameters: ["name": teamName], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let token: String = response!.allHeaderFields["Authorization"] as! String
+                
+                APIUser.sharedInstance.setToken(token)
+                let json = JSON(data: data!)
+                
+                withSuccess(json)
+                
+        }
     }
     
 }

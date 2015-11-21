@@ -231,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="1048" y="262"/>
         </scene>
-        <!--Team List Controller-->
+        <!--Timovi-->
         <scene sceneID="DAr-ao-lwc">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="oXm-Ap-zDp" customClass="TeamListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -335,7 +335,7 @@
                             <constraint firstItem="Iwv-iJ-MK5" firstAttribute="top" secondItem="kIZ-Yv-JyT" secondAttribute="bottom" id="ugy-gv-7qS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6SY-7W-Qh0"/>
+                    <navigationItem key="navigationItem" title="Timovi" id="6SY-7W-Qh0"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
@@ -371,7 +371,7 @@
         <!--Player List Controller-->
         <scene sceneID="Hl6-d3-EO4">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="PlayerListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerListController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="PlayerListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GAf-PM-wtp"/>
                         <viewControllerLayoutGuide type="bottom" id="Evt-VA-Ljh"/>
@@ -385,7 +385,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TeamListCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamListCell" rowHeight="77" id="AUf-kP-fiW" customClass="TeamListCell" customModule="PaintballApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UserListCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="77" id="AUf-kP-fiW" customClass="UserListCell" customModule="PaintballApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AUf-kP-fiW" id="kHi-w1-42c">
@@ -410,18 +410,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY">
                                                     <rect key="frame" x="204" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="✔︎">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT">
                                                     <rect key="frame" x="262" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.65459408969999999" green="0.19047225879999999" blue="0.21001269219999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,9 +429,6 @@
                                                     <state key="normal" title="✖︎">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -454,6 +448,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="buttonAdd" destination="xpl-HR-mLY" id="4D4-YS-87S"/>
+                                            <outlet property="buttonDelete" destination="raA-Rn-OhT" id="bUY-OA-RN2"/>
+                                            <outlet property="labelName" destination="awB-vY-Isd" id="1E6-4A-YoE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -472,9 +471,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="clickPlusButton:" destination="Rvh-wo-jj6" eventType="touchUpInside" id="N0i-J6-oFt"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -493,33 +489,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>
                     <connections>
-                        <outlet property="tableView" destination="bcR-n4-sXt" id="lT5-NU-y4e"/>
+                        <outlet property="tableView" destination="bcR-n4-sXt" id="iz4-WB-xKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CC9-cC-chJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="921"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZDq-gp-dZH">
-            <objects>
-                <navigationController storyboardIdentifier="UserListController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EIl-Tm-QIa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="550"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ZM-CS-vWr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Rvh-wo-jj6" kind="relationship" relationship="rootViewController" id="uBz-eW-cQz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fzp-uo-lCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1534" y="921"/>
+            <point key="canvasLocation" x="1963" y="919"/>
         </scene>
     </scenes>
     <resources>

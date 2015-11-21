@@ -59,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("token= \(deviceToken)")
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print(userInfo)
+    }
+    
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("error \(error)")
     }

@@ -90,11 +90,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                         self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
                     
                     } else {
-                        let alert = UIAlertView()
-                        alert.title = "Ups!"
-                        alert.message = "Prijava nije uspjela :("
-                        alert.addButtonWithTitle("OK")
-                        alert.show()
+                        CustomAlertView.alertFailWithText("Prijava nije uspjela :(")
                     }
                 }
             }) { (error: NSError) -> Void in
@@ -106,17 +102,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         APIUser.sharedInstance.register(self.fieldEmail.text!, password: self.fieldPassword.text!, name: self.fieldFullName.text!, withSuccess: { (json: JSON) -> Void in
             
             if let response = json["message"].string {
-                let alert = UIAlertView()
-                alert.title = "Registracija"
-                alert.message = response
-                alert.addButtonWithTitle("OK")
-                alert.show()
+                CustomAlertView.alertFailWithTextAndTitle("Registracija", tekst: response)
             } else {
-                let alert = UIAlertView()
-                alert.title = "Ups!"
-                alert.message = "Registracija nije uspjela :("
-                alert.addButtonWithTitle("OK")
-                alert.show()
+                CustomAlertView.alertFailWithText("Registracija nije uspjela :(")
             }
             }) { (error: NSError) -> Void in
         }
