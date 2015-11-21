@@ -13,12 +13,12 @@
     <section id="hero">
         <div id="owl-main" class="owl-carousel height-md owl-inner-nav owl-ui-lg">
 
-            <div class="item" style="background-image: url('{{ asset('images/art/slider01.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('images/art/paintball3.jpg') }}');">
                 <div class="container">
                     <div class="caption vertical-center text-center">
 
-                        <h1 class="fadeInDown-1 light-color">Paintball is cool</h1>
-                        <p class="fadeInDown-2 medium-color">Watch your favourite team!
+                        <h1 class="fadeInDown-1 light-color" >Paintball is cool</h1>
+                        <p class="fadeInDown-2 medium-color" >Watch your favourite team!
                         </p>
                         <div class="fadeInDown-3">
                             <a href="#" class="btn btn-large">text</a>
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('images/art/slider02.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('images/art/paintball4.jpg') }}');">
                 <div class="container">
                     <div class="caption vertical-center text-right">
 
