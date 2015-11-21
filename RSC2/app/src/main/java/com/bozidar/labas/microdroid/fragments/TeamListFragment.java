@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.activities.MainActivity;
 import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.item.CreatedTeamItem;
 import com.bozidar.microdroid.base.MicroFragment;
@@ -68,10 +69,10 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
     @Override
     public void microItemClicked(View view, MicroItem item) {
         CreatedTeamModel selectedModel = ((CreatedTeamItem)item).getModel();
-
+        goToSelectedTeamFragment(selectedModel);
     }
 
     private void goToSelectedTeamFragment(CreatedTeamModel selectedModel){
-
+        ((MainActivity)getMicroActivity()).setFragment(R.id.content, new SelectedTeamFragment());
     }
 }

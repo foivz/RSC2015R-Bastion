@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".activities.SelectedTeamActivity" >
         </activity>
+        <activity android:name=".activities.CreateTeamDialogActiviti" >
+        </activity>
     </application>
 
 </manifest>

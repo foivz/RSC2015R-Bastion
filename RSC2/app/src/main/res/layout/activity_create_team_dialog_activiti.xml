@@ -29,7 +29,7 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Zahtjev za tim"
+                android:text="KREIRANJE TIMA"
                 android:textSize="25sp"/>
 
             <TextView
@@ -45,15 +45,15 @@
                 android:layout_height="1px"
                 android:background="@color/colorPrimary"/>
 
-           <TextView
-               android:id="@+id/btnChoseTvShow"
-               android:layout_marginTop="15dp"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:text="OBAVIJEST"
-               android:gravity="right"
-               android:textStyle="bold"
-               android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/btnChoseTvShow"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OBAVIJEST"
+                android:gravity="right"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
         </LinearLayout>
 
 
