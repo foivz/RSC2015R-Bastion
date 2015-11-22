@@ -59,6 +59,13 @@
 
 
                         <!-- ============================================================= MEGA MENU : END ============================================================= -->
+
+                        @if(Auth::check())
+                            <li >
+                                <a href="{{ url('/profile') }}" >Profile</a>
+                            </li>
+                        @endif
+
                         @if(!Auth::check())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle js-activated">Login</a>
@@ -74,6 +81,8 @@
 
                             </li>
                         @endif
+
+
 
                         <li class="dropdown pull-right searchbox">
                             <a href="#" class="dropdown-toggle js-activated"><i class="icon-search"></i></a>

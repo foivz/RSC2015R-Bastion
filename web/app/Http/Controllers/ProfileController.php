@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Team;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {
@@ -16,7 +20,14 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::check()) {
+            $user=Auth::user();
+            $team = Team::where('id',$user->team_id)->first();
+            return view('profile.myprofile')->with('user',$user)->with('team',$team);
+        } else {
+            return Redirect::to('auth/login');
+        }
+
     }
 
     /**
@@ -26,7 +37,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -48,7 +59,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        return view('profile.myprofile');
+
     }
 
     /**
