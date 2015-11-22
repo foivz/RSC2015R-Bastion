@@ -139,10 +139,10 @@ class GameController extends Controller
         $teams = $game->teams()->get();
         $markers = $map->markers()->get();
 
-        for($i = 0;$i < count($teams);$i++){
+
             $users = User::where('team_id',$user->team_id)->get();
-            $teams[$i]->players = $teams[$i]->$users;
-        }
+            $teams[0]->players = $users;
+
 
         $array = array('markers' => $markers, 'map' =>$map,'teams'=> $teams);
         return json_encode($array);
