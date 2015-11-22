@@ -27,6 +27,10 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+Route::get('/adminview', function () {
+    return view('adminlive');
+});
+
 
 Route::post('/save', 'GameController@store');
 
