@@ -158,6 +158,7 @@ Route::group(['prefix' => 'api'], function()
 
         Route::post('/trackloc','GameController@trackloc');
         Route::post('/getflag','GameController@flag');
+        Route::post('/judgeeliminate/{id}','GameController@eliminationJudge');
 
         Route::post('notify/players','NotificationController@judgeToPlayers');
         Route::post('notify/teams','NotificationController@judgeToTeams');

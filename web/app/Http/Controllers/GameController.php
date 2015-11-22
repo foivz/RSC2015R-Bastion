@@ -174,8 +174,9 @@ class GameController extends Controller
         return json_encode($responseArray);
     }
 
-    public function eliminationJudge($id){
+    public function eliminationJudge(Request $request, $id){
         //GCM
+        $message = $request->message;
         $user = User::where('id',$id)->first();
         $user->status = 1;
         $user->save();
@@ -186,6 +187,18 @@ class GameController extends Controller
                 $team = $teams[$i];
                 $team->score = $team->score + 2;
                 $team->save();
+            }
+        }
+
+        if($user->gcm_id){
+            if($user->device == 'android') {
+                PushNotification::app('android')
+                    ->to($user->gcm_id)
+                    ->send($message);
+            } else {
+                PushNotification::app('iOS')
+                    ->to($user->gcm_id)
+                    ->send($message);
             }
         }
 
