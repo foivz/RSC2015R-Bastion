@@ -42,6 +42,6 @@
 
 
 
-<script src="{{asset('prikazAdmin.js')}}"></script>
+<script src="{{asset('prikazUser.js')}}"></script>
 </body>
 </html>
