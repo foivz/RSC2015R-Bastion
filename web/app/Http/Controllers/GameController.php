@@ -75,4 +75,6 @@ class GameController extends Controller
         return json_encode($array);
     }
 
+
+
 }

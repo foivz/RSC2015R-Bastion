@@ -121,6 +121,7 @@ class AuthController extends Controller {
         $user->password = bcrypt($request->input('password'));
         $user->role = 1;
         $user->device = $request->input('device');
+        $user->gcm_id = $request->input('pushid');
         $user->save();
 
 

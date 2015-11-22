@@ -132,6 +132,8 @@ Route::group(['prefix' => 'api'], function()
         });
 
 
+        Route::get('/myplayers', 'TeamController@players');
+        Route::post('/lockteam','TeamController@lock');
 
 
     });

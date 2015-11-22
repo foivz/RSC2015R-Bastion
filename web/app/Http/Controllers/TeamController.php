@@ -43,11 +43,48 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $email = Auth::user()->email;
+        $user = Auth::user();
+
         $team = new Team();
         $team->name = $request->name;
         $team->team_leader = $email;
         $team->save();
         $id = $team->id;
+        $user->team_id =$id;
+        $user->save();
+        $count = \DB::table('users')->count();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+        $count++;
+        $user = new User();
+        $user->name = 'name'.$count;
+        $user->email = 'email'.$count.'@gmail.com';
+        $user->password = bcrypt('123456');
+        $user->full_name = 'Full name'.$count;
+        $user->long = '16.3524307';
+        $user->lat = '46.3087504';
+        $user->team_id = $id;
+        $user->save();
+
+
         $responseArray = array('status' => 'OK', 'message' => $id,'data' => "");
         return json_encode($responseArray);
 
@@ -97,4 +134,31 @@ class TeamController extends Controller
     {
         //
     }
+
+    public function players(){
+        $user = Auth::user();
+        $team = Team::where('team_leader',$user->email)->orderBy('created_at','desc')->take(1)->get();
+
+        $players = User::where('team_id',$team[0]->id)->get();
+
+        for($i = 0;$i < count($players);$i++){
+            $players[$i]->team_name = $team[0]->name;
+        }
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => $players);
+        return json_encode($responseArray);
+    }
+
+    public function lock(Request $request){
+        $user = Auth::user();
+        $team = Team::where('team_leader',$user->email)
+            ->where('name',$request->input('teamname'))
+            ->orderBy('created_at','desc')->first();
+        $team->status = '2';
+        $team->save();
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
+        return json_encode($responseArray);
+
+    }
+
 }
