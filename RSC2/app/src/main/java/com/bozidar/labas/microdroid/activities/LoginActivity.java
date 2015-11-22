@@ -1,6 +1,7 @@
 package com.bozidar.labas.microdroid.activities;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -9,6 +10,8 @@ import com.bozidar.labas.microdroid.mvp.presenter.LoginPresenter;
 import com.bozidar.labas.microdroid.mvp.presenter.impl.LoginPresenterImpl;
 import com.bozidar.labas.microdroid.mvp.view.LoginView;
 import com.bozidar.labas.microdroid.utils.IntentUtil;
+import com.bozidar.labas.microdroid.utils.Serializator;
+import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.microdroid.base.MicroActivity;
 import com.bozidar.microdroid.model.User;
 
@@ -24,6 +27,8 @@ public class LoginActivity extends MicroActivity implements LoginView {
     TextView etPassword;
 
     LoginPresenter presenter;
+
+    private static final String KEY_USER = "rsc.bozidar.user";
 
 
     @Override
@@ -53,18 +58,31 @@ public class LoginActivity extends MicroActivity implements LoginView {
 
     @Override
     public void setUsernameError() {
-
     }
 
     @Override
     public void setPasswordError() {
-
     }
 
     //change 0 to social login id
     @Override
     public void navigateToHome(User user) {
-        IntentUtil.startMainActivity(this, user, 0, "RSCLogin");
+        Log.d("rola", user.getRole());
+        if(user.getRole().equals("1")){
+            //Obicni user
+            IntentUtil.startMainActivity(this, user, 0, "RSCLogin");
+        }if(user.getRole().equals("2")){
+            SharedPrefs prefs = SharedPrefs.getInstance();
+            prefs.saveObject(this, getResources().getString(R.string.user_data), user);
+            prefs.save(this, getResources().getString(R.string.login), "RSCLogin");
+
+            String jsonUser = Serializator.serialize(user);
+            Intent newIntent = new Intent(this, JudgeActivity.class);
+            newIntent.putExtra(KEY_USER, jsonUser);
+            newIntent.putExtra("networkId", 0);
+            this.startActivity(newIntent);
+        }
+
     }
 
     @Override

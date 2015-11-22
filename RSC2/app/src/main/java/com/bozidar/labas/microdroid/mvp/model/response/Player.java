@@ -13,6 +13,17 @@ public class Player {
     @SerializedName("id")
     private String id;
 
+    @SerializedName("team_name")
+    private String teamName;
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
     public String getName() {
         return name;
     }

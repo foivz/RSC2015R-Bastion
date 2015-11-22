@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.labas.microdroid.fragments.Game;
+import com.bozidar.labas.microdroid.fragments.JudgeFragment;
 import com.bozidar.labas.microdroid.fragments.TeamListFragment;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.microdroid.base.MicroActivity;
+import com.bozidar.microdroid.model.User;
 
 import butterknife.Bind;
 
@@ -32,6 +34,7 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     ActionBarDrawerToggle drawerToggle;
 
     TeamListFragment fragment;
+    JudgeFragment judgeFragment;
 
     public enum OpenedFragment {
         FRAGMENT_CREATED_TEAMS,
@@ -39,6 +42,10 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     }
 
     OpenedFragment openedFragment;
+
+    User user;
+
+    SharedPrefs prefs = SharedPrefs.getInstance();
 
 
 
@@ -62,7 +69,11 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
         setUpDrawer();
         fragment = new TeamListFragment();
         openedFragment = OpenedFragment.FRAGMENT_CREATED_TEAMS;
-        setFragment(R.id.content, fragment);
+        judgeFragment = new JudgeFragment();
+
+
+            setFragment(R.id.content, fragment);
+
     }
 
     /**

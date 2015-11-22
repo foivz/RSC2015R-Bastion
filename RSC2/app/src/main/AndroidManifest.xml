@@ -34,6 +34,11 @@
         </activity>
         <activity android:name=".activities.MyCreatedTeam" >
         </activity>
+        <activity
+            android:name=".activities.JudgeActivity"
+            android:label="@string/title_activity_judge"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

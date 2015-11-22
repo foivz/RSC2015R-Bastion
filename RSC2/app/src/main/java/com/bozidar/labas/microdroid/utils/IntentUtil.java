@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.activities.JudgeActivity;
 import com.bozidar.labas.microdroid.activities.MainActivity;
 import com.bozidar.microdroid.model.User;
 
@@ -25,6 +26,19 @@ public class IntentUtil {
 
         String jsonUser = Serializator.serialize(user);
         Intent newIntent = new Intent(context, MainActivity.class);
+        newIntent.putExtra(KEY_USER, jsonUser);
+        newIntent.putExtra("networkId", socialNetworkId);
+        context.startActivity(newIntent);
+    }
+
+    public static void startJudgeActivity(Context context, User user, int socialNetworkId,  String loginType){
+        SharedPrefs prefs = SharedPrefs.getInstance();
+        prefs.saveObject(context, context.getResources().getString(R.string.user_data), user);
+        prefs.save(context, context.getResources().getString(R.string.login), loginType);
+        Log.d("tokenLogin", user.getToken());
+
+        String jsonUser = Serializator.serialize(user);
+        Intent newIntent = new Intent(context, JudgeActivity.class);
         newIntent.putExtra(KEY_USER, jsonUser);
         newIntent.putExtra("networkId", socialNetworkId);
         context.startActivity(newIntent);

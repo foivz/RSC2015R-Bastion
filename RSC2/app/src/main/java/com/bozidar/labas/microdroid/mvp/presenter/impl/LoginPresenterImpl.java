@@ -45,10 +45,9 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
             logedUserModel.setName(response.getName());
             logedUserModel.setEmail(response.getEmail());
             logedUserModel.setAvatar(response.getAvatar());
+            logedUserModel.setRole(response.getRole());
             view.navigateToHome(logedUserModel);
         }
-
-
     }
 
     @Override

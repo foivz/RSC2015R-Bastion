@@ -3,6 +3,7 @@ package com.bozidar.labas.microdroid.network;
 import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.LoginModel;
 import com.bozidar.labas.microdroid.mvp.model.response.LoginResponse;
+import com.bozidar.labas.microdroid.mvp.model.response.Player;
 import com.bozidar.labas.microdroid.mvp.model.response.RegistrationResponse;
 import com.bozidar.labas.microdroid.mvp.model.response.Response;
 
@@ -48,6 +49,13 @@ public interface RequestAPI {
     void fetchCreatedTeams(
             @Header("Authorization") String token,
             Callback<Response<List<CreatedTeamModel>>> response);
+
+
+    //Chnge this later
+    @GET("/api/myplayers")
+    void fetchMyPlayers(
+            @Header("Authorization") String token,
+            Callback<Response<List<Player>>> response);
 
     @FormUrlEncoded
     @POST("/api/team")
