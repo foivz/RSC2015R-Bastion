@@ -20,7 +20,8 @@ Route::get('/test', function () {
 });
 
 Route::get('/view', function () {
-    return view('spectate');
+    $activeGame = \App\Game::where('status',1)->first();
+    return view('spectate')->with('active',$activeGame);
 });
 
 Route::get('/vieww', function () {

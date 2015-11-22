@@ -24,7 +24,8 @@ $(document).ready( function() {
     function initMap(){
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
-            center: bangalore
+            center: bangalore,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
         });
 
 
