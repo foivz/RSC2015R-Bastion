@@ -149,6 +149,12 @@ Route::group(['prefix' => 'api'], function()
         Route::post('/lockteam','TeamController@lock');
         Route::post('/viewMy', 'GameController@viewMy');
         Route::post('/teamlist','TeamController@teamsshow');
+
+        Route::post('notify/players','NotificationController@judgeToPlayers');
+        Route::post('notify/team','NotificationController@judgeToTeams');
+        //Route::post('notify/players','NotificationController@playersToJudge');
+        //Route::post('notify/players','NotificationController@onlyTeamPlayers');
+
     });
 });
 
