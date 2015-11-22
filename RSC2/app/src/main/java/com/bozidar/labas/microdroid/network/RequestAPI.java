@@ -85,6 +85,18 @@ public interface RequestAPI {
                   @Field("message") String message,
                   Callback<Response<String>> response);
 
+    @FormUrlEncoded
+    @POST("/api/getflag")
+    void flagCaptured(@Header("Authorization") String token,
+                      @Field("test") String test,
+                             Callback<Response<String>> response);
+
+    @FormUrlEncoded
+    @POST("/api/notify/judge")
+    void sendPushToJudge(@Header("Authorization") String token,
+                             @Field("message") String message,
+                             Callback<Response<String>> response);
+
     @GET("/api/listatimova")
     void fetchPreparedTeams(@Header("Authorization") String token,
                             Callback<Response<List<PreparedTeamResponse>>> response);

@@ -1,6 +1,5 @@
 package com.bozidar.microdroid.recyclerview.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,10 +8,8 @@ import android.view.ViewGroup;
 
 import com.bozidar.microdroid.recyclerview.holder.MicroViewHolder;
 import com.bozidar.microdroid.recyclerview.item.MicroItem;
-import com.bozidar.microdroid.recyclerview.model.MicroSimpleModel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -102,6 +99,12 @@ public class MicroRecyclerAdapter extends RecyclerView.Adapter<MicroViewHolder> 
     public void addItemColor(String itemAttributeName, int color){
         itemColors.put(itemAttributeName, color);
     }
+
+    public void delete(){
+        items.clear();
+        this.notifyDataSetChanged();
+    }
+
 }
 
 //DataModel    -> represents single item in list

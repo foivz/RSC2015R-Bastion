@@ -40,6 +40,9 @@ public class FragmentCommunication extends MicroTabFrag implements MicroRecycler
     RecyclerView list;
     private MicroRecyclerAdapter adapter;
 
+    @Bind(R.id.btn_change_message)
+    Button btn;
+
     String message;
 
     private String judge = "Poruke suca";
@@ -71,6 +74,12 @@ public class FragmentCommunication extends MicroTabFrag implements MicroRecycler
         return new ArrayList<String>(Arrays.asList(communication));
     }
 
+    private ArrayList<String> mockToJudgeItems(){
+        Resources res = getMicroActivity().getResources();
+        String[] communication = res.getStringArray(R.array.salji_sudcu);
+        return new ArrayList<String>(Arrays.asList(communication));
+    }
+
     public static FragmentCommunication newInstance(String param1) {
         FragmentCommunication fragment = new FragmentCommunication();
         Bundle args = new Bundle();
@@ -98,17 +107,34 @@ public class FragmentCommunication extends MicroTabFrag implements MicroRecycler
     @Override
     public void microItemClicked(View view, MicroItem item) {
         message = ((CommunicationItem)item).getModel();
-        sendPushToMyTeam();
+        if(btn.getText().equals(player)){
+            sendPushToMisterJudge();
+
+        }else{
+            sendPushToMyTeam();
+        }
     }
 
     @OnClick(R.id.btn_change_message)
     public void changeMessageType(View v){
         Button b = (Button)v;
-        if(((Button) v).getText().equals(judge)){
+        if(((Button) v).getText().equals(judge)) {
             b.setText(player);
+            adapter.delete();
+            setRecyclerView(mockToJudgeItems());
+
         }else{
             b.setText(judge);
+            adapter.delete();
+            setRecyclerView(mockComItems());
+
         }
+    }
+
+    public void sendPushToMisterJudge(){
+        RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
+        String tokenFormat = TokenManager.formatToken(user.getToken());
+        api.sendPushToJudge(tokenFormat, message, this);
     }
 
 

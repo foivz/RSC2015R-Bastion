@@ -71,13 +71,14 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
         openedFragment = OpenedFragment.FRAGMENT_CREATED_TEAMS;
         judgeFragment = new JudgeFragment();
 
+        String check = getIntent().getStringExtra("game");
 
+        if(check != null){
+            setFragment(R.id.content, Game.newInstance());
+        }else{
             setFragment(R.id.content, fragment);
-
+        }
     }
-
-
-
 
 
     /**
