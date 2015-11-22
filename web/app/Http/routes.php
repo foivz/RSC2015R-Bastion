@@ -39,6 +39,10 @@ Route::get('/adminview', function () {
     return view('adminlive');
 });
 
+Route::get('/viewmyteam/{id}', function () {
+    return view('myteam');
+});
+
     Route::get('game', function() {
     $teams = \App\Team::all();
     $maps = \App\Map::all();
@@ -52,6 +56,8 @@ Route::post('game','GameController@createGame');
 Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
+
+
 
 Route::get('testaona', function() {
     $team = \App\Team::last();
@@ -141,8 +147,8 @@ Route::group(['prefix' => 'api'], function()
 
         Route::get('/myplayers', 'TeamController@players');
         Route::post('/lockteam','TeamController@lock');
-
-
+        Route::post('/viewMy', 'GameController@viewMy');
+        Route::post('/teamlist','TeamController@teamsshow');
     });
 });
 

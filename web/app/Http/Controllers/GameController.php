@@ -6,10 +6,14 @@ use App\Game;
 use App\Map;
 use App\Marker;
 use App\Team;
+
+use App\User;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class GameController extends Controller
@@ -94,6 +98,24 @@ class GameController extends Controller
         $team2->save();
 
         return redirect('game')->with('message','Succesfully created game!');
+    }
+
+
+    public function viewMy($id){
+        $user = User::where('email',$id)->first();
+        $game = Game::where('status',1)->first();
+        $map = Map::where('id',$game->map_id)->first();
+        $teams = $game->teams()->get();
+        $markers = $map->markers()->get();
+
+        for($i = 0;$i < count($teams);$i++){
+            $users = User::where('team_id',$user->team_id)->get();
+            $teams[$i]->players = $teams[$i]->$users;
+        }
+
+        $array = array('markers' => $markers, 'map' =>$map,'teams'=> $teams);
+        return json_encode($array);
+
     }
 
 
