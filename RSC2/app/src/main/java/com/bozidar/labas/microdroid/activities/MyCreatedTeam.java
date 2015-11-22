@@ -4,6 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bozidar.labas.gcm_microdroid.BusProvider;
 import com.bozidar.labas.gcm_microdroid.listener.RegistrationId;
@@ -26,6 +27,7 @@ import com.squareup.otto.Subscribe;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 
@@ -40,6 +42,7 @@ public class MyCreatedTeam extends MicroActivity implements MicroRecyclerAdapter
 
     SharedPrefs prefs = SharedPrefs.getInstance();
     private User user;
+    private String teamName;
 
     @Override
     public int setupToolbar() {
@@ -105,11 +108,41 @@ public class MyCreatedTeam extends MicroActivity implements MicroRecyclerAdapter
     public void success(Response<List<Player>> listResponse, retrofit.client.Response response) {
         Log.d("dohvaceno", "dohvaceno");
         List<Player> players = listResponse.getData();
+        teamName = players.get(0).getTeamName();
         setRecyclerView(players);
     }
 
     @Override
     public void failure(RetrofitError error) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @OnClick(R.id.fab)
+    public void lockTeam(){
+        RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
+        String tokenFormat = TokenManager.formatToken(user.getToken());
+        api.lockTeam(tokenFormat, teamName, new Callback<Response<String>>() {
+
+            @Override
+            public void success(Response<String> stringResponse, retrofit.client.Response response) {
+                Log.d("success", stringResponse.getMessage());
+                teamLocked();
+
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.d("error", error.toString());
+            }
+        });
+    }
+
+    public void teamLocked(){
+        Toast.makeText(this, "Team Created", Toast.LENGTH_LONG).show();
     }
 }

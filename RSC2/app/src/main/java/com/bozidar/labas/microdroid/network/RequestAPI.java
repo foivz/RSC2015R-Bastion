@@ -42,6 +42,7 @@ public interface RequestAPI {
             @Field("email") String email,
             @Field("password") String password,
             @Field("device") String deviceType,
+            @Field("pushid") String pushId,
             Callback<Response<RegistrationResponse>> response
     );
 
@@ -69,5 +70,12 @@ public interface RequestAPI {
                   @Path("id") int id,
                   @Field("id") int id2,
                   Callback<Response<String>> response);
+
+    @FormUrlEncoded
+    @POST("/api/lockteam")
+    void lockTeam(
+            @Header("Authorization") String token,
+            @Field("teamname") String teamname,
+            Callback<Response<String>> response);
 }
 //api.register(username, email, password, firstName, lastName, city, birthDate, this);

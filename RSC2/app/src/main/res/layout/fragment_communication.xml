@@ -6,7 +6,7 @@
 
     <Button
         android:background="@color/colorPrimary"
-        android:id="@+id/btn"
+        android:id="@+id/btn_change_message"
         android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         android:text="Poruke suca"/>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_above="@+id/btn"
+        android:layout_above="@+id/btn_change_message"
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -37,7 +37,7 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnregisterFinis
     }
 
     @Override
-    public void register(String password, String email, String firstName, String lastName) {
-        interactor.register(password, email, firstName, lastName, this);
+    public void register(String id, String password, String email, String firstName, String lastName) {
+        interactor.register(id, password, email, firstName, lastName, this);
     }
 }

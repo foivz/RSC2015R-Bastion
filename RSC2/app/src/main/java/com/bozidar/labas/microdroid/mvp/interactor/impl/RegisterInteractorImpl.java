@@ -20,9 +20,8 @@ import retrofit.RetrofitError;
 public class RegisterInteractorImpl implements RegisterInteractor, Callback<Response<RegistrationResponse>> {
     private OnregisterFinishedListener listener;
 
-
     @Override
-    public void register(String password, String email, String firstName, String lastName, OnregisterFinishedListener listener) {
+    public void register(String pushId, String password, String email, String firstName, String lastName, OnregisterFinishedListener listener) {
         boolean error = false;
         this.listener = listener;
         if (TextUtils.isEmpty(password)) {
@@ -31,10 +30,9 @@ public class RegisterInteractorImpl implements RegisterInteractor, Callback<Resp
         }
         if (!error) {
             RequestAPI api = ServiceFactory.createRetrofitService(RequestAPI.class, Constants.ENDPOINT);
-            api.register(firstName + " " + lastName, email, password, "android", this);
+            api.register(firstName + " " + lastName, email, password, "android", pushId, this);
         }
     }
-
 
     @Override
     public void success(Response<RegistrationResponse> registrationResponseResponse, retrofit.client.Response response) {
@@ -46,6 +44,7 @@ public class RegisterInteractorImpl implements RegisterInteractor, Callback<Resp
         Log.d("error", error.toString());
 
     }
+
 
 }
 

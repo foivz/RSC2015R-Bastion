@@ -139,6 +139,7 @@ public class TeamListFragment extends MicroFragment implements MicroRecyclerAdap
         goToSelectedTeamFragment(selectedModel);
     }
 
+
     @Override
     public void failure(RetrofitError error) {
         Log.d("error", "success");

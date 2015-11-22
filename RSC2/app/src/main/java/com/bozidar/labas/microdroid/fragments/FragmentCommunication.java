@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import com.bozidar.labas.microdroid.R;
 import com.bozidar.labas.microdroid.mvp.model.item.CommunicationItem;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Created by Bozidar on 21.11.2015..
@@ -27,6 +29,9 @@ public class FragmentCommunication extends MicroTabFrag implements MicroRecycler
     @Bind(R.id.list)
     RecyclerView list;
     private MicroRecyclerAdapter adapter;
+
+    private String judge = "Poruke suca";
+    private String player = "Poruke igraca";
 
     @Override
     public String setTabTitle() {
@@ -76,5 +81,15 @@ public class FragmentCommunication extends MicroTabFrag implements MicroRecycler
     @Override
     public void microItemClicked(View view, MicroItem item) {
 
+    }
+
+    @OnClick(R.id.btn_change_message)
+    public void changeMessageType(View v){
+        Button b = (Button)v;
+        if(((Button) v).getText().equals(judge)){
+            b.setText(player);
+        }else{
+            b.setText(judge);
+        }
     }
 }
