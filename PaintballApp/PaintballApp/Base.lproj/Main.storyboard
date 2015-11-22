@@ -289,22 +289,46 @@
                                     <constraint firstItem="NzY-aC-NbF" firstAttribute="leading" secondItem="uNq-O6-AsR" secondAttribute="leading" id="wBh-Zp-PfC"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOM-jE-QSu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="516"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U86-kD-u1L">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="U86-kD-u1L" firstAttribute="leading" secondItem="EOM-jE-QSu" secondAttribute="leading" id="Dxh-2x-ZZK"/>
+                                    <constraint firstAttribute="trailing" secondItem="U86-kD-u1L" secondAttribute="trailing" id="OkP-bQ-Xqd"/>
+                                    <constraint firstItem="U86-kD-u1L" firstAttribute="top" secondItem="EOM-jE-QSu" secondAttribute="top" id="iBX-Kl-Wg2"/>
+                                    <constraint firstAttribute="bottom" secondItem="U86-kD-u1L" secondAttribute="bottom" id="jIR-B5-UsL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EOM-jE-QSu" firstAttribute="leading" secondItem="aAS-1A-5z9" secondAttribute="leading" id="2E0-RY-7UV"/>
                             <constraint firstAttribute="trailing" secondItem="uNq-O6-AsR" secondAttribute="trailing" id="AVZ-N0-6s7"/>
                             <constraint firstItem="Z2z-TX-eei" firstAttribute="leading" secondItem="vEg-3a-QeJ" secondAttribute="trailing" id="Bum-Wz-FlY"/>
                             <constraint firstItem="vEg-3a-QeJ" firstAttribute="top" secondItem="dcx-ZH-80b" secondAttribute="bottom" id="EBb-YW-1JC"/>
                             <constraint firstItem="vEg-3a-QeJ" firstAttribute="width" secondItem="Z2z-TX-eei" secondAttribute="width" id="Eu1-Yu-fWZ"/>
+                            <constraint firstItem="Ru8-Nl-Ybj" firstAttribute="top" secondItem="EOM-jE-QSu" secondAttribute="bottom" id="GC9-aj-Kre"/>
                             <constraint firstItem="Z2z-TX-eei" firstAttribute="height" secondItem="vEg-3a-QeJ" secondAttribute="height" id="Jkc-sO-ext"/>
                             <constraint firstItem="Ru8-Nl-Ybj" firstAttribute="top" secondItem="uNq-O6-AsR" secondAttribute="bottom" id="NSS-6L-kQL"/>
+                            <constraint firstItem="EOM-jE-QSu" firstAttribute="top" secondItem="dcx-ZH-80b" secondAttribute="bottom" id="QWR-HY-U85"/>
                             <constraint firstItem="uNq-O6-AsR" firstAttribute="leading" secondItem="aAS-1A-5z9" secondAttribute="leading" id="T2Y-RH-oLx"/>
                             <constraint firstItem="NzY-aC-NbF" firstAttribute="height" secondItem="aAS-1A-5z9" secondAttribute="height" id="YeN-si-rWe"/>
                             <constraint firstItem="vEg-3a-QeJ" firstAttribute="leading" secondItem="aAS-1A-5z9" secondAttribute="leading" id="aNs-QW-G7M"/>
                             <constraint firstItem="uNq-O6-AsR" firstAttribute="top" secondItem="vEg-3a-QeJ" secondAttribute="bottom" id="jSK-dk-DtW"/>
                             <constraint firstAttribute="trailing" secondItem="Z2z-TX-eei" secondAttribute="trailing" id="jfF-n3-vVQ"/>
                             <constraint firstItem="Z2z-TX-eei" firstAttribute="top" secondItem="dcx-ZH-80b" secondAttribute="bottom" id="mrB-AP-VzM"/>
+                            <constraint firstAttribute="trailing" secondItem="EOM-jE-QSu" secondAttribute="trailing" id="yR1-eY-b1d"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -316,16 +340,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="580"/>
                     <connections>
+                        <outlet property="labelAlert" destination="U86-kD-u1L" id="F1p-Ru-fkZ"/>
                         <outlet property="navButton1" destination="vEg-3a-QeJ" id="cKX-SE-dkM"/>
                         <outlet property="navButton2" destination="Z2z-TX-eei" id="0UP-kP-bRi"/>
                         <outlet property="scrollViewController" destination="uNq-O6-AsR" id="6LB-Oz-ZCh"/>
                         <outlet property="scrollViewWidth" destination="Uv7-KF-9by" id="Wfr-q3-Ram"/>
+                        <outlet property="viewAlert" destination="EOM-jE-QSu" id="mTp-hD-21C"/>
                         <outlet property="viewScrollViewContent" destination="NzY-aC-NbF" id="iEs-wk-Kzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG2-2o-P2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2365" y="991"/>
+            <point key="canvasLocation" x="2317" y="993"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="VLD-sw-A22">
