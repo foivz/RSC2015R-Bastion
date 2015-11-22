@@ -162,7 +162,7 @@ class TeamController extends Controller
 
     }
 
-    public function teamsshow(){
+    public function listatimova(){
 
         $game = Game::where('status',1)->first();
         $teams = $game->teams()->get();
