@@ -35,6 +35,7 @@
             <option value="{{ $map->id }}">{{$map->name}}</option>
                 @endforeach
         </select>
+        <input type="text" name="score">
         <br>
         <button type="submit" class="btn btn-success">Create a game</button>
     </form>

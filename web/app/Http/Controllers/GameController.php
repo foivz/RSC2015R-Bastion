@@ -85,6 +85,7 @@ class GameController extends Controller
         $game = new Game();
         $game->status = 1;
         $game->map_id = $request->input('map');
+        $game->score = $request->input('score');
         $game->save();
         $idGame = $game->id;
 
