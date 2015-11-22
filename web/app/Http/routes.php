@@ -103,7 +103,7 @@ Route::group(['prefix' => 'api'], function()
                     ->to($user1->gcm_id)
                     ->send('Novi igrač želi u vaš team!');
             } else {
-                PushNotification::app('ios')
+                PushNotification::app('iOS')
                     ->to($user1->gcm_id)
                     ->send('Novi igrač želi u vaš team!');
             }
