@@ -64,12 +64,8 @@ Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
 
+Route::resource('profile','ProfileController');
 
-
-Route::get('testaona', function() {
-    $team = \App\Team::last();
-    return $team;
-});
 
 
 /* AUTHENTICATION ROUTES */

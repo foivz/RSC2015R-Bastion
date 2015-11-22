@@ -1,7 +1,7 @@
 @extends('default.defaultadmin')
 
 @section('content')
-    @include('partials.headeradmin')
+    @include('partials.header')
 
 
 
