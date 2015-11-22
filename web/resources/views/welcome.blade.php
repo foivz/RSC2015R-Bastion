@@ -21,7 +21,7 @@
                         <p class="fadeInDown-2 medium-color" >Be a spectator! Watch your team moves!
                         </p>
                         <div class="fadeInDown-3">
-                            <a href="#" class="btn btn-large">Click to spectate</a>
+                            <a href="{{url('view')}}" class="btn btn-large">Click to spectate</a>
                         </div>
 
                     </div>
@@ -30,13 +30,13 @@
 
             <div class="item" style="background-image: url('{{ asset('images/art/paintball4.jpg') }}');">
                 <div class="container">
-                    <div class="caption vertical-center text-right">
+                    <div class="caption vertical-center text-left">
 
-                        <h1 class="fadeInLeft-1 light-color">text <br>text</h1>
-                        <p class="fadeInLeft-2 light-color">text<br>tekst tekst
+                        <h1 class="fadeInLeft-1 light-color">See your <br>stats! Admire yourself!</h1>
+                        <p class="fadeInLeft-2 light-color"><br>Login and check it out!
                         </p>
                         <div class="fadeInLeft-3">
-                            <a href="#" class="btn btn-large">text</a>
+                            <a href="{{url('auth/login')}}" class="btn btn-large">Login</a>
                         </div>
 
                     </div>
@@ -47,12 +47,10 @@
                 <div class="container">
                     <div class="caption vertical-center text-left">
 
-                        <h1 class="fadeInRight-1 dark-bg light-color"><span>text<br>text</span></h1>
-                        <p class="fadeInRight-2 dark-color">Some text
+                        <h1 class="fadeInRight-1 dark-bg light-color"><span>Android<br> and iOS</span></h1>
+                        <p class="fadeInRight-2 dark-color">Download mobile application!
                         </p>
-                        <div class="fadeInRight-3">
-                            <a href="#" class="btn btn-large">Text</a>
-                        </div>
+
 
                     </div>
                 </div>
@@ -66,16 +64,15 @@
 
     <!-- ============================================================= SECTION – GET IN TOUCH ============================================================= -->
 
-    <section id="get-in-touch" class="inner-bottom">
+    <section id="get-in-touch" class="inner-bottom" style="margin-top: 20px">
         <div class="container inner light-bg">
             <div class="row">
                 <div class="col-md-8 col-sm-9 center-block text-center">
                     <header>
-                        <h1>Want to work with us?</h1>
-                        <p>Magnis modipsae que voloratati andigen daepeditem quiate re porem aut labor.
-                            Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam.</p>
+                        <h1>Want to watch live battle!</h1>
+                        <p>Wanna see your favourite team fighting against others? If yes, press the button below and get popcorns!</p>
                     </header>
-                    <a href="{{ url('/contact') }}" class="btn btn-large">Get in touch</a>
+                    <a href="{{ url('/view') }}" class="btn btn-large">Spectate</a>
                 </div>
             </div>
         </div>

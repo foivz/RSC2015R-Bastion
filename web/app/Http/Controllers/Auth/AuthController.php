@@ -33,6 +33,7 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -59,5 +60,14 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function authenticated($request, $user)
+    {
+        if($user->role == 2) {
+            return redirect()->intended('/admin');
+        }
+
+        return redirect()->intended('/home');
     }
 }
