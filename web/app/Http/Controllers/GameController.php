@@ -83,7 +83,7 @@ class GameController extends Controller
 
     public function createGame(Request $request) {
         $game = new Game();
-        $game->status = 2;
+        $game->status = 1;
         $game->map_id = $request->input('map');
         $game->save();
         $idGame = $game->id;
@@ -94,9 +94,39 @@ class GameController extends Controller
         $team1->game_id = $idGame;
         $team1->save();
 
+        $players = $team1->users()->get();
+        foreach($players as $p){
+            if($p->gcm_id){
+                if($p->device == 'android') {
+                    PushNotification::app('android')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                } else {
+                    PushNotification::app('iOS')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                }
+            }
+        }
+
         $team2 = Team::find($idTeam2);
         $team2->game_id = $idGame;
         $team2->save();
+
+        $players = $team2->users()->get();
+        foreach($players as $p){
+            if($p->gcm_id){
+                if($p->device == 'android') {
+                    PushNotification::app('android')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                } else {
+                    PushNotification::app('iOS')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                }
+            }
+        }
 
         return redirect('game')->with('message','Succesfully created game!');
     }

@@ -108,6 +108,7 @@ $(document).ready( function() {
         //$('#map').empty();
         //initMap();
         clearMarkers();
+        $idTima = $('#idTima').val();
         $.ajax({
             type: "POST",
             url: "/viewMy",

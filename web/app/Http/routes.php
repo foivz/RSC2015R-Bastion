@@ -39,8 +39,8 @@ Route::get('/adminview', function () {
     return view('adminlive');
 });
 
-Route::get('/viewmyteam/{id}', function () {
-    return view('myteam');
+Route::get('/viewmyteam/{id}', function ($id) {
+    return view('myteam')->with('id',$id);
 });
 
 Route::get('/query', function() {
