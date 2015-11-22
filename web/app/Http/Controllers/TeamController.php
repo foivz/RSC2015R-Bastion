@@ -43,11 +43,15 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $email = Auth::user()->email;
+        $user = Auth::user();
+
         $team = new Team();
         $team->name = $request->name;
         $team->team_leader = $email;
         $team->save();
         $id = $team->id;
+        $user->team_id =$id;
+        $user->save();
         $count = \DB::table('users')->count();
         $count++;
         $user = new User();
@@ -143,8 +147,5 @@ class TeamController extends Controller
 
         $responseArray = array('status' => 'OK', 'message' => 'Success','data' => $players);
         return json_encode($responseArray);
-
-
-
     }
 }
