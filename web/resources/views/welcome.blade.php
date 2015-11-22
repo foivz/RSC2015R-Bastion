@@ -48,7 +48,7 @@
                     <div class="caption vertical-center text-left">
 
                         <h1 class="fadeInRight-1 dark-bg light-color"><span>Android<br> and iOS</span></h1>
-                        <p class="fadeInRight-2 dark-color">Download mobile application!
+                        <p class="fadeInRight-2 light-color">Download mobile application and play with your team mates!
                         </p>
 
 

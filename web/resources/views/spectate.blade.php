@@ -3,24 +3,18 @@
 @section('content')
     @include('partials.header')
 
-
-
     <body>
     <div id="container" style="margin-top:20px;">
         <div class="container">
-            <div id="Team1">
-                <input type="text" id="team1id">
+            <div id="Team1" >
+                <input type="text" id="team1id" style="width:80%;" >
             </div>
 
-            <div id="Team2">
-                <input type="text" id="team2id">
+            <div id="Team2" >
+                <input type="text" id="team2id" style="width:80%;" >
             </div>
         </div>
             <div id="map"></div>
-
-
-
-
 
     </div>
 

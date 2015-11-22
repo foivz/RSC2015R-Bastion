@@ -61,6 +61,14 @@ Route::get('/query', function() {
 
 });
 
+Route::get('popularmaps', function() {
+    $maps = DB::table('games')
+        ->select('map_id', DB::raw('count(*) as total'))
+        ->groupBy('map_id')
+        ->get();
+    return $maps;
+});
+
 Route::post('game','GameController@createGame');
 
 

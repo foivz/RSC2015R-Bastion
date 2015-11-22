@@ -3,27 +3,29 @@
  */
 
 function visitorData (data) {
+
     $('#chart1').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Average Visitors'
+            text: 'Most used maps'
         },
         xAxis: {
-            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
         },
         yAxis: {
             title: {
-                text: 'Number of visitors'
+                text: 'Number of times'
             }
         },
-        series: data,
+        series: []
     });
 }
 $(document).ready(function() {
+    alert("test");
     $.ajax({
-        url: '/admin',
+        url: '/popularmaps',
         type: 'GET',
         async: true,
         dataType: "json",

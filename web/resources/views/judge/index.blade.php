@@ -17,6 +17,8 @@
                 </div>
 
         </div>
+
+        <div id="chart1"> </div>
 </div>
 
 
@@ -32,6 +34,5 @@
 
 @include('includes.scripts')
 <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-<script src="{{ asset('js/statistics') }}"></script>
 
 @endsection
