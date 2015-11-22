@@ -18,7 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('team_leader')->nullable();
             $table->integer('game_id')->unsigned();
             $table->integer('score');
-            $table->string('status');
+            $table->string('status')->nullable()->default(1);
             $table->timestamps();
         });
     }
