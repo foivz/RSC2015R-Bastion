@@ -15,6 +15,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Witty\LaravelPushNotification\PushNotification;
 
 class GameController extends Controller
 {
@@ -116,6 +117,80 @@ class GameController extends Controller
         $array = array('markers' => $markers, 'map' =>$map,'teams'=> $teams);
         return json_encode($array);
 
+    }
+
+    public function trackloc(Request $request){
+
+        $lat = $request->lati;
+        $long = $request->long;
+
+        $user = Auth::user();
+        $user->long = $long;
+        $user->lat = $lat;
+        $user->save();
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
+        return json_encode($responseArray);
+
+    }
+
+    public function flag(){
+        //NAPRAVIT DA SE UVECAJU BODOVI kad uzmemo zastavu
+        $user = Auth::user();
+        $team  = Team::where('id',$user->team_id)->first();
+        $team->score = $team->score + 5;
+        $team->save();
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
+        return json_encode($responseArray);
+    }
+
+    public function eliminationSingle(){
+        //GCM
+        $user = Auth::user();
+        $user->status = 1;
+        $user->save();
+        $game = Game::where('status',1)->first();
+        $teams = $game->teams()->get();
+        for($i = 0;$i < count($teams);$i++){
+            if($teams[$i]->id != $user->team_id){
+                $team = $teams[$i];
+                $team->score = $team->score +2;
+                if($team->score >= 10){
+                    $game->status = 2;
+                    $team->status = 1;
+                    $game->save();
+                }
+                $team->save();
+            }
+        }
+        //SLOZIT DIO SA SKORON i NOTIFIKACIJE
+        $users = $teams->users()->get();
+        for($i = 0;$i < count($teams);$i++){
+
+        }
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
+        return json_encode($responseArray);
+    }
+
+    public function eliminationJudge($id){
+        //GCM
+        $user = User::where('id',$id)->first();
+        $user->status = 1;
+        $user->save();
+        $game = Game::where('status',1)->first();
+        $teams = $game->teams()->get();
+        for($i = 0;$i < count($teams);$i++){
+            if($teams[$i]->id != $user->team_id){
+                $team = $teams[$i];
+                $team->score = $team->score + 2;
+                $team->save();
+            }
+        }
+
+        $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
+        return json_encode($responseArray);
     }
 
 
