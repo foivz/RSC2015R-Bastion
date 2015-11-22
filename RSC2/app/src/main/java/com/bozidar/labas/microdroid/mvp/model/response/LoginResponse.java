@@ -22,6 +22,9 @@ public class LoginResponse {
     @SerializedName("role")
     private String role;  //1 == korisnik, 2==judge
 
+    @SerializedName("id")
+    private String id;  //1 == korisnik, 2==judge
+
     public String getToken() {
         return token;
     }
@@ -60,5 +63,13 @@ public class LoginResponse {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

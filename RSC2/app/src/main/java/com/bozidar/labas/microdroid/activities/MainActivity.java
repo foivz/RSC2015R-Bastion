@@ -22,7 +22,8 @@ import com.bumptech.glide.Glide;
 
 import butterknife.Bind;
 
-public class MainActivity extends MicroActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends MicroActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
@@ -49,9 +50,7 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
     OpenedFragment openedFragment;
 
     User user;
-
     SharedPrefs prefs = SharedPrefs.getInstance();
-
 
 
     @Override
@@ -71,6 +70,7 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
     @Override
     public void init() {
+
         setUpDrawer();
         fragment = new TeamListFragment();
         openedFragment = OpenedFragment.FRAGMENT_CREATED_TEAMS;
@@ -78,15 +78,17 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
         String check = getIntent().getStringExtra("game");
 
-        if(check != null){
+        if (check != null) {
             setFragment(R.id.content, Game.newInstance());
-        }else{
+        } else {
             setFragment(R.id.content, fragment);
         }
 
         Glide.with(this)
                 .load("https://upload.wikimedia.org/wikipedia/commons/7/79/Yang_Liwei.jpg")
                 .into(imageView);
+
+
     }
 
 
@@ -154,10 +156,12 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
         }
         if (id == com.bozidar.microdroid.R.id.action_search) {
             Log.d("Search", "Search");
-           // menuSearch();
+            // menuSearch();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }

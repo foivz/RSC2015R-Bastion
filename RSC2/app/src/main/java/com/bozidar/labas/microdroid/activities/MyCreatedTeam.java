@@ -23,7 +23,6 @@ import com.bozidar.microdroid.recyclerview.adapter.MicroRecyclerAdapter;
 import com.bozidar.microdroid.recyclerview.item.MicroItem;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
-
 import java.util.List;
 
 import butterknife.Bind;

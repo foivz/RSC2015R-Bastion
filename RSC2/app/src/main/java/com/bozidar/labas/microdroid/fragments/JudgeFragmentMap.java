@@ -1,6 +1,7 @@
 package com.bozidar.labas.microdroid.fragments;
 
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -32,6 +33,7 @@ public class JudgeFragmentMap extends MicroTabFrag {
     @Override
     public void init() {
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("https://bozidarlabas.from.hr/adminview");
 
         webView.setWebViewClient(new WebViewClient() {

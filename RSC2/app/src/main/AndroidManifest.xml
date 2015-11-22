@@ -3,7 +3,7 @@
     package="com.bozidar.labas.microdroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <service
@@ -51,6 +51,10 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity android:name=".activities.WaitForGameActivity" >
+        </activity>
+        <activity android:name=".activities.HelloAndroidGpsActivity" >
+        </activity>
+        <activity android:name=".activities.WinnerLooserActivity" >
         </activity>
     </application>
 

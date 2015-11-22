@@ -43,6 +43,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
             logedUserModel.setToken(response.getToken());
             //Log.d("tokencicLogin", logedUserModel.getToken());
             logedUserModel.setName(response.getName());
+            logedUserModel.setId(response.getId());
             logedUserModel.setEmail(response.getEmail());
             logedUserModel.setAvatar(response.getAvatar());
             logedUserModel.setRole(response.getRole());

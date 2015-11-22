@@ -15,6 +15,10 @@ import butterknife.Bind;
  */
 public class Game extends MicroFragment {
 
+
+
+
+
     @Bind(R.id.tabLayout)
     TabLayout tabLayout;
     @Bind(R.id.pagerMy)
@@ -33,6 +37,7 @@ public class Game extends MicroFragment {
     @Override
     public void init() {
         setUpTabs();
+
     }
 
     public void setUpTabs() {

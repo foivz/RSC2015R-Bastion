@@ -54,7 +54,7 @@ public class JudgeActivity extends MicroActivity implements Callback<Response<Li
     public void init() {
         user = prefs.loadObject(getResources().getString(R.string.user_data), this);
         sendRequestToServer();
-       // setUpTabs();
+        // setUpTabs();
     }
 
     private void sendRequestToServer() {
@@ -79,9 +79,20 @@ public class JudgeActivity extends MicroActivity implements Callback<Response<Li
     @Override
     public void success(Response<List<PreparedTeamResponse>> listResponse, retrofit.client.Response response) {
         Log.d("success", "success");
-        PreparedTeamResponse firstTeam = listResponse.getData().get(0);
-        PreparedTeamResponse secondTeam = listResponse.getData().get(1);
-        setUpTabs(firstTeam, secondTeam);
+        PreparedTeamResponse firstTeam = null;
+        PreparedTeamResponse secondTeam = null;
+        if (listResponse.getData().size() >= 1) {
+            firstTeam = listResponse.getData().get(0);
+        }
+        if (listResponse.getData().size() >= 2) {
+            secondTeam = listResponse.getData().get(1);
+        }
+
+        if(firstTeam != null && secondTeam != null){
+            setUpTabs(firstTeam, secondTeam);
+        }
+
+
     }
 
     @Override

@@ -1,10 +1,14 @@
 package com.bozidar.labas.microdroid.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.bozidar.labas.microdroid.R;
+import com.bozidar.labas.microdroid.utils.SharedPrefs;
+import com.bozidar.microdroid.model.User;
 import com.bozidar.microdroid.slidingtab.fragment.MicroTabFrag;
 
 import butterknife.Bind;
@@ -19,6 +23,9 @@ public class MapFragment extends MicroTabFrag {
     @Bind(R.id.webView1)
     WebView webView;
 
+    SharedPrefs prefs = SharedPrefs.getInstance();
+    private User user;
+
     @Override
     public String setTabTitle() {
         return getArguments().getString(ARG_PARAM1);
@@ -31,8 +38,17 @@ public class MapFragment extends MicroTabFrag {
 
     @Override
     public void init() {
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://www.google.com");
+        user = prefs.loadObject(getResources().getString(R.string.user_data), getMicroActivity());
+        Log.d("ididid", user.getId());
+        WebSettings ws = webView.getSettings();
+        ws.setJavaScriptCanOpenWindowsAutomatically(true);
+        ws.setJavaScriptEnabled(true);
+        ws.setPluginState(WebSettings.PluginState.ON);
+        ws.setLoadWithOverviewMode(false);
+        ws.setSupportMultipleWindows(true);
+        ws.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+
+        webView.loadUrl("http://bozidarlabas.from.hr/viewmyteam/" + user.getId());
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
