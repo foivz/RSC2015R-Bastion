@@ -18,6 +18,16 @@ public class Player implements Serializable {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("team_name")
+    private String teamName;
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
 
     public String getName() {
         return name;

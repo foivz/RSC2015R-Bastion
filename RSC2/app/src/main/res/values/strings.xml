@@ -22,11 +22,10 @@
     </string-array>
 
     <string-array name="salji_sudcu">
-        <item>Sudac, drugi tima vara :(</item>
+        <item>Sudac, drugi tima vara</item>
         <item>Bojim se</item>
         <item>Strah me za zivot</item>
         <item>Vadi me van</item>
-
     </string-array>
 
     <string name="title_activity_judge">JudgeActivity</string>

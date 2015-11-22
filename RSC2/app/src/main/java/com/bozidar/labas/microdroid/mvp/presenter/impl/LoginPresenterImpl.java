@@ -37,7 +37,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
 
     @Override
     public void onSuccess(Response<LoginResponse> loginResponse) {
-        if(loginResponse.getData() != null){
+        if(loginResponse != null){
             //Log.d("success", "success");
             LoginResponse response = loginResponse.getData();
             logedUserModel.setToken(response.getToken());

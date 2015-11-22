@@ -16,7 +16,9 @@ import com.bozidar.labas.microdroid.fragments.JudgeFragment;
 import com.bozidar.labas.microdroid.fragments.TeamListFragment;
 import com.bozidar.labas.microdroid.utils.SharedPrefs;
 import com.bozidar.microdroid.base.MicroActivity;
+import com.bozidar.microdroid.iphoneization.circleimageview.CircleImageView;
 import com.bozidar.microdroid.model.User;
+import com.bumptech.glide.Glide;
 
 import butterknife.Bind;
 
@@ -27,6 +29,9 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
 
     @Bind(R.id.toolbar_title)
     TextView tvToolbar;
+
+    @Bind(R.id.ivLoggedUser)
+    CircleImageView imageView;
 
     @Bind(R.id.nav_view)
     NavigationView navigationView;
@@ -78,6 +83,10 @@ public class MainActivity extends MicroActivity implements NavigationView.OnNavi
         }else{
             setFragment(R.id.content, fragment);
         }
+
+        Glide.with(this)
+                .load("https://upload.wikimedia.org/wikipedia/commons/7/79/Yang_Liwei.jpg")
+                .into(imageView);
     }
 
 

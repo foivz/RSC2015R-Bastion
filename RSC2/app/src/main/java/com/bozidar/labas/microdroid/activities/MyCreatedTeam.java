@@ -1,10 +1,10 @@
 package com.bozidar.labas.microdroid.activities;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.bozidar.labas.gcm_microdroid.BusProvider;
 import com.bozidar.labas.gcm_microdroid.listener.RegistrationId;
@@ -108,13 +108,12 @@ public class MyCreatedTeam extends MicroActivity implements MicroRecyclerAdapter
     public void success(Response<List<Player>> listResponse, retrofit.client.Response response) {
         Log.d("dohvaceno", "dohvaceno");
         List<Player> players = listResponse.getData();
-        //teamName = players.get(0).getTeamName();
+        teamName = players.get(0).getTeamName();
         setRecyclerView(players);
     }
 
     @Override
     public void failure(RetrofitError error) {
-
     }
 
     @Override
@@ -143,6 +142,7 @@ public class MyCreatedTeam extends MicroActivity implements MicroRecyclerAdapter
     }
 
     public void teamLocked(){
-        Toast.makeText(this, "Team Created", Toast.LENGTH_LONG).show();
+         finish();
+        startActivity(new Intent(this, WaitForGameActivity.class));
     }
 }

@@ -35,8 +35,6 @@
     </RelativeLayout>
 
 
-
-
     <FrameLayout
         android:id="@+id/containerSearch"
         android:layout_width="match_parent"
