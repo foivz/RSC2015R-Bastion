@@ -134,7 +134,7 @@ class TeamController extends Controller
     public function players(){
         $user = Auth::user();
         $team = Team::where('team_leader',$user->email)->orderBy('created_at')->take(1)->get();
-
+        return $team;
         $players = User::where('team_id',$team->id)->get();
 
         for($i = 0;$i < count($players);$i++){
