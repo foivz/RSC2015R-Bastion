@@ -59,6 +59,8 @@ class NotificationController extends Controller
                 }
             }
         }
+        $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
+        return json_encode($responseArray);
 
     }
 
@@ -76,7 +78,8 @@ class NotificationController extends Controller
                     ->send($message);
             }
         }
-
+        $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
+        return json_encode($responseArray);
     }
 
     public function onlyTeamPlayers(Request $request) {
@@ -102,5 +105,7 @@ class NotificationController extends Controller
                 }
             }
         }
+        $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
+        return json_encode($responseArray);
     }
 }
