@@ -18,7 +18,7 @@ class NotificationController extends Controller
         $sender = Auth::user()->full_name;
         $player = $request->id;
         $message = $request->message;
-        if($message == 'Izbacen+si+iz+igre'){
+        if($message == 'Izbacen si iz igre'){
             $user = User::where('id',$player)->first();
             $user->status = 1;
             $user->save();
@@ -113,7 +113,7 @@ class NotificationController extends Controller
         $team = Team::where('id',$user->team_id)->first();
         $players = $team->users()->get();
         $message = $request->message;
-        if($message == 'Pogoden+san'){
+        if($message == 'Pogoden san'){
             $user = Auth::user();
             $user->status = 1;
             $user->save();
