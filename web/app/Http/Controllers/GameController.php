@@ -173,7 +173,7 @@ class GameController extends Controller
         $team  = Team::where('id',$user->team_id)->first();
         $team->score = $team->score + 5;
         $team->save();
-        $game = Game::where('status',1)->first();
+        $game = Game::where('status',2)->first();
         $winner = false;
         $winnerID = 1;
 
@@ -236,14 +236,14 @@ class GameController extends Controller
         $user = Auth::user();
         $user->status = 1;
         $user->save();
-        $game = Game::where('status',1)->first();
+        $game = Game::where('status',2)->first();
         $teams = $game->teams()->get();
         for($i = 0;$i < count($teams);$i++){
             if($teams[$i]->id != $user->team_id){
                 $team = $teams[$i];
                 $team->score = $team->score +2;
                 if($team->score >= 10){
-                    $game->status = 2;
+                    $game->status = 1;
                     $team->status = 1;
                     $game->save();
                 }
