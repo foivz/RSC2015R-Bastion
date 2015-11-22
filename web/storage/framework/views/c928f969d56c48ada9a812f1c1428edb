@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+
+<?php echo $__env->make('partials.headeradmin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <!-- ============================================================= MAIN ============================================================= -->
+
+<main>
+<div class="container" style="margin-top: 20px;">
+    <h1>Creating a new game</h1>
+    <div class="alert-success" style="margin-bottom: 10px;">
+        <?php if(Session::has('message')): ?>
+            <?php echo e(Session::get('message')); ?>
+
+            <?php endif; ?>
+    </div>
+    <form method="post" action="<?php echo e(url('game')); ?>">
+        <label>Team 1:</label>
+        <select name="team1">
+            <?php foreach($teams as $team): ?>
+                <option value="<?php echo e($team->id); ?>"><?php echo e($team->name); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <br>
+        <label>Team 2:</label>
+        <select name="team2">
+            <?php foreach($teams as $team): ?>
+                <option value="<?php echo e($team->id); ?>"><?php echo e($team->name); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <br>
+        <label>Choose map:</label>
+        <select name="map">
+            <?php foreach($maps as $map): ?>
+            <option value="<?php echo e($map->id); ?>"><?php echo e($map->name); ?></option>
+                <?php endforeach; ?>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-success">Create a game</button>
+    </form>
+</div>
+
+
+</main>
+
+<!-- ============================================================= MAIN : END ============================================================= -->
+
+
+<?php echo $__env->make('includes.scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('default.defaultadmin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
