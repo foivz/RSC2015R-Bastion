@@ -1,0 +1,78 @@
+PODS:
+  - Alamofire (3.1.2)
+  - Box (HEAD based on 2.0)
+  - CMDQueryStringSerialization (0.4.1):
+    - ISO8601
+  - cocoa-oauth (0.0.1):
+    - NSData+Base64 (~> 1.0)
+  - ISO8601 (0.3.0)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
+  - NSData+Base64 (1.0.0)
+  - QRCodeReader.swift (5.2.1)
+  - ReactiveCocoa (2.4.7):
+    - ReactiveCocoa/UI (= 2.4.7)
+  - ReactiveCocoa/Core (2.4.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.7)
+  - ReactiveCocoa/UI (2.4.7):
+    - ReactiveCocoa/Core
+  - Result (HEAD based on 0.6.0-beta.6)
+  - SimpleAuth/Core (0.3.9):
+    - CMDQueryStringSerialization
+    - ReactiveCocoa
+  - SimpleAuth/Facebook (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/FacebookWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Twitter (0.3.9):
+    - cocoa-oauth
+    - SimpleAuth/Core
+  - SwiftyJSON (2.3.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Box (HEAD)
+  - MMDrawerController
+  - QRCodeReader.swift (~> 5.2.1)
+  - ReactiveCocoa (= 2.4.7)
+  - Result (HEAD)
+  - SimpleAuth/Facebook
+  - SimpleAuth/FacebookWeb
+  - SimpleAuth/Twitter
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 10f67900bdf2fb0faba3371249a6fefdcaa880c5
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
+  Box: 70713ca3679e4e11ad4c470e9b58265f506fc659
+  CMDQueryStringSerialization: 4bb0a2f5e7d8d8678d911d88072274952cbef4e5
+  cocoa-oauth: 1200a2170276a62a975f2786d505dab6e2db1fa8
+  ISO8601: 8d8a22d5edf0554a1cf75bac028c76c1dc0ffaef
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
+  QRCodeReader.swift: 671627ada6872fbdc75bc99442f53f7fd81646aa
+  ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
+  Result: dc390d0b58f9ec43fcd536f1ebdd130803cc6cbc
+  SimpleAuth: bc7d594f90711a7e6ef7624dce5aa8c8b09770ab
+  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+
+COCOAPODS: 0.39.0
