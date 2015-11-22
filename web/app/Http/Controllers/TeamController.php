@@ -133,12 +133,12 @@ class TeamController extends Controller
 
     public function players(){
         $user = Auth::user();
-        $team = Team::where('team_leader',$user->email)->orderBy('created_at')->take(1)->get();
-        return $team;
-        $players = User::where('team_id',$team->id)->get();
+        $team = Team::where('team_leader',$user->email)->orderBy('created_at','desc')->take(1)->get();
+
+        $players = User::where('team_id',$team[0]->id)->get();
 
         for($i = 0;$i < count($players);$i++){
-            $players[$i]->team_name = $team->name;
+            $players[$i]->team_name = $team[0]->name;
         }
 
         $responseArray = array('status' => 'OK', 'message' => 'Success','data' => $players);
