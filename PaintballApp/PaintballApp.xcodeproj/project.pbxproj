@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205A23A31C016FEC0033BD8A /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A23A21C016FEC0033BD8A /* CoreLocationController.swift */; };
+		205A23A51C018B4D0033BD8A /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A23A41C018B4D0033BD8A /* DrawerController.swift */; };
 		20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC601C009DB800B2E0B3 /* AppDelegate.swift */; };
 		20B1FC631C009DB800B2E0B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FC621C009DB800B2E0B3 /* LoginController.swift */; };
 		20B1FC661C009DB800B2E0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B1FC641C009DB800B2E0B3 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		20B1FCBF1C01168E00B2E0B3 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCBE1C01168E00B2E0B3 /* GameController.swift */; };
 		20B1FCC11C013FAA00B2E0B3 /* CommunicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCC01C013FAA00B2E0B3 /* CommunicationController.swift */; };
 		20B1FCC31C01436300B2E0B3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCC21C01436300B2E0B3 /* WebViewController.swift */; };
+		20B1FCC51C01515400B2E0B3 /* JudgeFirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCC41C01515400B2E0B3 /* JudgeFirstController.swift */; };
+		20B1FCC71C015AE600B2E0B3 /* JudgeTeamListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1FCC61C015AE600B2E0B3 /* JudgeTeamListController.swift */; };
 		8C5382D2952AFB15F8C349F6 /* Pods_PaintballApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		0D1C88186BA383EC912A490C /* Pods-PaintballApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.release.xcconfig"; sourceTree = "<group>"; };
+		205A23A21C016FEC0033BD8A /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
+		205A23A41C018B4D0033BD8A /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; };
 		20B1FC5D1C009DB800B2E0B3 /* PaintballApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintballApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B1FC601C009DB800B2E0B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B1FC621C009DB800B2E0B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		20B1FCBE1C01168E00B2E0B3 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		20B1FCC01C013FAA00B2E0B3 /* CommunicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationController.swift; sourceTree = "<group>"; };
 		20B1FCC21C01436300B2E0B3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		20B1FCC41C01515400B2E0B3 /* JudgeFirstController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeFirstController.swift; sourceTree = "<group>"; };
+		20B1FCC61C015AE600B2E0B3 /* JudgeTeamListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeTeamListController.swift; sourceTree = "<group>"; };
 		98406466547FC7A4639438F9 /* Pods_PaintballApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintballApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3235854ACB6D0C386D10797 /* Pods-PaintballApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintballApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaintballApp/Pods-PaintballApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +228,9 @@
 				20B1FCBE1C01168E00B2E0B3 /* GameController.swift */,
 				20B1FCC01C013FAA00B2E0B3 /* CommunicationController.swift */,
 				20B1FCC21C01436300B2E0B3 /* WebViewController.swift */,
+				20B1FCC41C01515400B2E0B3 /* JudgeFirstController.swift */,
+				20B1FCC61C015AE600B2E0B3 /* JudgeTeamListController.swift */,
+				205A23A41C018B4D0033BD8A /* DrawerController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 			children = (
 				20B1FCA91C00AA5A00B2E0B3 /* PaintballApp-Bridging-Header.h */,
 				20B1FCB11C00AAF000B2E0B3 /* Constants.swift */,
+				205A23A21C016FEC0033BD8A /* CoreLocationController.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -483,11 +495,15 @@
 				20B1FCA31C00A31100B2E0B3 /* CustomImageView.swift in Sources */,
 				20B1FCB01C00AAC300B2E0B3 /* APIData.swift in Sources */,
 				20B1FCBB1C00E43800B2E0B3 /* UIAlertViewExtension.swift in Sources */,
+				20B1FCC51C01515400B2E0B3 /* JudgeFirstController.swift in Sources */,
 				20B1FC611C009DB800B2E0B3 /* AppDelegate.swift in Sources */,
+				205A23A51C018B4D0033BD8A /* DrawerController.swift in Sources */,
 				20B1FCC11C013FAA00B2E0B3 /* CommunicationController.swift in Sources */,
 				20B1FCB21C00AAF000B2E0B3 /* Constants.swift in Sources */,
 				20B1FCB41C00B12900B2E0B3 /* TeamListController.swift in Sources */,
+				205A23A31C016FEC0033BD8A /* CoreLocationController.swift in Sources */,
 				20B1FCA51C00A7B600B2E0B3 /* CustomView.swift in Sources */,
+				20B1FCC71C015AE600B2E0B3 /* JudgeTeamListController.swift in Sources */,
 				20B1FCB91C00D34B00B2E0B3 /* PlayerListController.swift in Sources */,
 				20B1FCA81C00A7F500B2E0B3 /* UIViewExtension.swift in Sources */,
 				20B1FCBF1C01168E00B2E0B3 /* GameController.swift in Sources */,

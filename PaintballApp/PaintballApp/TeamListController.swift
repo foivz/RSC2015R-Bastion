@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import MMDrawerController
+
 
 class TeamListController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate {
     
@@ -54,6 +56,10 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func clickPlusButton(sender: AnyObject) {
         alert?.show()
+    }
+    
+    @IBAction func clickHamburger(sender: AnyObject) {
+        self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     func getData() {

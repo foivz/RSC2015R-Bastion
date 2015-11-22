@@ -13,6 +13,7 @@ pod 'Box', :head
 pod 'Result', :head
 pod 'ReactiveCocoa', '2.4.7'
 pod 'QRCodeReader.swift', '~> 5.2.1'
+pod 'MMDrawerController'
 
 end
 

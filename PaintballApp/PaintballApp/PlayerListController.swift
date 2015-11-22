@@ -7,20 +7,21 @@
 //
 
 import UIKit
-import QRCodeReader
 import AVFoundation
 import SwiftyJSON
 
-class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate {
+class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var indexOfTeam: Int = 0
     var teamName: String = ""
     var data: JSON = nil
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewWaitingForBegining: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewWaitingForBegining.hidden = true
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -50,6 +51,8 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func clickedLockButton(sender: AnyObject) {
         APIData.sharedInstance.lockTeam(teamName, withSuccess: { (json: JSON) -> Void in
             
+            self.viewWaitingForBegining.hidden = false
+            
             }) { (error: NSError) -> Void in
                 
         }
@@ -65,6 +68,15 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func refreshList(notification: NSNotification) {
+        if notification.userInfo != nil {
+            let string: String = (notification.userInfo!["aps"]!["alert"]) as! String
+            if string == "Igra pocinje!" {
+                self.viewWaitingForBegining.hidden = true
+                let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("GameController") as! GameController
+                self.navigationController?.showViewController(nextController, sender: nil)
+            }
+        }
+        
         
         APIData.sharedInstance.getYourPlayers(indexOfTeam, withSuccess: { (json: JSON) -> Void in
 
@@ -78,30 +90,4 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
-    
-    //QRCODE READER
-    func clickQRCodeStartScaning() {
-        reader.delegate = self
-        
-        // Or by using the closure pattern
-        reader.completionBlock = { (result: String?) in
-            print(result)
-        }
-        
-        // Presents the reader as modal form sheet
-        reader.modalPresentationStyle = .FormSheet
-        presentViewController(reader, animated: true, completion: nil)
-    }
-    
-    lazy var reader = QRCodeReaderViewController(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
-    
-    // MARK: - QRCodeReader Delegate Methods
-    func readerDidCancel(reader: QRCodeReaderViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func reader(reader: QRCodeReaderViewController, didScanResult result: String) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 }

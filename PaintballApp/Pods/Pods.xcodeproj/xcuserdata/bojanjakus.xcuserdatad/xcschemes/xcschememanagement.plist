@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MMDrawerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NSData+Base64.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,11 +77,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04728B5DBE34083361997296627AD0E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0EA1AF77E281BFE665CC0031A7EFE6A5</key>
 		<dict>
 			<key>primary</key>
@@ -87,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2817A2209CFD6E4E4089A677BC57EE4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F9912775473A057A1BEE942E87BEDCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3892D09EFC2E84213B291FA6854A687C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BA15834E9D5F01C38DC3EAD47AD2ED3</key>
+		<key>58EDA109FD0822ACA26BFB7383B59E25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87BE896A5AB28C2B9A2A35B687CF45F2</key>
+		<key>93BE2FFAB7DA264848E957AF995A291D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D3562E47E4792B0A6093A0323EB398</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A44E82135F3C74C3AB2647C05790E0F3</key>
+		<key>CC1FA246DF51647F02011CBEF0CC38FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCD5537A6DDD55C196A63D7C1689FBB3</key>
+		<key>D5CB15CD36581ABEA690AD66B07B9B5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDF2B8413B32B11B939CD92FBC8A7265</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FACC44D8619B38797C7BCD20E4DFA36E</key>
+		<key>E277E2B502B258F976AFC8B90E470F16</key>
 		<dict>
 			<key>primary</key>
 			<true/>

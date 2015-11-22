@@ -93,4 +93,21 @@ class APIUser {
         
     }
     
+    
+    
+    func setUserID(token: String) {
+        
+        let preferences = NSUserDefaults.standardUserDefaults()
+        preferences.setObject(token, forKey: "userID")
+        preferences.synchronize()
+        
+    }
+    
+    func getUserID() -> String {
+        
+        let preferences = NSUserDefaults.standardUserDefaults()
+        return preferences.objectForKey("userID") as! String
+        
+    }
+    
 }

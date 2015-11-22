@@ -16,7 +16,7 @@ class GameController: UIViewController {
     @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
     @IBOutlet weak var scrollViewController: UIScrollView!
     var numberOfScreens: CGFloat = 2
-    var cutBottomEdge: CGFloat = 58
+    var cutBottomEdge: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +28,14 @@ class GameController: UIViewController {
     
     func putControllers() {
         let width = self.view.frame.size.width
-        let mapsController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController")
+        let mapsController: WebViewController = self.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
+        mapsController.webViewURL = "\(Constants.kMAPTEAM)/\(APIUser.sharedInstance.getUserID())"
         let communicationController = self.storyboard?.instantiateViewControllerWithIdentifier("ComunicattionsController")
-        mapsController!.view.frame = CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height-cutBottomEdge)
+        mapsController.view.frame = CGRect(x: 0, y: 0, width: width, height: self.view.frame.size.height-cutBottomEdge)
         communicationController!.view.frame = CGRect(x: width, y: 0, width: width, height: self.view.frame.size.height-cutBottomEdge)
-        self.addChildViewController(mapsController!)
+        self.addChildViewController(mapsController)
         self.addChildViewController(communicationController!)
-        self.viewScrollViewContent.addSubview((mapsController?.view)!)
+        self.viewScrollViewContent.addSubview((mapsController.view)!)
         self.viewScrollViewContent.addSubview((communicationController?.view)!)
         
     }

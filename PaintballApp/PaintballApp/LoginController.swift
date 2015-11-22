@@ -9,6 +9,7 @@
 import UIKit
 import SimpleAuth
 import SwiftyJSON
+import MMDrawerController
 
 class LoginController: UIViewController, UITextFieldDelegate {
     
@@ -86,12 +87,24 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     if !token.isEmpty && token != "" {
                         
                         APIUser.sharedInstance.setToken("Bearer \(token)")
+                        APIUser.sharedInstance.setUserID(json["data"]["id"].string!)
+                        print(json)
+                        
                         
                         if let role = json["data"]["role"].string {
                             //ako je user
                             if role == "1" {
+                                
                                 let teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
-                                self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
+                                let drawerLController = self.storyboard?.instantiateViewControllerWithIdentifier("DrawerController")
+                                
+                                let drawerController = MMDrawerController(centerViewController: teamListNavigationController, leftDrawerViewController: drawerLController)
+                                drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
+                                drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureMode.All
+                                
+                                self.presentViewController(drawerController!, animated: true, completion: nil)
+                                
+                                
                                 //ako je sudac
                             } else {
                                 let judgeController = self.storyboard?.instantiateViewControllerWithIdentifier("JudgeFirstScreen")

@@ -11,11 +11,12 @@ import UIKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var webview: UIWebView!
+    var webViewURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.webview.loadRequest(NSURLRequest(URL: NSURL(string: "http://www.bug.hr")!))
+        self.webview.loadRequest(NSURLRequest(URL: NSURL(string: webViewURL)!))
         
     }
 

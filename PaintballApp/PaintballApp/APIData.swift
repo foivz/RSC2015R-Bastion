@@ -90,14 +90,106 @@ class APIData {
         Alamofire.request(.POST, Constants.kLOCKTEAM, parameters: ["teamname" : teamName], headers: ["Authorization": getToken])
             .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
                 
-                print(response)
-                print(data)
-                print(response)
                 
                 let json = JSON(data: data!)
                 
+                withSuccess(json)
+                print(json)
+                
+        }
+    }
+    
+    
+    
+    func fetchTeamsAndPlayers(withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.GET, Constants.kTEAMSANDPLAYERS, headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                
+                let json = JSON(data: data!)
+                
+                withSuccess(json)
+                
+        }
+    }
+    
+    
+    func eliminatePlayer(id: Int, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, "\(Constants.kELIMINATEPLAYER)/\(id)", parameters: ["message" : "izbačen si iz igre"], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
                 print(json)
                 withSuccess(json)
+                
+        }
+    }
+    
+    
+    
+    func sendTeamMessage(message: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, Constants.kSENDTEAMMESSAGE, parameters: ["message" : message], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
+                withSuccess(json)
+                
+                print(json)
+                
+        }
+    }
+    
+    
+    
+    
+    func sendToJudge(message: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, Constants.kSENDTOJUDGE, parameters: ["message" : message], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
+                withSuccess(json)
+                
+                print(json)
+                
+        }
+    }
+    
+    
+    
+    func reportFlag(withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, Constants.kSCANREQUEST, headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
+                withSuccess(json)
+                
+                print(json)
+                
+        }
+    }
+    
+    
+    
+    func sendGeolocation(lati: String, long: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, Constants.kSCANREQUEST, parameters: ["lati" : lati, "long" : long],  headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
+                withSuccess(json)
+                
+                print(json)
                 
         }
     }
