@@ -133,7 +133,7 @@ class GameController extends Controller
 
 
     public function viewMy($id){
-        $user = User::where('email',$id)->first();
+        $user = User::where('id',$id)->first();
         $game = Game::where('status',1)->first();
         $map = Map::where('id',$game->map_id)->first();
         $teams = $game->teams()->get();
