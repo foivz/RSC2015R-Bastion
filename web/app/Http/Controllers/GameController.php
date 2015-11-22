@@ -173,7 +173,7 @@ class GameController extends Controller
         $team  = Team::where('id',$user->team_id)->first();
         $team->score = $team->score + 5;
         $team->save();
-        $game = Game::where('status',2)->first();
+        $game = Game::where('status',1)->first();
         $winner = false;
         $winnerID = 1;
 
@@ -220,7 +220,7 @@ class GameController extends Controller
                     }
                 }
             }
-            $game->status = 1;
+            $game->status = 2;
             $game->save();
             $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
             return json_encode($responseArray);

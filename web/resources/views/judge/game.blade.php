@@ -18,14 +18,18 @@
         <label>Team 1:</label>
         <select name="team1">
             @foreach($teams as $team)
+                @if($team->status == 2)
                 <option value="{{ $team->id }}">{{$team->name}}</option>
+                @endif
             @endforeach
         </select>
         <br>
         <label>Team 2:</label>
         <select name="team2">
             @foreach($teams as $team)
+                @if($team->status == 2)
                 <option value="{{ $team->id }}">{{$team->name}}</option>
+                @endif
             @endforeach
         </select>
         <br>
