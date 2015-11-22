@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_settings"
+            android:title="Home"/>
+        <item
+            android:id="@+id/game_list"
+            android:icon="@mipmap/ic_settings"
+            android:title="Lista igara"/>
+        <item
+            android:id="@+id/igra"
+            android:icon="@mipmap/ic_settings"
+            android:title="Igra"/>
+    </group>
+    <group android:id="@+id/my_id">
+        <item
+            android:id="@+id/scan"
+            android:icon="@mipmap/ic_settings"
+            android:title="Scan"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/ic_settings"
+            android:title="Logout"/>
+    </group>
+
+
+</menu>

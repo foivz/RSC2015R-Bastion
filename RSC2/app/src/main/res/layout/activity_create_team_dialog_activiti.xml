@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="10dp"
+        android:layout_marginRight="1.0dip"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KREIRANJE TIMA"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/et_team_name"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Naziv tima"/>
+
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/btn_create_team"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KREIRAJ"
+                android:gravity="right"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+
+
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+</RelativeLayout>

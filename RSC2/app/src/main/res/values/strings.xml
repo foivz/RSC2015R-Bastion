@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">RSC</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="prefs_name">RSCPrefs</string>
+
+    <string-array name="salji_igracima">
+        <item>Pogoden sam</item>
+        <item>Treba mi pomoc</item>
+        <item>Neprijatelj u blizini</item>
+        <item>Kifla, nemam metaka</item>
+        <item>Uzmite pusku u ruke i aaaajmoooo</item>
+        <item>Ajmo gospodo jedan po jedan</item>
+    </string-array>
+
+    <string-array name="sudac_salji_timovima">
+        <item>Izbacen si iz igre</item>
+        <item>Opomena</item>
+        <item>Zadnja opomena</item>
+    </string-array>
+
+    <string-array name="salji_sudcu">
+        <item>Sudac, drugi tima vara</item>
+        <item>Bojim se</item>
+        <item>Strah me za zivot</item>
+        <item>Vadi me van</item>
+    </string-array>
+
+    <string name="title_activity_judge">JudgeActivity</string>
+    <string name="title_activity_judge_communication">JudgeCommunicationActivity</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bozidar.labas.microdroid" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <service
+        android:name=".MyService"
+        android:process=":my_service" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name=".activities.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.RegistrationActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activities.TutorialActivity" >
+        </activity>
+        <activity
+            android:name=".activities.CreateTeamDialogActivity"
+            android:theme="@style/AppTheme.DialogCustom" >
+        </activity>
+        <activity
+            android:name=".activities.QRCodeActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activities.MainActivity" >
+        </activity>
+        <activity android:name=".activities.MyCreatedTeam" >
+        </activity>
+        <activity
+            android:name=".activities.JudgeActivity"
+            android:label="@string/title_activity_judge"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".activities.JudgeCommunicationActivity"
+            android:label="@string/title_activity_judge_communication"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activities.WaitForGameActivity" >
+        </activity>
+        <activity android:name=".activities.HelloAndroidGpsActivity" >
+        </activity>
+        <activity android:name=".activities.WinnerLooserActivity" >
+        </activity>
+    </application>
+
+</manifest>
