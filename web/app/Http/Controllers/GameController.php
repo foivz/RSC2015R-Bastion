@@ -154,7 +154,7 @@ class GameController extends Controller
     public function trackloc(Request $request){
 
         $lat = $request->input('lati');
-        $long = $request->input('lati');
+        $long = $request->input('long');
 
         $user = Auth::user();
         $user->long = $long;
