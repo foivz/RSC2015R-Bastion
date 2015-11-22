@@ -46,6 +46,8 @@ Route::get('/adminview', function () {
 
 });
 
+Route::post('game','GameController@createGame');
+
 
 Route::post('/save', 'GameController@store');
 
