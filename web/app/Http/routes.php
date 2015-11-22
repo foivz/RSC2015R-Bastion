@@ -143,7 +143,7 @@ Route::group(['prefix' => 'api'], function()
             $users = \App\User::where('team_id',$id)->get();
             return $users;
         });
-        Route::post('/listatimova','TeamController@listatimova');
+        Route::get('/listatimova','TeamController@listatimova');
 
         Route::get('/myplayers', 'TeamController@players');
         Route::post('/lockteam','TeamController@lock');
