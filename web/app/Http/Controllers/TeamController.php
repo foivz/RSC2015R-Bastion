@@ -148,4 +148,13 @@ class TeamController extends Controller
         $responseArray = array('status' => 'OK', 'message' => 'Success','data' => $players);
         return json_encode($responseArray);
     }
+
+    public function lock(){
+        $user = Auth::user();
+        $team = Team::where('team_leader',$user->email)->orderBy('created_at','desc')->take(1)->get();
+
+
+
+    }
+
 }

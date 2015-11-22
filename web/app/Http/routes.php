@@ -103,7 +103,7 @@ Route::group(['prefix' => 'api'], function()
                     ->to($user1->gcm_id)
                     ->send('Novi igrač želi u vaš team!');
             } else {
-                PushNotification::app('iOS')
+                PushNotification::app('ios')
                     ->to($user1->gcm_id)
                     ->send('Novi igrač želi u vaš team!');
             }
@@ -119,7 +119,7 @@ Route::group(['prefix' => 'api'], function()
 
 
         Route::get('/myplayers', 'TeamController@players');
-
+        Route::get('/lockteam','TeamController@lock');
 
 
     });
