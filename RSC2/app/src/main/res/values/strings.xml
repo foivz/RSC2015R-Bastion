@@ -13,5 +13,13 @@
         <item>Uzmite pusku u ruke i aaaajmoooo</item>
         <item>Ajmo gospodo jedan po jedan</item>
     </string-array>
+
+    <string-array name="sudac_salji_timovima">
+        <item>Izbacen si iz igre</item>
+        <item>Opomena</item>
+        <item>Zadnja opomena</item>
+    </string-array>
+
     <string name="title_activity_judge">JudgeActivity</string>
+    <string name="title_activity_judge_communication">JudgeCommunicationActivity</string>
 </resources>

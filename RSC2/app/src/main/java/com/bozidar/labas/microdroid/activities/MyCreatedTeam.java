@@ -108,7 +108,7 @@ public class MyCreatedTeam extends MicroActivity implements MicroRecyclerAdapter
     public void success(Response<List<Player>> listResponse, retrofit.client.Response response) {
         Log.d("dohvaceno", "dohvaceno");
         List<Player> players = listResponse.getData();
-        teamName = players.get(0).getTeamName();
+        //teamName = players.get(0).getTeamName();
         setRecyclerView(players);
     }
 

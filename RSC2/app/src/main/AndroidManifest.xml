@@ -3,6 +3,8 @@
     package="com.bozidar.labas.microdroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -39,6 +41,13 @@
             android:label="@string/title_activity_judge"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".activities.JudgeCommunicationActivity"
+            android:label="@string/title_activity_judge_communication"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
+
+    <service android:name=".MyService" android:process=":my_service" />
 
 </manifest>

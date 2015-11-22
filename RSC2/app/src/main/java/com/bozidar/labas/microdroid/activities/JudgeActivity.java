@@ -52,10 +52,9 @@ public class JudgeActivity extends MicroActivity implements Callback<Response<Li
 
     @Override
     public void init() {
-
         user = prefs.loadObject(getResources().getString(R.string.user_data), this);
         sendRequestToServer();
-        setUpTabs();
+       // setUpTabs();
     }
 
     private void sendRequestToServer() {
@@ -64,11 +63,12 @@ public class JudgeActivity extends MicroActivity implements Callback<Response<Li
         api.fetchPreparedTeams(tokenFormat, this);
     }
 
-    public void setUpTabs() {
+    public void setUpTabs(PreparedTeamResponse firstTeam, PreparedTeamResponse secondTeam) {
         MicroTabManager microTabManager = new MicroTabManager(getSupportFragmentManager(), viewPager, tabLayout);
         JudgeFragmentMap mapFragment = JudgeFragmentMap.newInstance("Mapa");
-        JudgeFragmentTeamOne fragmentTeamOne = JudgeFragmentTeamOne.newInstance("Tim 1");
-        JudgeFragmentTeamOne fragmentTeamTwo = JudgeFragmentTeamOne.newInstance("Tim 2");
+        Log.d("ddsfsdf", firstTeam.getPlayers().get(0).getName());
+        JudgeFragmentTeamOne fragmentTeamOne = JudgeFragmentTeamOne.newInstance("Tim 1", firstTeam);
+        JudgeFragmentTeamOne fragmentTeamTwo = JudgeFragmentTeamOne.newInstance("Tim 2", secondTeam);
         microTabManager.addTab(mapFragment);
         microTabManager.addTab(fragmentTeamOne);
         microTabManager.addTab(fragmentTeamTwo);
@@ -79,6 +79,9 @@ public class JudgeActivity extends MicroActivity implements Callback<Response<Li
     @Override
     public void success(Response<List<PreparedTeamResponse>> listResponse, retrofit.client.Response response) {
         Log.d("success", "success");
+        PreparedTeamResponse firstTeam = listResponse.getData().get(0);
+        PreparedTeamResponse secondTeam = listResponse.getData().get(1);
+        setUpTabs(firstTeam, secondTeam);
     }
 
     @Override

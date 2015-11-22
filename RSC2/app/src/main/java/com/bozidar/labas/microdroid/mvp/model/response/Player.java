@@ -9,22 +9,15 @@ import java.io.Serializable;
  */
 public class Player implements Serializable {
 
-    @SerializedName("name")
-    private String name;
+    @SerializedName("full_name")
+    private String fullName;
 
     @SerializedName("id")
     private String id;
 
-    @SerializedName("team_name")
-    private String teamName;
+    @SerializedName("name")
+    private String name;
 
-    public String getTeamName() {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
 
     public String getName() {
         return name;

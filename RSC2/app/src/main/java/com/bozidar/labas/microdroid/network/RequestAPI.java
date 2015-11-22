@@ -62,8 +62,8 @@ public interface RequestAPI {
     @FormUrlEncoded
     @POST("/api/team")
     void createTeam(@Header("Authorization") String token,
-                       @Field("name") String teamName,
-                       Callback<Response<String>> response);
+                    @Field("name") String teamName,
+                    Callback<Response<String>> response);
 
     @FormUrlEncoded
     @POST("/api/join/{id}")
@@ -72,9 +72,22 @@ public interface RequestAPI {
                   @Field("id") int id2,
                   Callback<Response<String>> response);
 
-    @POST("/api/listatimova")
+    @FormUrlEncoded
+    @POST("/api/judgeeliminate/{id}")
+    void sendPush(@Header("Authorization") String token,
+                  @Path("id") String id,
+                  @Field("message") String message,
+                  Callback<Response<String>> response);
+
+    @FormUrlEncoded
+    @POST("/api/notify/teamplayers")
+    void sendPushToMyComrade(@Header("Authorization") String token,
+                  @Field("message") String message,
+                  Callback<Response<String>> response);
+
+    @GET("/api/listatimova")
     void fetchPreparedTeams(@Header("Authorization") String token,
-                  Callback<Response<List<PreparedTeamResponse>>> response);
+                            Callback<Response<List<PreparedTeamResponse>>> response);
 
     @FormUrlEncoded
     @POST("/api/lockteam")
