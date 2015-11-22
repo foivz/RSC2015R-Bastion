@@ -16,11 +16,19 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    return view('judge.test');
 });
 
 Route::get('/view', function () {
-    return view('prikaz');
+    return view('spectate');
+});
+
+Route::get('/vieww', function () {
+    return view('spectate1');
+});
+
+Route::get('admin', function() {
+    return view('judge.index');
 });
 
 Route::get('/home', function () {
@@ -29,6 +37,13 @@ Route::get('/home', function () {
 
 Route::get('/adminview', function () {
     return view('adminlive');
+});
+
+    Route::get('game', function() {
+    $teams = \App\Team::all();
+    $maps = \App\Map::all();
+    return view('judge.game')->with('teams',$teams)->with('maps',$maps);
+
 });
 
 
