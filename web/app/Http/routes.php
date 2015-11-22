@@ -28,7 +28,9 @@ Route::get('/vieww', function () {
 });
 
 Route::get('admin', function() {
-    return view('judge.index');
+    $countGames = \App\Game::count();
+    $countUsers = \App\User::where('role',1)->count();
+    return view('judge.index')->with('countGames',$countGames)->with('countUsers',$countUsers);
 });
 
 Route::get('/home', function () {
