@@ -24,13 +24,64 @@ class NotificationController extends Controller
             $user->save();
             $game = Game::where('status',1)->first();
             $teams = $game->teams()->get();
+            $winner = false;
+            $winnerID = 1;
             for($i = 0;$i < count($teams);$i++){
                 if($teams[$i]->id != $user->team_id){
                     $team = $teams[$i];
                     $team->score = $team->score + 2;
                     $team->save();
+                    if($team->score >= $game->score){
+                        $winner = true;
+                        $winnerID = $team->id;
+                        //kraj foreacha
+                    }//if ako je doslo do promjene rezultata
                 }
             }
+
+            if($winner){
+                $teams = $game->teams()->get();
+                //$users = $team->users()->get();
+
+                for($i=0;$i<count($teams);$i++){
+                    $users = $teams[$i]->users()->get();
+                    $team = $teams[$i];
+                    $team->status = 1;
+                    $team->save();
+                    foreach($users as $u){
+                        if($u->gcm_id){
+                            if($winnerID == $u->team_id){
+                                if($u->device == 'android') {
+                                    PushNotification::app('android')
+                                        ->to($u->gcm_id)
+                                        ->send('Pobjednik');
+                                } else {
+                                    PushNotification::app('iOS')
+                                        ->to($u->gcm_id)
+                                        ->send('Pobjednik');
+                                }
+                            }
+                            else{
+                                if($u->device == 'android') {
+                                    PushNotification::app('android')
+                                        ->to($u->gcm_id)
+                                        ->send('Gubitnik');
+                                } else {
+                                    PushNotification::app('iOS')
+                                        ->to($u->gcm_id)
+                                        ->send('Gubitnik');
+                                }
+                            }
+
+                        }
+                    }
+                }
+                $game->status = 1;
+                $game->save;
+                $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
+                return json_encode($responseArray);
+
+            }//ako je pobjednik
 
             if($user->gcm_id){
                 if($user->device == 'android') {
@@ -113,6 +164,8 @@ class NotificationController extends Controller
         $team = Team::where('id',$user->team_id)->first();
         $players = $team->users()->get();
         $message = $request->message;
+        $winner = false;
+        $winnerID = 1;
         if($message == 'Pogoden sam'){
             $user = Auth::user();
             $user->status = 1;
@@ -123,17 +176,60 @@ class NotificationController extends Controller
                 if($teams[$i]->id != $user->team_id){
                     $team = $teams[$i];
                     $team->score = $team->score +2;
-                    /*
-                    if($team->score >= 10){
-                        $game->status = 2;
-                        $team->status = 1;
-                        $game->save();
+                    if($team->score >= $game->score){
+                        $winner = true;
+                        $winnerID = $team->id;
+                        //kraj foreacha
                     }
-                    */
                     $team->save();
                 }
             }
         }
+
+        if($winner){
+            $teams = $game->teams()->get();
+            //$users = $team->users()->get();
+
+            for($i=0;$i<count($teams);$i++){
+                $users = $teams[$i]->users()->get();
+                $team = $teams[$i];
+                $team->status = 1;
+                $team->save();
+                foreach($users as $u){
+                    if($u->gcm_id){
+                        if($winnerID == $u->team_id){
+                            if($u->device == 'android') {
+                                PushNotification::app('android')
+                                    ->to($u->gcm_id)
+                                    ->send('Pobjednik');
+                            } else {
+                                PushNotification::app('iOS')
+                                    ->to($u->gcm_id)
+                                    ->send('Pobjednik');
+                            }
+                        }
+                        else{
+                            if($u->device == 'android') {
+                                PushNotification::app('android')
+                                    ->to($u->gcm_id)
+                                    ->send('Gubitnik');
+                            } else {
+                                PushNotification::app('iOS')
+                                    ->to($u->gcm_id)
+                                    ->send('Gubitnik');
+                            }
+                        }
+
+                    }
+                }
+            }
+            $game->status = 1;
+            $game->save;
+            $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
+            return json_encode($responseArray);
+
+        }//ako je pobjednik
+
         foreach($players as $p){
             if($p->id == $user->id) {
 

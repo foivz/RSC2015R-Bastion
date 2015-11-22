@@ -16,6 +16,7 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->integer('status')->nullable();
             $table->integer('map_id')->unsigned();
+            $table->integer('score')->unsigned();
             $table->timestamps();
         });
     }

@@ -35,3 +35,10 @@ $factory->define(App\Group::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
     ];
 });
+
+$factory->define(App\Marker::class, function (Faker\Generator $faker) {
+    return [
+        'type' => 1,
+    ];
+});
+
