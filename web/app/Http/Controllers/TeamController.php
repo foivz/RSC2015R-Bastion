@@ -162,7 +162,7 @@ class TeamController extends Controller
 
     }
 
-    public function teams(){
+    public function teamsshow(){
 
         $game = Game::where('status',1)->first();
         $teams = $game->teams()->get();
