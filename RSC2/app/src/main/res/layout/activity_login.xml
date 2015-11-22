@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"/>
 
             <EditText
-                android:text="jtrupina@gmail.com"
+                android:text="email1@gmail.com"
                 android:id="@+id/etEmail"
                 style="@style/FormEditText"
                 android:layout_width="fill_parent"
@@ -57,7 +57,7 @@
                 android:singleLine="true" />
 
             <EditText
-                android:text="111"
+                android:text="123456"
                 android:id="@+id/etPassword"
                 style="@style/FormEditText"
                 android:layout_width="fill_parent"

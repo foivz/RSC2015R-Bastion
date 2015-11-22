@@ -2,10 +2,12 @@ package com.bozidar.labas.microdroid.mvp.model.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Bozidar on 22.11.2015..
  */
-public class Player {
+public class Player implements Serializable {
 
     @SerializedName("name")
     private String name;

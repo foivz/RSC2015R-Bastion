@@ -4,6 +4,7 @@ import com.bozidar.labas.microdroid.mvp.model.CreatedTeamModel;
 import com.bozidar.labas.microdroid.mvp.model.LoginModel;
 import com.bozidar.labas.microdroid.mvp.model.response.LoginResponse;
 import com.bozidar.labas.microdroid.mvp.model.response.Player;
+import com.bozidar.labas.microdroid.mvp.model.response.PreparedTeamResponse;
 import com.bozidar.labas.microdroid.mvp.model.response.RegistrationResponse;
 import com.bozidar.labas.microdroid.mvp.model.response.Response;
 
@@ -70,6 +71,10 @@ public interface RequestAPI {
                   @Path("id") int id,
                   @Field("id") int id2,
                   Callback<Response<String>> response);
+
+    @POST("/api/listatimova")
+    void fetchPreparedTeams(@Header("Authorization") String token,
+                  Callback<Response<List<PreparedTeamResponse>>> response);
 
     @FormUrlEncoded
     @POST("/api/lockteam")
