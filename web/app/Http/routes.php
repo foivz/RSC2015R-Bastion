@@ -118,7 +118,7 @@ Route::group(['prefix' => 'api'], function()
         });
 
 
-        Route::get('/myplayers', 'Auth\TeamController@players');
+        Route::get('/myplayers', 'TeamController@players');
 
 
 
