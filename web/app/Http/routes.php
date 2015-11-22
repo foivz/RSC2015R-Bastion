@@ -43,6 +43,13 @@ Route::get('/viewmyteam/{id}', function () {
     return view('myteam');
 });
 
+Route::get('/query', function() {
+    $playersTeam1 = \App\User::where('team_id',1)->get();
+    foreach($playersTeam1 as $playerTeam1) {
+        echo $playerTeam1->gcm_id;
+    }
+});
+
     Route::get('game', function() {
     $teams = \App\Team::all();
     $maps = \App\Map::all();
