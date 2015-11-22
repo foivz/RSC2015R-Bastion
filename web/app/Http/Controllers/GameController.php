@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Game;
 use App\Map;
 use App\Marker;
+use App\Team;
+
 use App\User;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -77,6 +80,27 @@ class GameController extends Controller
         return json_encode($array);
     }
 
+    public function createGame(Request $request) {
+        $game = new Game();
+        $game->status = 2;
+        $game->map_id = $request->input('map');
+        $game->save();
+        $idGame = $game->id;
+
+        $idTeam1 = $request->input('team1');
+        $idTeam2 = $request->input('team2');
+        $team1 = Team::find($idTeam1);
+        $team1->game_id = $idGame;
+        $team1->save();
+
+        $team2 = Team::find($idTeam2);
+        $team2->game_id = $idGame;
+        $team2->save();
+
+        return redirect('game')->with('message','Succesfully created game!');
+    }
+
+
     public function viewMy($id){
         $user = User::where('email',$id)->first();
         $game = Game::where('status',1)->first();
@@ -93,6 +117,7 @@ class GameController extends Controller
         return json_encode($array);
 
     }
+
 
 
 }

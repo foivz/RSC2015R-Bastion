@@ -50,6 +50,8 @@ Route::get('/viewmyteam/{id}', function () {
 
 });
 
+Route::post('game','GameController@createGame');
+
 
 Route::post('/save', 'GameController@store');
 
