@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -158,6 +159,18 @@ class TeamController extends Controller
         $team->save();
         $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
         return json_encode($responseArray);
+
+    }
+
+    public function teams(){
+
+        $game = Game::where('status',1)->first();
+        $teams = $game->teams()->get();
+        for($i = 0;$i < count($teams);$i++){
+            $teams[$i]->players = $teams[$i]->users()->get();
+        }
+        $array = array('status' => 'OK', 'message' => 'Success','data' => $teams);
+        return json_encode($array);
 
     }
 
