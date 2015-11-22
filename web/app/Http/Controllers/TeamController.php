@@ -163,7 +163,7 @@ class TeamController extends Controller
     }
 
     public function listatimova(){
-        return "ćaća";
+
         $game = Game::where('status',1)->first();
         $teams = $game->teams()->get();
         for($i = 0;$i < count($teams);$i++){
