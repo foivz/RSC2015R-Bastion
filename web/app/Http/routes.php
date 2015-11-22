@@ -153,9 +153,9 @@ Route::group(['prefix' => 'api'], function()
         Route::post('/getflag','GameController@flag');
 
         Route::post('notify/players','NotificationController@judgeToPlayers');
-        Route::post('notify/team','NotificationController@judgeToTeams');
-        //Route::post('notify/players','NotificationController@playersToJudge');
-        //Route::post('notify/players','NotificationController@onlyTeamPlayers');
+        Route::post('notify/teams','NotificationController@judgeToTeams');
+        Route::post('notify/judge','NotificationController@playersToJudge');
+        Route::post('notify/teamplayers','NotificationController@onlyTeamPlayers');
 
     });
 });
