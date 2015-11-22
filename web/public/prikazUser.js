@@ -111,7 +111,7 @@ $(document).ready( function() {
         $idTima = $('#idTima').val();
         $.ajax({
             type: "POST",
-            url: "/viewMy",
+            url: "/viewMy/"+$idTima,
             async:false,
             dataType: "json",
             success: function (data, status, xhr) {

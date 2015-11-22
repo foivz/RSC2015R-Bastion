@@ -66,7 +66,7 @@ Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
 
-Route::post('/viewMy', 'GameController@viewMy');
+Route::post('/viewMy/{id}', 'GameController@viewMy');
 
 Route::resource('profile','ProfileController');
 
