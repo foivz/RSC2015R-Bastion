@@ -83,7 +83,7 @@ class GameController extends Controller
 
     public function createGame(Request $request) {
         $game = new Game();
-        $game->status = 2;
+        $game->status = 1;
         $game->map_id = $request->input('map');
         $game->save();
         $idGame = $game->id;
@@ -94,24 +94,56 @@ class GameController extends Controller
         $team1->game_id = $idGame;
         $team1->save();
 
+        $players = $team1->users()->get();
+        foreach($players as $p){
+            if($p->gcm_id){
+                if($p->device == 'android') {
+                    PushNotification::app('android')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                } else {
+                    PushNotification::app('iOS')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                }
+            }
+        }
+
         $team2 = Team::find($idTeam2);
         $team2->game_id = $idGame;
         $team2->save();
+
+        $players = $team2->users()->get();
+        foreach($players as $p){
+            if($p->gcm_id){
+                if($p->device == 'android') {
+                    PushNotification::app('android')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                } else {
+                    PushNotification::app('iOS')
+                        ->to($p->gcm_id)
+                        ->send("Igra pocinje!");
+                }
+            }
+        }
 
         return redirect('game')->with('message','Succesfully created game!');
     }
 
 
     public function viewMy($id){
-        $user = User::where('email',$id)->first();
+        $user = User::where('team_id',$id)->first();
         $game = Game::where('status',1)->first();
         $map = Map::where('id',$game->map_id)->first();
         $teams = $game->teams()->get();
         $markers = $map->markers()->get();
 
         for($i = 0;$i < count($teams);$i++){
-            $users = User::where('team_id',$user->team_id)->get();
-            $teams[$i]->players = $teams[$i]->$users;
+            if($teams[$i]->id == $user->team_id){
+                $users = User::where('team_id',$user->team_id)->get();
+                $teams[$i]->players = $users;
+            }
         }
 
         $array = array('markers' => $markers, 'map' =>$map,'teams'=> $teams);
@@ -121,8 +153,8 @@ class GameController extends Controller
 
     public function trackloc(Request $request){
 
-        $lat = $request->lati;
-        $long = $request->long;
+        $lat = $request->input('lati');
+        $long = $request->input('long');
 
         $user = Auth::user();
         $user->long = $long;
@@ -205,6 +237,7 @@ class GameController extends Controller
         $responseArray = array('status' => 'OK', 'message' => 'Success','data' => "");
         return json_encode($responseArray);
     }
+
 
 
 

@@ -39,8 +39,10 @@ Route::get('/adminview', function () {
     return view('adminlive');
 });
 
-Route::get('/viewmyteam/{id}', function () {
-    return view('myteam');
+Route::get('/viewmyteam/{id}', function ($id) {
+    // return view('welcome', ['avatar' => $userAvatar->pivot->avatar,'email' => $user->email
+    //,'name' => $user->name,'status' => 'OK','message' => 'Successfull login!']);
+    return view('myteam',['id' => $id]);
 });
 
 Route::get('/query', function() {
@@ -63,6 +65,8 @@ Route::post('game','GameController@createGame');
 Route::post('/save', 'GameController@store');
 
 Route::post('/view', 'GameController@view');
+
+Route::post('/viewMy/{id}', 'GameController@viewMy');
 
 Route::resource('profile','ProfileController');
 

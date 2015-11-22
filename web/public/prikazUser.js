@@ -108,9 +108,11 @@ $(document).ready( function() {
         //$('#map').empty();
         //initMap();
         clearMarkers();
+        $idTima = $('#idTima').val();
+        $id = parseInt($idTima);
         $.ajax({
             type: "POST",
-            url: "/viewMy",
+            url: "/viewMy/"+$id,
             async:false,
             dataType: "json",
             success: function (data, status, xhr) {
