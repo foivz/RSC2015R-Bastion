@@ -76,8 +76,8 @@ class NotificationController extends Controller
                         }
                     }
                 }
-                $game->status = 1;
-                $game->save;
+                $game->status = 2;
+                $game->save();
                 $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
                 return json_encode($responseArray);
 
@@ -224,7 +224,7 @@ class NotificationController extends Controller
                 }
             }
             $game->status = 1;
-            $game->save;
+            $game->save();
             $responseArray = array('status' => 'OK', 'message' => 'OK','data' => "");
             return json_encode($responseArray);
 
