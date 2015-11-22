@@ -15,5 +15,7 @@ struct Constants {
     static let kREGISTER: String = "\(kENDPOINT)/api/register"
     static let kTEAMLIST: String = "\(kENDPOINT)/api/team"
     static let kJOINTEAM: String = "\(kENDPOINT)/api/join"
+    static let kGETYOURPLAYERS: String = "\(kENDPOINT)/api/applications"
+    static let kLOCKTEAM: String = "\(kENDPOINT)/api/lockteam"
     
 }

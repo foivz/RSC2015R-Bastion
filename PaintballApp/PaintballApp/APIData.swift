@@ -47,9 +47,6 @@ class APIData {
         Alamofire.request(.POST, Constants.kTEAMLIST, parameters: ["name": teamName], headers: ["Authorization": getToken])
             .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
  
-                //let token: String = response!.allHeaderFields["Authorization"] as! String
-                
-                //APIUser.sharedInstance.setToken(token)
                 let json = JSON(data: data!)
                 
                 withSuccess(json)
@@ -63,15 +60,43 @@ class APIData {
         Alamofire.request(.POST, "\(Constants.kJOINTEAM)/\(id)", headers: ["Authorization": getToken])
             .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
                 
+                let json = JSON(data: data!)
+                
+                withSuccess(json)
+                
+        }
+    }
+    
+    
+    func getYourPlayers(id: Int, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.GET, "\(Constants.kGETYOURPLAYERS)/\(id)", headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
+                let json = JSON(data: data!)
+                
+                withSuccess(json)
+                
+        }
+    }
+    
+    
+    
+    
+    func lockTeam(teamName: String, withSuccess: ((JSON) -> Void), withFail: ((NSError) -> Void)) {
+        let getToken = APIUser.sharedInstance.getToken()
+        
+        Alamofire.request(.POST, Constants.kLOCKTEAM, parameters: ["teamname" : teamName], headers: ["Authorization": getToken])
+            .response { (request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) -> Void in
+                
                 print(response)
                 print(data)
                 print(response)
                 
-                //let token: String = response!.allHeaderFields["Authorization"] as! String
-                
-                //APIUser.sharedInstance.setToken(token)
                 let json = JSON(data: data!)
                 
+                print(json)
                 withSuccess(json)
                 
         }

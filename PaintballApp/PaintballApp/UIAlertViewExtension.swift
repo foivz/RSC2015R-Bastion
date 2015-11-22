@@ -28,7 +28,7 @@ class CustomAlertView: UIAlertView {
     
     static func alertFailWithTextAndTitle(title: String, tekst: String) {
         let alert = UIAlertView()
-        alert.title = "Ups!"
+        alert.title = title
         alert.message = tekst
         alert.addButtonWithTitle("OK")
         alert.show()

@@ -86,6 +86,19 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     if !token.isEmpty && token != "" {
                         
                         APIUser.sharedInstance.setToken("Bearer \(token)")
+                        
+                        if let role = json["data"]["role"].string {
+                            //ako je user
+                            if role == "1" {
+                                let teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
+                                self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
+                                //ako je sudac
+                            } else {
+                                let judgeController = self.storyboard?.instantiateViewControllerWithIdentifier("JudgeFirstScreen")
+                                self.presentViewController(judgeController!, animated: true, completion: nil)
+                            }
+                        }
+                        
                         let teamListNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("TeamListController")
                         self.presentViewController(teamListNavigationController!, animated: true, completion: nil)
                     

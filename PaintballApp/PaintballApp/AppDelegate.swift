@@ -62,10 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print("token= \(deviceToken)")
+        var token = "\(deviceToken)"
+        token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
+        token = token.stringByReplacingOccurrencesOfString("<", withString: "")
+        token = token.stringByReplacingOccurrencesOfString(">", withString: "")
+        APIUser.sharedInstance.setPushID(token)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print(userInfo)
         NSNotificationCenter.defaultCenter().postNotificationName("refreshUserList", object: self, userInfo: userInfo)
     }
     

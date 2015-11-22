@@ -231,6 +231,268 @@
             </objects>
             <point key="canvasLocation" x="1048" y="262"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="pz0-zQ-jWZ">
+            <objects>
+                <viewController storyboardIdentifier="JudgeFirstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Uk-da-Ltp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zqu-0U-3sl"/>
+                        <viewControllerLayoutGuide type="bottom" id="eAf-qp-PdU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o1g-5F-NOs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="580"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sudija" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHs-bf-Bma">
+                                <rect key="frame" x="87" y="140" width="45" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="580"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1IJ-iE-ydc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="1208"/>
+        </scene>
+        <!--Game Controller-->
+        <scene sceneID="Z0k-Hf-ogg">
+            <objects>
+                <viewController id="o1J-Yt-MSv" customClass="GameController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcx-ZH-80b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ru8-Nl-Ybj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aAS-1A-5z9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="580"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEg-3a-QeJ">
+                                <rect key="frame" x="0.0" y="64" width="160" height="38"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.79607843140000001" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="wUl-lV-hpC"/>
+                                </constraints>
+                                <state key="normal" title="Mapa">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickButton1:" destination="o1J-Yt-MSv" eventType="touchUpInside" id="KJ8-sC-p9N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2z-TX-eei">
+                                <rect key="frame" x="160" y="64" width="160" height="38"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.79607843140000001" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Komunikacija">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickButton2:" destination="o1J-Yt-MSv" eventType="touchUpInside" id="SmT-ZE-DBX"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNq-O6-AsR">
+                                <rect key="frame" x="0.0" y="102" width="320" height="478"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-aC-NbF">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Uv7-KF-9by"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NzY-aC-NbF" secondAttribute="trailing" id="N5o-OQ-VNr"/>
+                                    <constraint firstAttribute="bottom" secondItem="NzY-aC-NbF" secondAttribute="bottom" id="PtQ-Hf-ZbT"/>
+                                    <constraint firstItem="NzY-aC-NbF" firstAttribute="top" secondItem="uNq-O6-AsR" secondAttribute="top" id="gAb-yk-3Kc"/>
+                                    <constraint firstItem="NzY-aC-NbF" firstAttribute="height" secondItem="uNq-O6-AsR" secondAttribute="height" id="pbu-Gs-px3"/>
+                                    <constraint firstItem="NzY-aC-NbF" firstAttribute="leading" secondItem="uNq-O6-AsR" secondAttribute="leading" id="wBh-Zp-PfC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uNq-O6-AsR" secondAttribute="trailing" id="AVZ-N0-6s7"/>
+                            <constraint firstItem="Z2z-TX-eei" firstAttribute="leading" secondItem="vEg-3a-QeJ" secondAttribute="trailing" id="Bum-Wz-FlY"/>
+                            <constraint firstItem="vEg-3a-QeJ" firstAttribute="top" secondItem="dcx-ZH-80b" secondAttribute="bottom" id="EBb-YW-1JC"/>
+                            <constraint firstItem="vEg-3a-QeJ" firstAttribute="width" secondItem="Z2z-TX-eei" secondAttribute="width" id="Eu1-Yu-fWZ"/>
+                            <constraint firstItem="Z2z-TX-eei" firstAttribute="height" secondItem="vEg-3a-QeJ" secondAttribute="height" id="Jkc-sO-ext"/>
+                            <constraint firstItem="Ru8-Nl-Ybj" firstAttribute="top" secondItem="uNq-O6-AsR" secondAttribute="bottom" id="NSS-6L-kQL"/>
+                            <constraint firstItem="uNq-O6-AsR" firstAttribute="leading" secondItem="aAS-1A-5z9" secondAttribute="leading" id="T2Y-RH-oLx"/>
+                            <constraint firstItem="NzY-aC-NbF" firstAttribute="height" secondItem="aAS-1A-5z9" secondAttribute="height" id="YeN-si-rWe"/>
+                            <constraint firstItem="vEg-3a-QeJ" firstAttribute="leading" secondItem="aAS-1A-5z9" secondAttribute="leading" id="aNs-QW-G7M"/>
+                            <constraint firstItem="uNq-O6-AsR" firstAttribute="top" secondItem="vEg-3a-QeJ" secondAttribute="bottom" id="jSK-dk-DtW"/>
+                            <constraint firstAttribute="trailing" secondItem="Z2z-TX-eei" secondAttribute="trailing" id="jfF-n3-vVQ"/>
+                            <constraint firstItem="Z2z-TX-eei" firstAttribute="top" secondItem="dcx-ZH-80b" secondAttribute="bottom" id="mrB-AP-VzM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YeN-si-rWe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="580"/>
+                    <connections>
+                        <outlet property="navButton1" destination="vEg-3a-QeJ" id="cKX-SE-dkM"/>
+                        <outlet property="navButton2" destination="Z2z-TX-eei" id="0UP-kP-bRi"/>
+                        <outlet property="scrollViewController" destination="uNq-O6-AsR" id="6LB-Oz-ZCh"/>
+                        <outlet property="scrollViewWidth" destination="Uv7-KF-9by" id="Wfr-q3-Ram"/>
+                        <outlet property="viewScrollViewContent" destination="NzY-aC-NbF" id="iEs-wk-Kzo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TG2-2o-P2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2365" y="991"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="VLD-sw-A22">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A3o-bf-4vr" customClass="WebViewController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vf6-pp-8NG"/>
+                        <viewControllerLayoutGuide type="bottom" id="B4g-mq-oJF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxB-tG-7tO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-Si-iYh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bsX-Si-iYh" firstAttribute="top" secondItem="rxB-tG-7tO" secondAttribute="top" id="B77-Nd-9jm"/>
+                            <constraint firstItem="bsX-Si-iYh" firstAttribute="leading" secondItem="rxB-tG-7tO" secondAttribute="leading" id="SlX-Hc-EfB"/>
+                            <constraint firstItem="B4g-mq-oJF" firstAttribute="top" secondItem="bsX-Si-iYh" secondAttribute="bottom" id="fAn-xD-4qd"/>
+                            <constraint firstAttribute="trailing" secondItem="bsX-Si-iYh" secondAttribute="trailing" id="rQs-jQ-nmF"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="550"/>
+                    <connections>
+                        <outlet property="webview" destination="bsX-Si-iYh" id="pHj-v3-msi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zum-MY-BQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="1678"/>
+        </scene>
+        <!--Communication Controller-->
+        <scene sceneID="7xr-zH-Pfy">
+            <objects>
+                <viewController storyboardIdentifier="ComunicattionsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cam-RY-z7z" customClass="CommunicationController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jeg-Fa-sG6"/>
+                        <viewControllerLayoutGuide type="bottom" id="hOq-5X-TZu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eIh-GW-UHq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfJ-Jc-axk">
+                                <rect key="frame" x="20" y="36" width="280" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="4eT-Hz-KN6"/>
+                                </constraints>
+                                <state key="normal" title="Message 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-jK-naK">
+                                <rect key="frame" x="20" y="97" width="280" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Message 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-n4-ztt">
+                                <rect key="frame" x="20" y="158" width="280" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Message 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvO-GL-j5b">
+                                <rect key="frame" x="20" y="221" width="280" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Message 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmw-yT-Ftc">
+                                <rect key="frame" x="20" y="282" width="280" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.52156862749999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Message 1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pr-6v-L5Y">
+                                <rect key="frame" x="0.0" y="427" width="320" height="53"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="PORUKE SUCU">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0e5-n4-ztt" secondAttribute="trailing" constant="20" id="6Id-rr-fJg"/>
+                            <constraint firstItem="vvO-GL-j5b" firstAttribute="height" secondItem="vfJ-Jc-axk" secondAttribute="height" id="9Fz-AM-NCA"/>
+                            <constraint firstItem="vvO-GL-j5b" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" constant="20" id="AXk-E3-NOz"/>
+                            <constraint firstItem="8Pr-6v-L5Y" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" id="GD5-w8-4Xw"/>
+                            <constraint firstItem="bXH-jK-naK" firstAttribute="height" secondItem="vfJ-Jc-axk" secondAttribute="height" id="JcZ-Di-V55"/>
+                            <constraint firstItem="0e5-n4-ztt" firstAttribute="height" secondItem="vfJ-Jc-axk" secondAttribute="height" id="NPW-dI-E3o"/>
+                            <constraint firstItem="vfJ-Jc-axk" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" constant="20" id="QPF-df-dvj"/>
+                            <constraint firstItem="0e5-n4-ztt" firstAttribute="top" secondItem="bXH-jK-naK" secondAttribute="bottom" constant="8" id="QQA-N1-SMs"/>
+                            <constraint firstItem="jmw-yT-Ftc" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" constant="20" id="Qmc-aa-4NA"/>
+                            <constraint firstItem="jmw-yT-Ftc" firstAttribute="height" secondItem="vfJ-Jc-axk" secondAttribute="height" id="WuD-n8-CCD"/>
+                            <constraint firstAttribute="trailing" secondItem="8Pr-6v-L5Y" secondAttribute="trailing" id="XrU-Al-dWf"/>
+                            <constraint firstAttribute="trailing" secondItem="bXH-jK-naK" secondAttribute="trailing" constant="20" id="bTC-Lm-P6n"/>
+                            <constraint firstAttribute="trailing" secondItem="vfJ-Jc-axk" secondAttribute="trailing" constant="20" id="bx8-Lu-dEu"/>
+                            <constraint firstItem="vfJ-Jc-axk" firstAttribute="top" secondItem="jeg-Fa-sG6" secondAttribute="bottom" constant="16" id="cpc-oe-xh7"/>
+                            <constraint firstItem="0e5-n4-ztt" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" constant="20" id="dOC-aV-43U"/>
+                            <constraint firstItem="jmw-yT-Ftc" firstAttribute="top" secondItem="vvO-GL-j5b" secondAttribute="bottom" constant="8" id="ds2-kc-eqq"/>
+                            <constraint firstItem="8Pr-6v-L5Y" firstAttribute="height" secondItem="vfJ-Jc-axk" secondAttribute="height" id="fdF-lJ-3iK"/>
+                            <constraint firstItem="bXH-jK-naK" firstAttribute="top" secondItem="vfJ-Jc-axk" secondAttribute="bottom" constant="8" id="hoj-1f-c2b"/>
+                            <constraint firstItem="hOq-5X-TZu" firstAttribute="top" secondItem="8Pr-6v-L5Y" secondAttribute="bottom" id="l1m-Zv-YF5"/>
+                            <constraint firstAttribute="trailing" secondItem="jmw-yT-Ftc" secondAttribute="trailing" constant="20" id="mRH-16-TKI"/>
+                            <constraint firstItem="vvO-GL-j5b" firstAttribute="top" secondItem="0e5-n4-ztt" secondAttribute="bottom" constant="10" id="swi-ou-Qwi"/>
+                            <constraint firstItem="bXH-jK-naK" firstAttribute="leading" secondItem="eIh-GW-UHq" secondAttribute="leading" constant="20" id="yTR-ii-QrK"/>
+                            <constraint firstAttribute="trailing" secondItem="vvO-GL-j5b" secondAttribute="trailing" constant="20" id="ywb-xs-bxx"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLi-UB-vMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1643"/>
+        </scene>
         <!--Timovi-->
         <scene sceneID="DAr-ao-lwc">
             <objects>
@@ -368,7 +630,7 @@
             </objects>
             <point key="canvasLocation" x="1534" y="252"/>
         </scene>
-        <!--Player List Controller-->
+        <!--Igrači-->
         <scene sceneID="Hl6-d3-EO4">
             <objects>
                 <viewController storyboardIdentifier="PlayerListController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rvh-wo-jj6" customClass="PlayerListController" customModule="PaintballApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -410,7 +672,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpl-HR-mLY">
                                                     <rect key="frame" x="204" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -418,7 +680,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raA-Rn-OhT">
                                                     <rect key="frame" x="262" y="19" width="50" height="40"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.65459408969999999" green="0.19047225879999999" blue="0.21001269219999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -456,7 +718,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-ha-wwq" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEj-ha-wwq" customClass="CustomButton" customModule="PaintballApp" customModuleProvider="target">
                                 <rect key="frame" x="225" y="455" width="75" height="75"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.27525027549999997" green="0.58227926590000001" blue="0.39585710610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -471,6 +733,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickedLockButton:" destination="Rvh-wo-jj6" eventType="touchUpInside" id="iDH-Sr-GaI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -484,7 +749,7 @@
                             <constraint firstItem="bcR-n4-sXt" firstAttribute="leading" secondItem="eIQ-n7-2HG" secondAttribute="leading" id="lFa-tN-yoU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="puh-aO-mdG"/>
+                    <navigationItem key="navigationItem" title="Igrači" id="puh-aO-mdG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="550"/>

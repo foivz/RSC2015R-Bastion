@@ -43,8 +43,8 @@ class APIUser {
             "email": email,
             "password": password,
             "full_name": name,
-            "city": "Zagreb",
-            "birth_date": "1992-10-01"
+            "device": "ios",
+            "pushid" : APIUser.sharedInstance.getPushID()
         ]
         
         Alamofire.request(.POST, Constants.kREGISTER, parameters: parameters)
@@ -74,6 +74,22 @@ class APIUser {
         
         let preferences = NSUserDefaults.standardUserDefaults()
         return preferences.objectForKey("token") as! String
+        
+    }
+    
+    
+    func setPushID(token: String) {
+        
+        let preferences = NSUserDefaults.standardUserDefaults()
+        preferences.setObject(token, forKey: "pushID")
+        preferences.synchronize()
+        
+    }
+    
+    func getPushID() -> String {
+        
+        let preferences = NSUserDefaults.standardUserDefaults()
+        return preferences.objectForKey("pushID") as! String
         
     }
     

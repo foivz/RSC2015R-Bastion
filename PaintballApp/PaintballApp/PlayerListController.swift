@@ -9,9 +9,13 @@
 import UIKit
 import QRCodeReader
 import AVFoundation
+import SwiftyJSON
 
 class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate {
 
+    var indexOfTeam: Int = 0
+    var teamName: String = ""
+    var data: JSON = nil
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -21,13 +25,14 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:",
-            name: "refreshUserList:", object: nil)
+        self.refreshList(NSNotification(name: "fake", object: nil))
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name: "refreshUserList", object: nil)
 
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -36,7 +41,18 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.buttonDelete.tag = indexPath.row
         cell.buttonAdd.addTarget(self, action: "clickedAddButton:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.buttonDelete.addTarget(self, action: "clickedDeleteButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        cell.labelName.text = data[indexPath.row]["name"].string
+        
         return cell
+    }
+    
+    @IBAction func clickedLockButton(sender: AnyObject) {
+        APIData.sharedInstance.lockTeam(teamName, withSuccess: { (json: JSON) -> Void in
+            
+            }) { (error: NSError) -> Void in
+                
+        }
     }
 
     func clickedAddButton(sender: UIButton) {
@@ -49,7 +65,17 @@ class PlayerListController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func refreshList(notification: NSNotification) {
-        print(notification)
+        
+        APIData.sharedInstance.getYourPlayers(indexOfTeam, withSuccess: { (json: JSON) -> Void in
+
+            if json != nil && json.count != 0{
+                self.data = json
+                self.tableView.reloadData()
+            }
+            
+            }) { (error: NSError) -> Void in
+                
+        }
     }
     
     

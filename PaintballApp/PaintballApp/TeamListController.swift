@@ -25,6 +25,7 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        //hakaton je, sta ces...
         NSThread.sleepForTimeInterval(1)
         getData()
     }
@@ -68,12 +69,14 @@ class TeamListController: UIViewController, UITableViewDelegate, UITableViewData
     
     //GO TO USERS PICKING
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        APIData.sharedInstance.setTeam((alertView .textFieldAtIndex(0)?.text!)!, withSuccess: { (json: JSON) -> Void in
-            
+        APIData.sharedInstance.setTeam((alertView.textFieldAtIndex(0)?.text!)!, withSuccess: { (json: JSON) -> Void in
+            print(json)
             if let status = json["status"].string {
                 if status == "OK" {
-                    let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerListController")
-                    self.navigationController?.showViewController(nextController!, sender: nil)
+                    let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("PlayerListController") as! PlayerListController
+                    nextController.indexOfTeam = json["message"].int!
+                    nextController.teamName = (alertView.textFieldAtIndex(0)?.text!)!
+                    self.navigationController?.showViewController(nextController, sender: nil)
                 } else {
                     CustomAlertView.alertCreateTeamFail()
                 }
